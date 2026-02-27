@@ -1,0 +1,105 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+2026-02-24 10:28:19,634 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 672 个卫星场景 (训练集)
+2026-02-24 10:28:19,653 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 62 个卫星场景 (验证集)
+2026-02-24 10:28:19,653 - portable_sam_fusion.data.loader - INFO - 创建验证集加载器: 62 样本
+2026-02-24 10:28:19,654 - portable_sam_fusion - INFO - Dataset size: 672
+[DEBUG] RSFeatureAggregatorSAM2 inputs: 4 tensors
+  [0] shape=torch.Size([2, 256, 128, 128]), dtype=torch.float32
+  [1] shape=torch.Size([2, 256, 64, 64]), dtype=torch.float32
+  [2] shape=torch.Size([2, 256, 32, 32]), dtype=torch.float32
+  [3] shape=torch.Size([2, 256, 16, 16]), dtype=torch.float32
+2026-02-24 10:30:09,566 - portable_sam_fusion - INFO - Epoch 1 detailed losses: loss_rpn_cls=0.6925, loss_rpn_bbox=0.0150, loss_cls=0.4687, acc=97.4133, loss_bbox=0.0138, loss_mask=0.2782
+2026-02-24 10:30:34,087 - portable_sam_fusion - INFO - Epoch 1/50 | train=1.468214 val=1.321348 | sat_backbone=2.10e-06 sat_other=4.20e-06
+2026-02-24 10:32:32,259 - portable_sam_fusion - INFO - Epoch 2 detailed losses: loss_rpn_cls=0.4377, loss_rpn_bbox=0.0134, loss_cls=0.2721, acc=91.0610, loss_bbox=0.2041, loss_mask=0.1933
+2026-02-24 10:33:00,144 - portable_sam_fusion - INFO - Epoch 2/50 | train=1.120620 val=1.095413 | sat_backbone=4.10e-06 sat_other=8.19e-06
+2026-02-24 10:35:00,003 - portable_sam_fusion - INFO - Epoch 3 detailed losses: loss_rpn_cls=0.1866, loss_rpn_bbox=0.0121, loss_cls=0.3055, acc=86.5159, loss_bbox=0.3163, loss_mask=0.1347
+2026-02-24 10:35:30,650 - portable_sam_fusion - INFO - Epoch 3/50 | train=0.955149 val=0.827566 | sat_backbone=6.09e-06 sat_other=1.22e-05
+2026-02-24 10:37:36,244 - portable_sam_fusion - INFO - Epoch 4 detailed losses: loss_rpn_cls=0.1215, loss_rpn_bbox=0.0110, loss_cls=0.2633, acc=88.3911, loss_bbox=0.2654, loss_mask=0.1207
+2026-02-24 10:38:03,255 - portable_sam_fusion - INFO - Epoch 4/50 | train=0.781937 val=0.720684 | sat_backbone=8.09e-06 sat_other=1.62e-05
+2026-02-24 10:40:11,648 - portable_sam_fusion - INFO - Epoch 5 detailed losses: loss_rpn_cls=0.0858, loss_rpn_bbox=0.0094, loss_cls=0.2724, acc=88.1789, loss_bbox=0.2436, loss_mask=0.1067
+2026-02-24 10:40:38,754 - portable_sam_fusion - INFO - Epoch 5/50 | train=0.717962 val=0.674357 | sat_backbone=1.01e-05 sat_other=2.02e-05
+2026-02-24 10:42:42,886 - portable_sam_fusion - INFO - Epoch 6 detailed losses: loss_rpn_cls=0.0619, loss_rpn_bbox=0.0081, loss_cls=0.2617, acc=88.6980, loss_bbox=0.2096, loss_mask=0.0987
+2026-02-24 10:43:11,872 - portable_sam_fusion - INFO - Epoch 6/50 | train=0.640064 val=0.673043 | sat_backbone=1.21e-05 sat_other=2.42e-05
+2026-02-24 10:45:20,653 - portable_sam_fusion - INFO - Epoch 7 detailed losses: loss_rpn_cls=0.0490, loss_rpn_bbox=0.0073, loss_cls=0.2477, acc=89.5037, loss_bbox=0.1890, loss_mask=0.0939
+2026-02-24 10:45:49,078 - portable_sam_fusion - INFO - Epoch 7/50 | train=0.586867 val=0.585096 | sat_backbone=1.41e-05 sat_other=2.82e-05
+2026-02-24 10:47:59,630 - portable_sam_fusion - INFO - Epoch 8 detailed losses: loss_rpn_cls=0.0417, loss_rpn_bbox=0.0063, loss_cls=0.2320, acc=90.0176, loss_bbox=0.1740, loss_mask=0.0778
+2026-02-24 10:48:28,247 - portable_sam_fusion - INFO - Epoch 8/50 | train=0.531867 val=0.566835 | sat_backbone=1.61e-05 sat_other=3.22e-05
+2026-02-24 10:50:37,671 - portable_sam_fusion - INFO - Epoch 9 detailed losses: loss_rpn_cls=0.0355, loss_rpn_bbox=0.0058, loss_cls=0.2178, acc=90.8378, loss_bbox=0.1557, loss_mask=0.0664
+2026-02-24 10:51:05,466 - portable_sam_fusion - INFO - Epoch 9/50 | train=0.481169 val=0.553156 | sat_backbone=1.81e-05 sat_other=3.62e-05
+2026-02-24 10:53:14,542 - portable_sam_fusion - INFO - Epoch 10 detailed losses: loss_rpn_cls=0.0303, loss_rpn_bbox=0.0053, loss_cls=0.2006, acc=91.5545, loss_bbox=0.1384, loss_mask=0.0547
+2026-02-24 10:53:40,929 - portable_sam_fusion - INFO - Epoch 10/50 | train=0.429160 val=0.506326 | sat_backbone=2.01e-05 sat_other=4.02e-05
+2026-02-24 10:55:50,643 - portable_sam_fusion - INFO - Epoch 11 detailed losses: loss_rpn_cls=0.0258, loss_rpn_bbox=0.0050, loss_cls=0.1946, acc=91.7951, loss_bbox=0.1301, loss_mask=0.0444
+2026-02-24 10:56:16,850 - portable_sam_fusion - INFO - Epoch 11/50 | train=0.399963 val=0.493262 | sat_backbone=2.21e-05 sat_other=4.42e-05
+2026-02-24 10:58:27,688 - portable_sam_fusion - INFO - Epoch 12 detailed losses: loss_rpn_cls=0.0243, loss_rpn_bbox=0.0047, loss_cls=0.1781, acc=92.4671, loss_bbox=0.1169, loss_mask=0.0407
+2026-02-24 10:58:57,591 - portable_sam_fusion - INFO - Epoch 12/50 | train=0.364644 val=0.439234 | sat_backbone=2.41e-05 sat_other=4.82e-05
+2026-02-24 11:00:28,258 - portable_sam_fusion - INFO - Epoch 13 detailed losses: loss_rpn_cls=0.0230, loss_rpn_bbox=0.0045, loss_cls=0.1795, acc=92.4944, loss_bbox=0.1147, loss_mask=0.0411
+2026-02-24 11:00:41,328 - portable_sam_fusion - INFO - Epoch 13/50 | train=0.362831 val=0.458832 | sat_backbone=2.61e-05 sat_other=5.21e-05
+2026-02-24 11:01:35,456 - portable_sam_fusion - INFO - Epoch 14 detailed losses: loss_rpn_cls=0.0206, loss_rpn_bbox=0.0043, loss_cls=0.1671, acc=93.0769, loss_bbox=0.1048, loss_mask=0.0349
+2026-02-24 11:01:49,245 - portable_sam_fusion - INFO - Epoch 14/50 | train=0.331657 val=0.442920 | sat_backbone=2.81e-05 sat_other=5.61e-05
+2026-02-24 11:04:03,464 - portable_sam_fusion - INFO - Epoch 15 detailed losses: loss_rpn_cls=0.0193, loss_rpn_bbox=0.0059, loss_cls=0.1652, acc=93.1710, loss_bbox=0.1059, loss_mask=0.0339
+2026-02-24 11:04:22,223 - portable_sam_fusion - INFO - Epoch 15/50 | train=0.330178 val=0.454806 | sat_backbone=3.01e-05 sat_other=6.01e-05
+2026-02-24 11:06:35,935 - portable_sam_fusion - INFO - Epoch 16 detailed losses: loss_rpn_cls=0.0191, loss_rpn_bbox=0.0044, loss_cls=0.1629, acc=93.2600, loss_bbox=0.0986, loss_mask=0.0327
+2026-02-24 11:07:05,686 - portable_sam_fusion - INFO - Epoch 16/50 | train=0.317635 val=0.423456 | sat_backbone=3.21e-05 sat_other=6.41e-05
+2026-02-24 11:09:17,431 - portable_sam_fusion - INFO - Epoch 17 detailed losses: loss_rpn_cls=0.0151, loss_rpn_bbox=0.0040, loss_cls=0.1497, acc=93.8168, loss_bbox=0.0952, loss_mask=0.0301
+2026-02-24 11:09:36,170 - portable_sam_fusion - INFO - Epoch 17/50 | train=0.294103 val=0.468863 | sat_backbone=3.41e-05 sat_other=6.81e-05
+2026-02-24 11:11:48,526 - portable_sam_fusion - INFO - Epoch 18 detailed losses: loss_rpn_cls=0.0152, loss_rpn_bbox=0.0045, loss_cls=0.1506, acc=93.8407, loss_bbox=0.0921, loss_mask=0.0317
+2026-02-24 11:12:07,342 - portable_sam_fusion - INFO - Epoch 18/50 | train=0.294045 val=0.464264 | sat_backbone=3.61e-05 sat_other=7.21e-05
+2026-02-24 11:14:18,135 - portable_sam_fusion - INFO - Epoch 19 detailed losses: loss_rpn_cls=0.0159, loss_rpn_bbox=0.0040, loss_cls=0.1506, acc=93.8337, loss_bbox=0.0906, loss_mask=0.0326
+2026-02-24 11:14:35,319 - portable_sam_fusion - INFO - Epoch 19/50 | train=0.293630 val=0.444294 | sat_backbone=3.81e-05 sat_other=7.61e-05
+2026-02-24 11:16:47,423 - portable_sam_fusion - INFO - Epoch 20 detailed losses: loss_rpn_cls=0.0129, loss_rpn_bbox=0.0043, loss_cls=0.1451, acc=94.0354, loss_bbox=0.0879, loss_mask=0.0301
+2026-02-24 11:17:15,461 - portable_sam_fusion - INFO - Epoch 20/50 | train=0.280374 val=0.397046 | sat_backbone=4.01e-05 sat_other=8.01e-05
+2026-02-24 11:19:28,702 - portable_sam_fusion - INFO - Epoch 21 detailed losses: loss_rpn_cls=0.0140, loss_rpn_bbox=0.0042, loss_cls=0.1465, acc=93.9994, loss_bbox=0.0878, loss_mask=0.0278
+2026-02-24 11:20:01,538 - portable_sam_fusion - INFO - Epoch 21/50 | train=0.280412 val=0.390990 | sat_backbone=4.21e-05 sat_other=8.41e-05
+2026-02-24 11:22:12,805 - portable_sam_fusion - INFO - Epoch 22 detailed losses: loss_rpn_cls=0.0116, loss_rpn_bbox=0.0034, loss_cls=0.1375, acc=94.3557, loss_bbox=0.0767, loss_mask=0.0290
+2026-02-24 11:22:32,870 - portable_sam_fusion - INFO - Epoch 22/50 | train=0.258150 val=0.473522 | sat_backbone=4.41e-05 sat_other=8.81e-05
+2026-02-24 11:24:43,442 - portable_sam_fusion - INFO - Epoch 23 detailed losses: loss_rpn_cls=0.0114, loss_rpn_bbox=0.0040, loss_cls=0.1447, acc=94.0499, loss_bbox=0.0822, loss_mask=0.0300
+2026-02-24 11:25:03,204 - portable_sam_fusion - INFO - Epoch 23/50 | train=0.272322 val=0.423464 | sat_backbone=4.61e-05 sat_other=9.21e-05
+2026-02-24 11:27:15,776 - portable_sam_fusion - INFO - Epoch 24 detailed losses: loss_rpn_cls=0.0107, loss_rpn_bbox=0.0034, loss_cls=0.1344, acc=94.5324, loss_bbox=0.0773, loss_mask=0.0288
+2026-02-24 11:27:35,502 - portable_sam_fusion - INFO - Epoch 24/50 | train=0.254657 val=0.456110 | sat_backbone=4.81e-05 sat_other=9.61e-05
+2026-02-24 11:29:46,761 - portable_sam_fusion - INFO - Epoch 25 detailed losses: loss_rpn_cls=0.0095, loss_rpn_bbox=0.0032, loss_cls=0.1346, acc=94.4795, loss_bbox=0.0766, loss_mask=0.0265
+2026-02-24 11:30:06,977 - portable_sam_fusion - INFO - Epoch 25/50 | train=0.250455 val=0.449811 | sat_backbone=5.01e-05 sat_other=1.00e-04
+2026-02-24 11:32:17,195 - portable_sam_fusion - INFO - Epoch 26 detailed losses: loss_rpn_cls=0.0105, loss_rpn_bbox=0.0036, loss_cls=0.1313, acc=94.5876, loss_bbox=0.0723, loss_mask=0.0276
+2026-02-24 11:32:35,000 - portable_sam_fusion - INFO - Epoch 26/50 | train=0.245309 val=0.419356 | sat_backbone=5.20e-05 sat_other=1.04e-04
+2026-02-24 11:34:44,345 - portable_sam_fusion - INFO - Epoch 27 detailed losses: loss_rpn_cls=0.0101, loss_rpn_bbox=0.0038, loss_cls=0.1363, acc=94.4859, loss_bbox=0.0743, loss_mask=0.0329
+2026-02-24 11:35:01,064 - portable_sam_fusion - INFO - Epoch 27/50 | train=0.257563 val=0.393050 | sat_backbone=5.40e-05 sat_other=1.08e-04
+2026-02-24 11:37:12,074 - portable_sam_fusion - INFO - Epoch 28 detailed losses: loss_rpn_cls=0.0095, loss_rpn_bbox=0.0035, loss_cls=0.1310, acc=94.5632, loss_bbox=0.0741, loss_mask=0.0262
+2026-02-24 11:37:29,539 - portable_sam_fusion - INFO - Epoch 28/50 | train=0.244305 val=0.446383 | sat_backbone=5.60e-05 sat_other=1.12e-04
+2026-02-24 11:39:41,453 - portable_sam_fusion - INFO - Epoch 29 detailed losses: loss_rpn_cls=0.0096, loss_rpn_bbox=0.0036, loss_cls=0.1278, acc=94.7888, loss_bbox=0.0709, loss_mask=0.0279
+2026-02-24 11:40:09,457 - portable_sam_fusion - INFO - Epoch 29/50 | train=0.239885 val=0.387525 | sat_backbone=5.80e-05 sat_other=1.16e-04
+2026-02-24 11:42:18,237 - portable_sam_fusion - INFO - Epoch 30 detailed losses: loss_rpn_cls=0.0089, loss_rpn_bbox=0.0042, loss_cls=0.1374, acc=94.3976, loss_bbox=0.0776, loss_mask=0.0279
+2026-02-24 11:42:36,103 - portable_sam_fusion - INFO - Epoch 30/50 | train=0.255983 val=0.416888 | sat_backbone=6.00e-05 sat_other=1.20e-04
+2026-02-24 11:44:46,064 - portable_sam_fusion - INFO - Epoch 31 detailed losses: loss_rpn_cls=0.0083, loss_rpn_bbox=0.0039, loss_cls=0.1259, acc=94.8358, loss_bbox=0.0683, loss_mask=0.0272
+2026-02-24 11:45:02,552 - portable_sam_fusion - INFO - Epoch 31/50 | train=0.233575 val=0.432659 | sat_backbone=6.20e-05 sat_other=1.24e-04
+2026-02-24 11:47:16,294 - portable_sam_fusion - INFO - Epoch 32 detailed losses: loss_rpn_cls=0.0106, loss_rpn_bbox=0.0039, loss_cls=0.1239, acc=94.9637, loss_bbox=0.0660, loss_mask=0.0265
+2026-02-24 11:47:33,927 - portable_sam_fusion - INFO - Epoch 32/50 | train=0.230991 val=0.453491 | sat_backbone=6.40e-05 sat_other=1.28e-04
+2026-02-24 11:49:43,998 - portable_sam_fusion - INFO - Epoch 33 detailed losses: loss_rpn_cls=0.0083, loss_rpn_bbox=0.0042, loss_cls=0.1284, acc=94.7382, loss_bbox=0.0698, loss_mask=0.0254
+2026-02-24 11:50:01,516 - portable_sam_fusion - INFO - Epoch 33/50 | train=0.236048 val=0.449467 | sat_backbone=6.60e-05 sat_other=1.32e-04
+2026-02-24 11:52:11,813 - portable_sam_fusion - INFO - Epoch 34 detailed losses: loss_rpn_cls=0.0125, loss_rpn_bbox=0.0032, loss_cls=0.1322, acc=94.6684, loss_bbox=0.0763, loss_mask=0.0278
+2026-02-24 11:52:29,304 - portable_sam_fusion - INFO - Epoch 34/50 | train=0.251993 val=0.478539 | sat_backbone=6.80e-05 sat_other=1.36e-04
+2026-02-24 11:54:40,004 - portable_sam_fusion - INFO - Epoch 35 detailed losses: loss_rpn_cls=0.0108, loss_rpn_bbox=0.0034, loss_cls=0.1281, acc=94.8597, loss_bbox=0.0692, loss_mask=0.0298
+2026-02-24 11:54:58,663 - portable_sam_fusion - INFO - Epoch 35/50 | train=0.241279 val=0.476844 | sat_backbone=7.00e-05 sat_other=1.40e-04
+2026-02-24 11:57:07,739 - portable_sam_fusion - INFO - Epoch 36 detailed losses: loss_rpn_cls=0.0086, loss_rpn_bbox=0.0035, loss_cls=0.1253, acc=94.8074, loss_bbox=0.0666, loss_mask=0.0253
+2026-02-24 11:57:26,972 - portable_sam_fusion - INFO - Epoch 36/50 | train=0.229298 val=0.439584 | sat_backbone=7.20e-05 sat_other=1.44e-04
+2026-02-24 11:59:39,543 - portable_sam_fusion - INFO - Epoch 37 detailed losses: loss_rpn_cls=0.0084, loss_rpn_bbox=0.0032, loss_cls=0.1267, acc=94.8934, loss_bbox=0.0719, loss_mask=0.0309
+2026-02-24 11:59:58,741 - portable_sam_fusion - INFO - Epoch 37/50 | train=0.240986 val=0.466028 | sat_backbone=7.40e-05 sat_other=1.48e-04
+2026-02-24 12:02:09,688 - portable_sam_fusion - INFO - Epoch 38 detailed losses: loss_rpn_cls=0.0094, loss_rpn_bbox=0.0044, loss_cls=0.1181, acc=95.1957, loss_bbox=0.0647, loss_mask=0.0284
+2026-02-24 12:02:29,051 - portable_sam_fusion - INFO - Epoch 38/50 | train=0.225042 val=0.442310 | sat_backbone=7.60e-05 sat_other=1.52e-04
+2026-02-24 12:04:39,766 - portable_sam_fusion - INFO - Epoch 39 detailed losses: loss_rpn_cls=0.0094, loss_rpn_bbox=0.0035, loss_cls=0.1255, acc=95.0172, loss_bbox=0.0676, loss_mask=0.0255
+2026-02-24 12:04:57,414 - portable_sam_fusion - INFO - Epoch 39/50 | train=0.231467 val=0.478818 | sat_backbone=7.80e-05 sat_other=1.56e-04
+2026-02-24 12:07:06,430 - portable_sam_fusion - INFO - Epoch 40 detailed losses: loss_rpn_cls=0.0084, loss_rpn_bbox=0.0033, loss_cls=0.1225, acc=95.1311, loss_bbox=0.0654, loss_mask=0.0266
+2026-02-24 12:07:23,557 - portable_sam_fusion - INFO - Epoch 40/50 | train=0.226206 val=0.442688 | sat_backbone=8.00e-05 sat_other=1.60e-04
+2026-02-24 12:09:34,376 - portable_sam_fusion - INFO - Epoch 41 detailed losses: loss_rpn_cls=0.0076, loss_rpn_bbox=0.0035, loss_cls=0.1273, acc=94.7818, loss_bbox=0.0687, loss_mask=0.0269
+2026-02-24 12:09:52,419 - portable_sam_fusion - INFO - Epoch 41/50 | train=0.233963 val=0.490413 | sat_backbone=8.20e-05 sat_other=1.64e-04
+2026-02-24 12:12:03,974 - portable_sam_fusion - INFO - Epoch 42 detailed losses: loss_rpn_cls=0.0086, loss_rpn_bbox=0.0033, loss_cls=0.1217, acc=95.0974, loss_bbox=0.0667, loss_mask=0.0264
+2026-02-24 12:12:22,286 - portable_sam_fusion - INFO - Epoch 42/50 | train=0.226745 val=0.411943 | sat_backbone=8.40e-05 sat_other=1.68e-04
+2026-02-24 12:14:31,204 - portable_sam_fusion - INFO - Epoch 43 detailed losses: loss_rpn_cls=0.0095, loss_rpn_bbox=0.0034, loss_cls=0.1216, acc=95.1230, loss_bbox=0.0666, loss_mask=0.0267
+2026-02-24 12:14:51,304 - portable_sam_fusion - INFO - Epoch 43/50 | train=0.227814 val=0.397624 | sat_backbone=8.60e-05 sat_other=1.72e-04
+2026-02-24 12:16:59,791 - portable_sam_fusion - INFO - Epoch 44 detailed losses: loss_rpn_cls=0.0082, loss_rpn_bbox=0.0029, loss_cls=0.1252, acc=95.0195, loss_bbox=0.0665, loss_mask=0.0265
+2026-02-24 12:17:17,659 - portable_sam_fusion - INFO - Epoch 44/50 | train=0.229343 val=0.526067 | sat_backbone=8.80e-05 sat_other=1.76e-04
+2026-02-24 12:17:17,659 - portable_sam_fusion - INFO - Early stopping triggered (patience=15)

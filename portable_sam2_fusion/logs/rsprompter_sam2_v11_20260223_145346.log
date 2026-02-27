@@ -1,0 +1,18 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+2026-02-23 14:53:58,231 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 734 个卫星场景 (训练集)
+2026-02-23 14:53:58,231 - portable_sam_fusion - INFO - Dataset size: 734
+[DEBUG] RSFeatureAggregatorSAM2 inputs: 4 tensors
+  [0] shape=torch.Size([2, 256, 32, 32]), dtype=torch.float32
+  [1] shape=torch.Size([2, 256, 128, 128]), dtype=torch.float16
+  [2] shape=torch.Size([2, 256, 64, 64]), dtype=torch.float16
+  [3] shape=torch.Size([2, 256, 32, 32]), dtype=torch.float32
+2026-02-23 14:55:48,236 - portable_sam_fusion - INFO - Epoch 1 detailed losses: loss_rpn_cls=0.6744, loss_rpn_bbox=0.0061, loss_cls=0.6734, acc=87.0620, loss_bbox=0.3221, loss_mask=0.3140
+2026-02-23 14:56:06,413 - portable_sam_fusion - INFO - Epoch 1/50 | train=1.989995 | sat_backbone=2.10e-06 sat_other=4.20e-06
+2026-02-23 14:57:57,114 - portable_sam_fusion - INFO - Epoch 2 detailed losses: loss_rpn_cls=0.3488, loss_rpn_bbox=0.0111, loss_cls=0.6341, acc=87.6634, loss_bbox=0.3038, loss_mask=0.2166
+2026-02-23 14:58:16,150 - portable_sam_fusion - INFO - Epoch 2/50 | train=1.514505 | sat_backbone=4.10e-06 sat_other=8.19e-06

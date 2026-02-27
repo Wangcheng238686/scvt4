@@ -1,0 +1,98 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 188, in main
+[rank0]:     cfg = Config.fromfile(args.config)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 461, in fromfile
+[rank0]:     cfg_dict, cfg_text, env_variables = Config._file2dict(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 947, in _file2dict
+[rank0]:     raise e
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 925, in _file2dict
+[rank0]:     eval(codeobj, global_locals_var, global_locals_var)
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/configs/rsprompter_anchor_satS_drone_guidance_v1.py", line 12, in <module>
+[rank0]:     os.path.join(os.path.dirname(__file__), "..", "checkpoints", "sam_vit_b_01ec64.pth"),
+[rank0]: NameError: name '__file__' is not defined
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 188, in main
+[rank1]:     cfg = Config.fromfile(args.config)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 461, in fromfile
+[rank1]:     cfg_dict, cfg_text, env_variables = Config._file2dict(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 947, in _file2dict
+[rank1]:     raise e
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 925, in _file2dict
+[rank1]:     eval(codeobj, global_locals_var, global_locals_var)
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/configs/rsprompter_anchor_satS_drone_guidance_v1.py", line 12, in <module>
+[rank1]:     os.path.join(os.path.dirname(__file__), "..", "checkpoints", "sam_vit_b_01ec64.pth"),
+[rank1]: NameError: name '__file__' is not defined
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+[rank3]:     main()
+[rank3]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 188, in main
+[rank3]:     cfg = Config.fromfile(args.config)
+[rank3]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 461, in fromfile
+[rank3]:     cfg_dict, cfg_text, env_variables = Config._file2dict(
+[rank3]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 947, in _file2dict
+[rank3]:     raise e
+[rank3]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 925, in _file2dict
+[rank3]:     eval(codeobj, global_locals_var, global_locals_var)
+[rank3]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/configs/rsprompter_anchor_satS_drone_guidance_v1.py", line 12, in <module>
+[rank3]:     os.path.join(os.path.dirname(__file__), "..", "checkpoints", "sam_vit_b_01ec64.pth"),
+[rank3]: NameError: name '__file__' is not defined
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 188, in main
+[rank2]:     cfg = Config.fromfile(args.config)
+[rank2]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 461, in fromfile
+[rank2]:     cfg_dict, cfg_text, env_variables = Config._file2dict(
+[rank2]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 947, in _file2dict
+[rank2]:     raise e
+[rank2]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/config/config.py", line 925, in _file2dict
+[rank2]:     eval(codeobj, global_locals_var, global_locals_var)
+[rank2]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/configs/rsprompter_anchor_satS_drone_guidance_v1.py", line 12, in <module>
+[rank2]:     os.path.join(os.path.dirname(__file__), "..", "checkpoints", "sam_vit_b_01ec64.pth"),
+[rank2]: NameError: name '__file__' is not defined
+[rank0]:[W205 20:16:21.213924691 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0205 20:16:22.314065 97115 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 97274 closing signal SIGTERM
+W0205 20:16:22.315620 97115 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 97275 closing signal SIGTERM
+W0205 20:16:22.316113 97115 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 97276 closing signal SIGTERM
+E0205 20:16:22.544276 97115 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 97273) of binary: /data/wangcheng/cvt/bin/python
+Traceback (most recent call last):
+  File "/data/wangcheng/cvt/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/wangcheng/cvt/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-02-05_20:16:22
+  host      : lthpc
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 97273)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

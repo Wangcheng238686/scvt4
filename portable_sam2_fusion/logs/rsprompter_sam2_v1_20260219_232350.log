@@ -1,0 +1,799 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+2026-02-19 23:24:02,019 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 734 个卫星场景 (训练集)
+2026-02-19 23:24:02,019 - portable_sam_fusion - INFO - Dataset size: 734
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+DEBUG: Calling decoder with type <class 'sam2.modeling.sam.mask_decoder.MaskDecoder'>
+DEBUG: decoder class: MaskDecoder
+DEBUG: forward params: ('self', 'image_embeddings', 'image_pe', 'sparse_prompt_embeddings', 'dense_prompt_embeddings', 'multimask_output', 'repeat_image', 'high_res_features', 'masks', 'iou_pred', 'mask_tokens_out', 'object_score_logits', 'sam_tokens_out')
+Warning: SAM2 decoder forward failed: Tensors must have same number of dimensions: got 3 and 4
+E0219 23:24:54.544408 432704 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: -9) local_rank: 0 (pid: 432797) of binary: /home/wangcheng/anaconda3/envs/cvt2/bin/python
+Traceback (most recent call last):
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangcheng/project/portable_sam_fusion/train/train_rsprompter_fusion.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-02-19_23:24:54
+  host      : node01
+  rank      : 0 (local_rank: 0)
+  exitcode  : -9 (pid: 432797)
+  error_file: <N/A>
+  traceback : Signal 9 (SIGKILL) received by PID 432797
+============================================================

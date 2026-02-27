@@ -1,0 +1,50 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+2026-02-25 00:44:15,495 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 672 个卫星场景 (训练集)
+2026-02-25 00:44:15,513 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 62 个卫星场景 (验证集)
+2026-02-25 00:44:15,514 - portable_sam_fusion.data.loader - INFO - 创建验证集加载器: 62 样本
+2026-02-25 00:44:15,514 - portable_sam_fusion - INFO - Dataset size: 672
+[DEBUG] RSFeatureAggregatorSAM2 inputs: 4 tensors
+  [0] shape=torch.Size([2, 256, 128, 128]), dtype=torch.float32
+  [1] shape=torch.Size([2, 256, 64, 64]), dtype=torch.float32
+  [2] shape=torch.Size([2, 256, 32, 32]), dtype=torch.float32
+  [3] shape=torch.Size([2, 256, 16, 16]), dtype=torch.float32
+Warning: SAM2 decoder forward failed (count=1): The size of tensor a (32) must match the size of tensor b (16) at non-singleton dimension 3
+  image_embeddings.shape: torch.Size([25, 256, 16, 16])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 16, 16])
+  sparse_prompt_embeddings.shape: torch.Size([25, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([25, 256, 16, 16])
+Traceback (most recent call last):
+  File "/home/wangcheng/project/portable_sam_fusion/rsprompter/models_sam2.py", line 370, in forward
+    decoder_output = self.decoder(
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wangcheng/project/sam2-main/sam2/modeling/sam/mask_decoder.py", line 136, in forward
+    masks, iou_pred, mask_tokens_out, object_score_logits = self.predict_masks(
+  File "/home/wangcheng/project/sam2-main/sam2/modeling/sam/mask_decoder.py", line 224, in predict_masks
+    upscaled_embedding = act1(ln1(dc1(src) + feat_s1))
+RuntimeError: The size of tensor a (32) must match the size of tensor b (16) at non-singleton dimension 3
+Warning: SAM2 decoder forward failed (count=2): The size of tensor a (32) must match the size of tensor b (16) at non-singleton dimension 3
+  image_embeddings.shape: torch.Size([20, 256, 16, 16])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 16, 16])
+  sparse_prompt_embeddings.shape: torch.Size([20, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([20, 256, 16, 16])
+Traceback (most recent call last):
+  File "/home/wangcheng/project/portable_sam_fusion/rsprompter/models_sam2.py", line 370, in forward
+    decoder_output = self.decoder(
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wangcheng/project/sam2-main/sam2/modeling/sam/mask_decoder.py", line 136, in forward
+    masks, iou_pred, mask_tokens_out, object_score_logits = self.predict_masks(
+  File "/home/wangcheng/project/sam2-main/sam2/modeling/sam/mask_decoder.py", line 224, in predict_masks
+    upscaled_embedding = act1(ln1(dc1(src) + feat_s1))
+RuntimeError: The size of tensor a (32) must match the size of tensor b (16) at non-singleton dimension 3

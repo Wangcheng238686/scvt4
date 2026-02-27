@@ -1,0 +1,148 @@
+/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth
+Loaded SAM VisionEncoder with interpolation. Missing keys: 0, Unexpected keys: 138
+02/10 22:32:23 - mmengine - INFO - load model from: /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth
+02/10 22:32:23 - mmengine - INFO - Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth
+02/10 22:32:24 - mmengine - WARNING - The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: shared_image_embedding.positional_embedding, vision_encoder.pos_embed, vision_encoder.patch_embed.projection.weight, vision_encoder.patch_embed.projection.bias, vision_encoder.layers.0.layer_norm1.weight, vision_encoder.layers.0.layer_norm1.bias, vision_encoder.layers.0.attn.rel_pos_h, vision_encoder.layers.0.attn.rel_pos_w, vision_encoder.layers.0.attn.qkv.weight, vision_encoder.layers.0.attn.qkv.bias, vision_encoder.layers.0.attn.proj.weight, vision_encoder.layers.0.attn.proj.bias, vision_encoder.layers.0.layer_norm2.weight, vision_encoder.layers.0.layer_norm2.bias, vision_encoder.layers.0.mlp.lin1.weight, vision_encoder.layers.0.mlp.lin1.bias, vision_encoder.layers.0.mlp.lin2.weight, vision_encoder.layers.0.mlp.lin2.bias, vision_encoder.layers.1.layer_norm1.weight, vision_encoder.layers.1.layer_norm1.bias, vision_encoder.layers.1.attn.rel_pos_h, vision_encoder.layers.1.attn.rel_pos_w, vision_encoder.layers.1.attn.qkv.weight, vision_encoder.layers.1.attn.qkv.bias, vision_encoder.layers.1.attn.proj.weight, vision_encoder.layers.1.attn.proj.bias, vision_encoder.layers.1.layer_norm2.weight, vision_encoder.layers.1.layer_norm2.bias, vision_encoder.layers.1.mlp.lin1.weight, vision_encoder.layers.1.mlp.lin1.bias, vision_encoder.layers.1.mlp.lin2.weight, vision_encoder.layers.1.mlp.lin2.bias, vision_encoder.layers.2.layer_norm1.weight, vision_encoder.layers.2.layer_norm1.bias, vision_encoder.layers.2.attn.rel_pos_h, vision_encoder.layers.2.attn.rel_pos_w, vision_encoder.layers.2.attn.qkv.weight, vision_encoder.layers.2.attn.qkv.bias, vision_encoder.layers.2.attn.proj.weight, vision_encoder.layers.2.attn.proj.bias, vision_encoder.layers.2.layer_norm2.weight, vision_encoder.layers.2.layer_norm2.bias, vision_encoder.layers.2.mlp.lin1.weight, vision_encoder.layers.2.mlp.lin1.bias, vision_encoder.layers.2.mlp.lin2.weight, vision_encoder.layers.2.mlp.lin2.bias, vision_encoder.layers.3.layer_norm1.weight, vision_encoder.layers.3.layer_norm1.bias, vision_encoder.layers.3.attn.rel_pos_h, vision_encoder.layers.3.attn.rel_pos_w, vision_encoder.layers.3.attn.qkv.weight, vision_encoder.layers.3.attn.qkv.bias, vision_encoder.layers.3.attn.proj.weight, vision_encoder.layers.3.attn.proj.bias, vision_encoder.layers.3.layer_norm2.weight, vision_encoder.layers.3.layer_norm2.bias, vision_encoder.layers.3.mlp.lin1.weight, vision_encoder.layers.3.mlp.lin1.bias, vision_encoder.layers.3.mlp.lin2.weight, vision_encoder.layers.3.mlp.lin2.bias, vision_encoder.layers.4.layer_norm1.weight, vision_encoder.layers.4.layer_norm1.bias, vision_encoder.layers.4.attn.rel_pos_h, vision_encoder.layers.4.attn.rel_pos_w, vision_encoder.layers.4.attn.qkv.weight, vision_encoder.layers.4.attn.qkv.bias, vision_encoder.layers.4.attn.proj.weight, vision_encoder.layers.4.attn.proj.bias, vision_encoder.layers.4.layer_norm2.weight, vision_encoder.layers.4.layer_norm2.bias, vision_encoder.layers.4.mlp.lin1.weight, vision_encoder.layers.4.mlp.lin1.bias, vision_encoder.layers.4.mlp.lin2.weight, vision_encoder.layers.4.mlp.lin2.bias, vision_encoder.layers.5.layer_norm1.weight, vision_encoder.layers.5.layer_norm1.bias, vision_encoder.layers.5.attn.rel_pos_h, vision_encoder.layers.5.attn.rel_pos_w, vision_encoder.layers.5.attn.qkv.weight, vision_encoder.layers.5.attn.qkv.bias, vision_encoder.layers.5.attn.proj.weight, vision_encoder.layers.5.attn.proj.bias, vision_encoder.layers.5.layer_norm2.weight, vision_encoder.layers.5.layer_norm2.bias, vision_encoder.layers.5.mlp.lin1.weight, vision_encoder.layers.5.mlp.lin1.bias, vision_encoder.layers.5.mlp.lin2.weight, vision_encoder.layers.5.mlp.lin2.bias, vision_encoder.layers.6.layer_norm1.weight, vision_encoder.layers.6.layer_norm1.bias, vision_encoder.layers.6.attn.rel_pos_h, vision_encoder.layers.6.attn.rel_pos_w, vision_encoder.layers.6.attn.qkv.weight, vision_encoder.layers.6.attn.qkv.bias, vision_encoder.layers.6.attn.proj.weight, vision_encoder.layers.6.attn.proj.bias, vision_encoder.layers.6.layer_norm2.weight, vision_encoder.layers.6.layer_norm2.bias, vision_encoder.layers.6.mlp.lin1.weight, vision_encoder.layers.6.mlp.lin1.bias, vision_encoder.layers.6.mlp.lin2.weight, vision_encoder.layers.6.mlp.lin2.bias, vision_encoder.layers.7.layer_norm1.weight, vision_encoder.layers.7.layer_norm1.bias, vision_encoder.layers.7.attn.rel_pos_h, vision_encoder.layers.7.attn.rel_pos_w, vision_encoder.layers.7.attn.qkv.weight, vision_encoder.layers.7.attn.qkv.bias, vision_encoder.layers.7.attn.proj.weight, vision_encoder.layers.7.attn.proj.bias, vision_encoder.layers.7.layer_norm2.weight, vision_encoder.layers.7.layer_norm2.bias, vision_encoder.layers.7.mlp.lin1.weight, vision_encoder.layers.7.mlp.lin1.bias, vision_encoder.layers.7.mlp.lin2.weight, vision_encoder.layers.7.mlp.lin2.bias, vision_encoder.layers.8.layer_norm1.weight, vision_encoder.layers.8.layer_norm1.bias, vision_encoder.layers.8.attn.rel_pos_h, vision_encoder.layers.8.attn.rel_pos_w, vision_encoder.layers.8.attn.qkv.weight, vision_encoder.layers.8.attn.qkv.bias, vision_encoder.layers.8.attn.proj.weight, vision_encoder.layers.8.attn.proj.bias, vision_encoder.layers.8.layer_norm2.weight, vision_encoder.layers.8.layer_norm2.bias, vision_encoder.layers.8.mlp.lin1.weight, vision_encoder.layers.8.mlp.lin1.bias, vision_encoder.layers.8.mlp.lin2.weight, vision_encoder.layers.8.mlp.lin2.bias, vision_encoder.layers.9.layer_norm1.weight, vision_encoder.layers.9.layer_norm1.bias, vision_encoder.layers.9.attn.rel_pos_h, vision_encoder.layers.9.attn.rel_pos_w, vision_encoder.layers.9.attn.qkv.weight, vision_encoder.layers.9.attn.qkv.bias, vision_encoder.layers.9.attn.proj.weight, vision_encoder.layers.9.attn.proj.bias, vision_encoder.layers.9.layer_norm2.weight, vision_encoder.layers.9.layer_norm2.bias, vision_encoder.layers.9.mlp.lin1.weight, vision_encoder.layers.9.mlp.lin1.bias, vision_encoder.layers.9.mlp.lin2.weight, vision_encoder.layers.9.mlp.lin2.bias, vision_encoder.layers.10.layer_norm1.weight, vision_encoder.layers.10.layer_norm1.bias, vision_encoder.layers.10.attn.rel_pos_h, vision_encoder.layers.10.attn.rel_pos_w, vision_encoder.layers.10.attn.qkv.weight, vision_encoder.layers.10.attn.qkv.bias, vision_encoder.layers.10.attn.proj.weight, vision_encoder.layers.10.attn.proj.bias, vision_encoder.layers.10.layer_norm2.weight, vision_encoder.layers.10.layer_norm2.bias, vision_encoder.layers.10.mlp.lin1.weight, vision_encoder.layers.10.mlp.lin1.bias, vision_encoder.layers.10.mlp.lin2.weight, vision_encoder.layers.10.mlp.lin2.bias, vision_encoder.layers.11.layer_norm1.weight, vision_encoder.layers.11.layer_norm1.bias, vision_encoder.layers.11.attn.rel_pos_h, vision_encoder.layers.11.attn.rel_pos_w, vision_encoder.layers.11.attn.qkv.weight, vision_encoder.layers.11.attn.qkv.bias, vision_encoder.layers.11.attn.proj.weight, vision_encoder.layers.11.attn.proj.bias, vision_encoder.layers.11.layer_norm2.weight, vision_encoder.layers.11.layer_norm2.bias, vision_encoder.layers.11.mlp.lin1.weight, vision_encoder.layers.11.mlp.lin1.bias, vision_encoder.layers.11.mlp.lin2.weight, vision_encoder.layers.11.mlp.lin2.bias, vision_encoder.neck.conv1.weight, vision_encoder.neck.layer_norm1.weight, vision_encoder.neck.layer_norm1.bias, vision_encoder.neck.conv2.weight, vision_encoder.neck.layer_norm2.weight, vision_encoder.neck.layer_norm2.bias, mask_decoder.iou_token.weight, mask_decoder.mask_tokens.weight, mask_decoder.transformer.layers.0.self_attn.q_proj.weight, mask_decoder.transformer.layers.0.self_attn.q_proj.bias, mask_decoder.transformer.layers.0.self_attn.k_proj.weight, mask_decoder.transformer.layers.0.self_attn.k_proj.bias, mask_decoder.transformer.layers.0.self_attn.v_proj.weight, mask_decoder.transformer.layers.0.self_attn.v_proj.bias, mask_decoder.transformer.layers.0.self_attn.out_proj.weight, mask_decoder.transformer.layers.0.self_attn.out_proj.bias, mask_decoder.transformer.layers.0.layer_norm1.weight, mask_decoder.transformer.layers.0.layer_norm1.bias, mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.weight, mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.bias, mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.weight, mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.bias, mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.weight, mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.bias, mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.weight, mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.bias, mask_decoder.transformer.layers.0.layer_norm2.weight, mask_decoder.transformer.layers.0.layer_norm2.bias, mask_decoder.transformer.layers.0.mlp.lin1.weight, mask_decoder.transformer.layers.0.mlp.lin1.bias, mask_decoder.transformer.layers.0.mlp.lin2.weight, mask_decoder.transformer.layers.0.mlp.lin2.bias, mask_decoder.transformer.layers.0.layer_norm3.weight, mask_decoder.transformer.layers.0.layer_norm3.bias, mask_decoder.transformer.layers.0.layer_norm4.weight, mask_decoder.transformer.layers.0.layer_norm4.bias, mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.weight, mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.bias, mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.weight, mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.bias, mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.weight, mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.bias, mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.weight, mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.bias, mask_decoder.transformer.layers.1.self_attn.q_proj.weight, mask_decoder.transformer.layers.1.self_attn.q_proj.bias, mask_decoder.transformer.layers.1.self_attn.k_proj.weight, mask_decoder.transformer.layers.1.self_attn.k_proj.bias, mask_decoder.transformer.layers.1.self_attn.v_proj.weight, mask_decoder.transformer.layers.1.self_attn.v_proj.bias, mask_decoder.transformer.layers.1.self_attn.out_proj.weight, mask_decoder.transformer.layers.1.self_attn.out_proj.bias, mask_decoder.transformer.layers.1.layer_norm1.weight, mask_decoder.transformer.layers.1.layer_norm1.bias, mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.weight, mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.bias, mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.weight, mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.bias, mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.weight, mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.bias, mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.weight, mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.bias, mask_decoder.transformer.layers.1.layer_norm2.weight, mask_decoder.transformer.layers.1.layer_norm2.bias, mask_decoder.transformer.layers.1.mlp.lin1.weight, mask_decoder.transformer.layers.1.mlp.lin1.bias, mask_decoder.transformer.layers.1.mlp.lin2.weight, mask_decoder.transformer.layers.1.mlp.lin2.bias, mask_decoder.transformer.layers.1.layer_norm3.weight, mask_decoder.transformer.layers.1.layer_norm3.bias, mask_decoder.transformer.layers.1.layer_norm4.weight, mask_decoder.transformer.layers.1.layer_norm4.bias, mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.weight, mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.bias, mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.weight, mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.bias, mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.weight, mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.bias, mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.weight, mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.bias, mask_decoder.transformer.final_attn_token_to_image.q_proj.weight, mask_decoder.transformer.final_attn_token_to_image.q_proj.bias, mask_decoder.transformer.final_attn_token_to_image.k_proj.weight, mask_decoder.transformer.final_attn_token_to_image.k_proj.bias, mask_decoder.transformer.final_attn_token_to_image.v_proj.weight, mask_decoder.transformer.final_attn_token_to_image.v_proj.bias, mask_decoder.transformer.final_attn_token_to_image.out_proj.weight, mask_decoder.transformer.final_attn_token_to_image.out_proj.bias, mask_decoder.transformer.layer_norm_final_attn.weight, mask_decoder.transformer.layer_norm_final_attn.bias, mask_decoder.upscale_conv1.weight, mask_decoder.upscale_conv1.bias, mask_decoder.upscale_conv2.weight, mask_decoder.upscale_conv2.bias, mask_decoder.upscale_layer_norm.weight, mask_decoder.upscale_layer_norm.bias, mask_decoder.output_hypernetworks_mlps.0.proj_in.weight, mask_decoder.output_hypernetworks_mlps.0.proj_in.bias, mask_decoder.output_hypernetworks_mlps.0.proj_out.weight, mask_decoder.output_hypernetworks_mlps.0.proj_out.bias, mask_decoder.output_hypernetworks_mlps.0.layers.0.weight, mask_decoder.output_hypernetworks_mlps.0.layers.0.bias, mask_decoder.output_hypernetworks_mlps.1.proj_in.weight, mask_decoder.output_hypernetworks_mlps.1.proj_in.bias, mask_decoder.output_hypernetworks_mlps.1.proj_out.weight, mask_decoder.output_hypernetworks_mlps.1.proj_out.bias, mask_decoder.output_hypernetworks_mlps.1.layers.0.weight, mask_decoder.output_hypernetworks_mlps.1.layers.0.bias, mask_decoder.output_hypernetworks_mlps.2.proj_in.weight, mask_decoder.output_hypernetworks_mlps.2.proj_in.bias, mask_decoder.output_hypernetworks_mlps.2.proj_out.weight, mask_decoder.output_hypernetworks_mlps.2.proj_out.bias, mask_decoder.output_hypernetworks_mlps.2.layers.0.weight, mask_decoder.output_hypernetworks_mlps.2.layers.0.bias, mask_decoder.output_hypernetworks_mlps.3.proj_in.weight, mask_decoder.output_hypernetworks_mlps.3.proj_in.bias, mask_decoder.output_hypernetworks_mlps.3.proj_out.weight, mask_decoder.output_hypernetworks_mlps.3.proj_out.bias, mask_decoder.output_hypernetworks_mlps.3.layers.0.weight, mask_decoder.output_hypernetworks_mlps.3.layers.0.bias, mask_decoder.iou_prediction_head.proj_in.weight, mask_decoder.iou_prediction_head.proj_in.bias, mask_decoder.iou_prediction_head.proj_out.weight, mask_decoder.iou_prediction_head.proj_out.bias, mask_decoder.iou_prediction_head.layers.0.weight, mask_decoder.iou_prediction_head.layers.0.bias, prompt_encoder.shared_embedding.positional_embedding
+
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.conv1.weight - torch.Size([4, 1, 2, 2]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.conv1.bias - torch.Size([4]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.conv2.weight - torch.Size([16, 4, 2, 2]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.conv2.bias - torch.Size([16]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.conv3.weight - torch.Size([256, 16, 1, 1]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.conv3.bias - torch.Size([256]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.layer_norm1.weight - torch.Size([4]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.layer_norm1.bias - torch.Size([4]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.layer_norm2.weight - torch.Size([16]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.mask_embed.layer_norm2.bias - torch.Size([16]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.no_mask_embed.weight - torch.Size([1, 256]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.point_embed.0.weight - torch.Size([1, 256]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.point_embed.1.weight - torch.Size([1, 256]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.point_embed.2.weight - torch.Size([1, 256]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.point_embed.3.weight - torch.Size([1, 256]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+02/10 22:32:24 - mmengine - INFO - 
+prompt_encoder.not_a_point_embed.weight - torch.Size([1, 256]): 
+PretrainedInit: load from /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth 
+ 
+Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT3/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth
+Loaded SAM PositionalEmbedding. Missing keys: 0, Unexpected keys: 314
+2026-02-10 22:32:26,364 - portable_sam_fusion.data.satellite_drone_dataset - INFO - SatelliteDroneDataset initialized (训练集): 580 scenes, views=4, sat_size=(1024, 1024), drone_size=(512, 512)
+2026-02-10 22:32:26,397 - portable_sam_fusion.data.satellite_drone_dataset - INFO - SatelliteDroneDataset initialized (验证集): 56 scenes, views=4, sat_size=(1024, 1024), drone_size=(512, 512)
+2026-02-10 22:32:26,397 - portable_sam_fusion - INFO - Dataset size: 580
+2026-02-10 22:34:36,438 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=1)
+2026-02-10 22:35:51,736 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=1)
+2026-02-10 22:36:58,888 - portable_sam_fusion - INFO - Epoch 1 detailed losses: loss_rpn_cls=0.6659, loss_rpn_bbox=0.0260, loss_cls=0.4012, acc=93.3992, loss_bbox=0.0027, loss_mask=0.6376
+2026-02-10 22:37:49,083 - portable_sam_fusion - INFO - Epoch 1/40 | train=1.041614 val=98.611564 | sat_backbone=1.34e-07 sat_other=2.69e-07 drone_guidance=1.34e-07
+2026-02-10 22:40:30,201 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=2)
+2026-02-10 22:40:46,041 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=2)
+2026-02-10 22:42:21,557 - portable_sam_fusion - INFO - Epoch 2 detailed losses: loss_rpn_cls=0.6674, loss_rpn_bbox=0.0255, loss_cls=0.0793, acc=98.0651, loss_bbox=0.0019, loss_mask=0.5570
+2026-02-10 22:43:08,956 - portable_sam_fusion - INFO - Epoch 2/40 | train=0.638279 val=98.416832 | sat_backbone=1.69e-07 sat_other=3.38e-07 drone_guidance=1.69e-07
+2026-02-10 22:43:40,884 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=3)
+2026-02-10 22:45:03,847 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=3)
+2026-02-10 22:47:43,555 - portable_sam_fusion - INFO - Epoch 3 detailed losses: loss_rpn_cls=0.6667, loss_rpn_bbox=0.0255, loss_cls=0.0418, acc=98.7295, loss_bbox=0.0016, loss_mask=0.4534
+2026-02-10 22:48:03,237 - portable_sam_fusion - INFO - Epoch 3/40 | train=0.496828 val=99.199016 | sat_backbone=2.03e-07 sat_other=4.07e-07 drone_guidance=2.03e-07
+2026-02-10 22:49:02,421 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=4)
+2026-02-10 22:52:25,043 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=4)
+2026-02-10 22:52:38,296 - portable_sam_fusion - INFO - Epoch 4 detailed losses: loss_rpn_cls=0.6665, loss_rpn_bbox=0.0256, loss_cls=0.0330, acc=99.0194, loss_bbox=0.0012, loss_mask=0.3787
+2026-02-10 22:52:59,964 - portable_sam_fusion - INFO - Epoch 4/40 | train=0.412875 val=99.480671 | sat_backbone=2.38e-07 sat_other=4.76e-07 drone_guidance=2.38e-07
+2026-02-10 22:53:07,758 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=5)
+2026-02-10 22:56:25,116 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=5)
+2026-02-10 22:57:38,472 - portable_sam_fusion - INFO - Epoch 5 detailed losses: loss_rpn_cls=0.6665, loss_rpn_bbox=0.0256, loss_cls=0.0299, acc=99.2998, loss_bbox=0.0011, loss_mask=0.3302
+2026-02-10 22:57:59,321 - portable_sam_fusion - INFO - Epoch 5/40 | train=0.361225 val=99.626508 | sat_backbone=1.00e-04 sat_other=2.00e-04 drone_guidance=1.00e-04
+2026-02-10 22:59:30,278 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=6)
+2026-02-10 23:00:17,646 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=6)
+2026-02-10 23:02:15,223 - portable_sam_fusion - INFO - Epoch 6 detailed losses: loss_rpn_cls=0.6514, loss_rpn_bbox=0.0251, loss_cls=0.0065, acc=99.8736, loss_bbox=0.0005, loss_mask=0.2502
+2026-02-10 23:02:35,144 - portable_sam_fusion - INFO - Epoch 6/40 | train=0.257280 val=100.193042 | sat_backbone=9.99e-05 sat_other=2.00e-04 drone_guidance=9.99e-05
+2026-02-10 23:04:12,536 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=7)
+2026-02-10 23:05:32,334 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=7)
+2026-02-10 23:07:17,280 - portable_sam_fusion - INFO - Epoch 7 detailed losses: loss_rpn_cls=0.6459, loss_rpn_bbox=0.0264, loss_cls=0.0015, acc=99.9378, loss_bbox=0.0001, loss_mask=0.2156
+2026-02-10 23:07:38,294 - portable_sam_fusion - INFO - Epoch 7/40 | train=0.217204 val=100.229854 | sat_backbone=9.95e-05 sat_other=1.99e-04 drone_guidance=9.95e-05
+2026-02-10 23:08:26,326 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=8)
+2026-02-10 23:09:43,982 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=8)
+2026-02-10 23:12:00,148 - portable_sam_fusion - INFO - Epoch 8 detailed losses: loss_rpn_cls=0.6532, loss_rpn_bbox=0.0280, loss_cls=0.0004, acc=99.9980, loss_bbox=0.0002, loss_mask=0.1946
+2026-02-10 23:12:21,967 - portable_sam_fusion - INFO - Epoch 8/40 | train=0.195179 val=100.201036 | sat_backbone=9.89e-05 sat_other=1.98e-04 drone_guidance=9.89e-05
+2026-02-10 23:12:54,838 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=9)
+2026-02-10 23:15:06,185 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=9)
+2026-02-10 23:16:54,686 - portable_sam_fusion - INFO - Epoch 9 detailed losses: loss_rpn_cls=0.6566, loss_rpn_bbox=0.0297, loss_cls=0.0000, acc=100.0000, loss_bbox=0.0000, loss_mask=0.1706
+2026-02-10 23:17:14,747 - portable_sam_fusion - INFO - Epoch 9/40 | train=0.170607 val=100.193984 | sat_backbone=9.80e-05 sat_other=1.96e-04 drone_guidance=9.80e-05
+2026-02-10 23:20:35,592 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=10)
+2026-02-10 23:21:43,116 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=10)
+2026-02-10 23:21:44,586 - portable_sam_fusion - INFO - Epoch 10 detailed losses: loss_rpn_cls=0.6577, loss_rpn_bbox=0.0305, loss_cls=0.0000, acc=100.0000, loss_bbox=0.0000, loss_mask=0.1204
+2026-02-10 23:22:04,577 - portable_sam_fusion - INFO - Epoch 10/40 | train=0.120410 val=100.140567 | sat_backbone=9.70e-05 sat_other=1.93e-04 drone_guidance=9.70e-05
+2026-02-10 23:23:07,879 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=11)
+2026-02-10 23:25:29,255 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=11)
+2026-02-10 23:26:37,176 - portable_sam_fusion - INFO - Epoch 11 detailed losses: loss_rpn_cls=0.6605, loss_rpn_bbox=0.0309, loss_cls=0.0000, acc=100.0000, loss_bbox=0.0000, loss_mask=0.0965
+2026-02-10 23:26:56,952 - portable_sam_fusion - INFO - Epoch 11/40 | train=0.096496 val=100.087736 | sat_backbone=9.56e-05 sat_other=1.90e-04 drone_guidance=9.56e-05
+2026-02-10 23:29:01,850 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=12)
+2026-02-10 23:31:02,707 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=12)
+2026-02-10 23:31:29,834 - portable_sam_fusion - INFO - Epoch 12 detailed losses: loss_rpn_cls=0.6544, loss_rpn_bbox=0.0309, loss_cls=0.0002, acc=99.9980, loss_bbox=0.0001, loss_mask=0.0802
+2026-02-10 23:31:50,076 - portable_sam_fusion - INFO - Epoch 12/40 | train=0.080414 val=100.084009 | sat_backbone=9.41e-05 sat_other=1.87e-04 drone_guidance=9.41e-05
+2026-02-10 23:34:22,750 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=13)
+2026-02-10 23:36:06,696 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=13)
+2026-02-10 23:36:22,225 - portable_sam_fusion - INFO - Epoch 13 detailed losses: loss_rpn_cls=0.6567, loss_rpn_bbox=0.0309, loss_cls=0.0000, acc=99.9993, loss_bbox=0.0001, loss_mask=0.0699
+2026-02-10 23:36:42,701 - portable_sam_fusion - INFO - Epoch 13/40 | train=0.069963 val=100.082697 | sat_backbone=9.24e-05 sat_other=1.83e-04 drone_guidance=9.24e-05
+2026-02-10 23:38:05,696 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=14)
+2026-02-10 23:39:05,839 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=14)
+2026-02-10 23:41:15,127 - portable_sam_fusion - INFO - Epoch 14 detailed losses: loss_rpn_cls=0.6559, loss_rpn_bbox=0.0309, loss_cls=0.0000, acc=100.0000, loss_bbox=0.0000, loss_mask=0.0617
+2026-02-10 23:41:35,594 - portable_sam_fusion - INFO - Epoch 14/40 | train=0.061699 val=100.081586 | sat_backbone=9.04e-05 sat_other=1.78e-04 drone_guidance=9.04e-05
+2026-02-10 23:41:42,889 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=15)
+2026-02-10 23:42:55,330 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=15)
+2026-02-10 23:46:08,942 - portable_sam_fusion - INFO - Epoch 15 detailed losses: loss_rpn_cls=0.6536, loss_rpn_bbox=0.0308, loss_cls=0.0000, acc=100.0000, loss_bbox=0.0000, loss_mask=0.0522
+2026-02-10 23:46:28,983 - portable_sam_fusion - INFO - Epoch 15/40 | train=0.052185 val=100.068687 | sat_backbone=8.83e-05 sat_other=1.74e-04 drone_guidance=8.83e-05
+2026-02-10 23:50:05,177 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=16)
+2026-02-10 23:50:14,377 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=16)
+2026-02-10 23:51:01,032 - portable_sam_fusion - INFO - Epoch 16 detailed losses: loss_rpn_cls=0.6532, loss_rpn_bbox=0.0305, loss_cls=0.0000, acc=100.0000, loss_bbox=0.0000, loss_mask=0.0462
+2026-02-10 23:51:21,408 - portable_sam_fusion - INFO - Epoch 16/40 | train=0.046195 val=100.059974 | sat_backbone=8.60e-05 sat_other=1.68e-04 drone_guidance=8.60e-05
+2026-02-10 23:51:40,849 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=17)
+2026-02-10 23:53:55,045 - portable_sam_fusion - WARNING - Skip batch with no valid GT instances (epoch=17)
+2026-02-10 23:55:54,149 - portable_sam_fusion - INFO - Epoch 17 detailed losses: loss_rpn_cls=0.6547, loss_rpn_bbox=0.0304, loss_cls=0.0000, acc=100.0000, loss_bbox=0.0000, loss_mask=0.0407
+2026-02-10 23:56:14,966 - portable_sam_fusion - INFO - Epoch 17/40 | train=0.040700 val=100.055432 | sat_backbone=8.35e-05 sat_other=1.63e-04 drone_guidance=8.35e-05
+2026-02-10 23:56:14,967 - portable_sam_fusion - INFO - Early stopping triggered (patience=15)

@@ -1,0 +1,63 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+2026-02-21 19:27:00,028 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 734 个卫星场景 (训练集)
+2026-02-21 19:27:00,029 - portable_sam_fusion - INFO - Dataset size: 734
+Warning: SAM2 decoder forward failed (count=1): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([49, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([49, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([49, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=2): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([51, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([51, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([51, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=3): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([11, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([11, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([11, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=4): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([3, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([3, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([3, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=5): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([7, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([7, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([7, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=6): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([45, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([45, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([45, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=7): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([37, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([37, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([37, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=8): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([40, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([40, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([40, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=9): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([15, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([15, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([15, 256, 64, 64])
+Warning: SAM2 decoder forward failed (count=10): too many values to unpack (expected 3)
+  image_embeddings.shape: torch.Size([40, 256, 64, 64])
+  image_positional_embeddings_pe.shape: torch.Size([1, 256, 64, 64])
+  sparse_prompt_embeddings.shape: torch.Size([40, 4, 256])
+  dense_prompt_embeddings.shape: torch.Size([40, 256, 64, 64])
+2026-02-21 19:28:51,312 - portable_sam_fusion - INFO - Epoch 1 detailed losses: loss_rpn_cls=0.7029, loss_rpn_bbox=0.0124, loss_cls=0.6826, acc=93.8862, loss_bbox=0.1246, loss_mask=0.6931
+2026-02-21 19:28:59,988 - portable_sam_fusion - INFO - Epoch 1/50 | train=2.215545 | sat_backbone=4.20e-07 sat_other=4.20e-06
+2026-02-21 19:30:48,863 - portable_sam_fusion - INFO - Epoch 2 detailed losses: loss_rpn_cls=0.4326, loss_rpn_bbox=0.0146, loss_cls=0.6332, acc=92.2285, loss_bbox=0.1751, loss_mask=0.6931
+2026-02-21 19:30:56,925 - portable_sam_fusion - INFO - Epoch 2/50 | train=1.948672 | sat_backbone=8.19e-07 sat_other=8.19e-06

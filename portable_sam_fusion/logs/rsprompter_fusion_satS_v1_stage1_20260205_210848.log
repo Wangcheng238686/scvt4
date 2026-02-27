@@ -1,0 +1,320 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ac57f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 3dbb9dda-c5f1-4b97-bda5-aa141da5fb9b)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:09:05,456 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ac57f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 3dbb9dda-c5f1-4b97-bda5-aa141da5fb9b)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+2026-02-05 21:09:05,457 - huggingface_hub.utils._http - WARNING - Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ab57f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 73841ed0-9b9b-45e1-986d-f4f278ba47b9)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:09:05,540 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ab57f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 73841ed0-9b9b-45e1-986d-f4f278ba47b9)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+2026-02-05 21:09:05,540 - huggingface_hub.utils._http - WARNING - Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ac5e20>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 55d35f9c-21d2-4ad2-83ab-42f3bfb6f40e)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:09:16,472 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ac5e20>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 55d35f9c-21d2-4ad2-83ab-42f3bfb6f40e)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+2026-02-05 21:09:16,472 - huggingface_hub.utils._http - WARNING - Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ab5e20>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: e51a663c-4ebd-40b8-991b-0465532326bc)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:09:16,555 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ab5e20>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: e51a663c-4ebd-40b8-991b-0465532326bc)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+2026-02-05 21:09:16,556 - huggingface_hub.utils._http - WARNING - Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9af73a0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 047e631a-4d00-4864-a534-b196f1938e9a)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:09:28,492 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9af73a0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 047e631a-4d00-4864-a534-b196f1938e9a)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+2026-02-05 21:09:28,492 - huggingface_hub.utils._http - WARNING - Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ae73a0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 7bd4321f-19c2-40a6-b68d-61efae733b99)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:09:28,564 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ae73a0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 7bd4321f-19c2-40a6-b68d-61efae733b99)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+2026-02-05 21:09:28,564 - huggingface_hub.utils._http - WARNING - Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9af7f40>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: c759c345-78c6-4b8f-9a80-c2e923f05639)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:09:42,510 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9af7f40>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: c759c345-78c6-4b8f-9a80-c2e923f05639)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+2026-02-05 21:09:42,510 - huggingface_hub.utils._http - WARNING - Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ae7f40>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 5566cb47-7a23-48d3-8341-4c6697a0cb16)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:09:42,583 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ae7f40>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 5566cb47-7a23-48d3-8341-4c6697a0cb16)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+2026-02-05 21:09:42,584 - huggingface_hub.utils._http - WARNING - Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ae77f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 935ebf90-3927-4f77-b67e-7176cd08bbf2)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:10:00,532 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ae77f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 935ebf90-3927-4f77-b67e-7176cd08bbf2)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+2026-02-05 21:10:00,532 - huggingface_hub.utils._http - WARNING - Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ad77f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: d3e71f86-efdd-4bf0-bcf7-513ef3e79bf0)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:10:00,607 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ad77f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: d3e71f86-efdd-4bf0-bcf7-513ef3e79bf0)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+2026-02-05 21:10:00,607 - huggingface_hub.utils._http - WARNING - Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ae7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 21a168de-f56d-4a7a-acf3-5d6068d93cb2)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:10:18,555 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ae7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 21a168de-f56d-4a7a-acf3-5d6068d93cb2)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+[rank0]:     conn = connection.create_connection(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/util/connection.py", line 95, in create_connection
+[rank0]:     raise err
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+[rank0]:     sock.connect(sa)
+[rank0]: OSError: [Errno 101] Network is unreachable
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+[rank0]:     httplib_response = self._make_request(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+[rank0]:     self._validate_conn(conn)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+[rank0]:     conn.connect()
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connection.py", line 363, in connect
+[rank0]:     self.sock = conn = self._new_conn()
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+[rank0]:     raise NewConnectionError(
+[rank0]: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f57f9ae7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/requests/adapters.py", line 489, in send
+[rank0]:     resp = conn.urlopen(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+[rank0]:     retries = retries.increment(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/util/retry.py", line 594, in increment
+[rank0]:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+[rank0]: urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ae7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+[rank0]:     metadata = get_hf_file_metadata(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+[rank0]:     r = _request_wrapper(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+[rank0]:     response = _request_wrapper(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 306, in _request_wrapper
+[rank0]:     response = http_backoff(method=method, url=url, **params)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 326, in http_backoff
+[rank0]:     raise err
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 307, in http_backoff
+[rank0]:     response = session.request(method=method, url=url, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/requests/sessions.py", line 587, in request
+[rank0]:     resp = self.send(prep, **send_kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/requests/sessions.py", line 701, in send
+[rank0]:     r = adapter.send(request, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 96, in send
+[rank0]:     return super().send(request, *args, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/requests/adapters.py", line 565, in send
+[rank0]:     raise ConnectionError(e, request=request)
+[rank0]: requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f57f9ae7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 21a168de-f56d-4a7a-acf3-5d6068d93cb2)')
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/utils/hub.py", line 398, in cached_file
+[rank0]:     resolved_file = hf_hub_download(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+[rank0]:     return _hf_hub_download_to_cache_dir(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+[rank0]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1658, in _raise_on_head_call_error
+[rank0]:     raise LocalEntryNotFoundError(
+[rank0]: huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 189, in main
+[rank0]:     model = MODELS.build(cfg.model)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank0]:     obj = obj_cls(**args)  # type: ignore
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/models/rsprompter_anchor_drone_guidance.py", line 67, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 310, in __init__
+[rank0]:     super().__init__(*args, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmdet/models/detectors/mask_rcnn.py", line 22, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmdet/models/detectors/two_stage.py", line 34, in __init__
+[rank0]:     self.backbone = MODELS.build(backbone)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank0]:     obj = obj_cls(**args)  # type: ignore
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 72, in __init__
+[rank0]:     sam_config = SamConfig.from_pretrained(hf_pretrain_name).vision_config
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/configuration_utils.py", line 604, in from_pretrained
+[rank0]:     config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/configuration_utils.py", line 633, in get_config_dict
+[rank0]:     config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/configuration_utils.py", line 688, in _get_config_dict
+[rank0]:     resolved_config_file = cached_file(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/utils/hub.py", line 441, in cached_file
+[rank0]:     raise EnvironmentError(
+[rank0]: OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like facebook/sam-vit-base is not the path to a directory containing a file named config.json.
+[rank0]: Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ad7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: bb2ef7fc-70ce-4324-828b-34c10b4ed47e)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+2026-02-05 21:10:18,623 - huggingface_hub.utils._http - WARNING - '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ad7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: bb2ef7fc-70ce-4324-828b-34c10b4ed47e)')' thrown while requesting HEAD https://huggingface.co/facebook/sam-vit-base/resolve/main/config.json
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+[rank1]:     conn = connection.create_connection(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/util/connection.py", line 95, in create_connection
+[rank1]:     raise err
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+[rank1]:     sock.connect(sa)
+[rank1]: OSError: [Errno 101] Network is unreachable
+
+[rank1]: During handling of the above exception, another exception occurred:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+[rank1]:     httplib_response = self._make_request(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+[rank1]:     self._validate_conn(conn)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+[rank1]:     conn.connect()
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connection.py", line 363, in connect
+[rank1]:     self.sock = conn = self._new_conn()
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+[rank1]:     raise NewConnectionError(
+[rank1]: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f02c7ad7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+[rank1]: During handling of the above exception, another exception occurred:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/requests/adapters.py", line 489, in send
+[rank1]:     resp = conn.urlopen(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+[rank1]:     retries = retries.increment(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/urllib3/util/retry.py", line 594, in increment
+[rank1]:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+[rank1]: urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ad7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+[rank1]: During handling of the above exception, another exception occurred:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+[rank1]:     metadata = get_hf_file_metadata(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+[rank1]:     r = _request_wrapper(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+[rank1]:     response = _request_wrapper(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 306, in _request_wrapper
+[rank1]:     response = http_backoff(method=method, url=url, **params)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 326, in http_backoff
+[rank1]:     raise err
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 307, in http_backoff
+[rank1]:     response = session.request(method=method, url=url, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/requests/sessions.py", line 587, in request
+[rank1]:     resp = self.send(prep, **send_kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/requests/sessions.py", line 701, in send
+[rank1]:     r = adapter.send(request, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 96, in send
+[rank1]:     return super().send(request, *args, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/requests/adapters.py", line 565, in send
+[rank1]:     raise ConnectionError(e, request=request)
+[rank1]: requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /facebook/sam-vit-base/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f02c7ad7a90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: bb2ef7fc-70ce-4324-828b-34c10b4ed47e)')
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/utils/hub.py", line 398, in cached_file
+[rank1]:     resolved_file = hf_hub_download(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+[rank1]:     return _hf_hub_download_to_cache_dir(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+[rank1]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1658, in _raise_on_head_call_error
+[rank1]:     raise LocalEntryNotFoundError(
+[rank1]: huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 189, in main
+[rank1]:     model = MODELS.build(cfg.model)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank1]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank1]:     return build_from_cfg(cfg, registry, default_args)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank1]:     obj = obj_cls(**args)  # type: ignore
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/models/rsprompter_anchor_drone_guidance.py", line 67, in __init__
+[rank1]:     super().__init__(
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 310, in __init__
+[rank1]:     super().__init__(*args, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmdet/models/detectors/mask_rcnn.py", line 22, in __init__
+[rank1]:     super().__init__(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmdet/models/detectors/two_stage.py", line 34, in __init__
+[rank1]:     self.backbone = MODELS.build(backbone)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank1]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank1]:     return build_from_cfg(cfg, registry, default_args)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank1]:     obj = obj_cls(**args)  # type: ignore
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 72, in __init__
+[rank1]:     sam_config = SamConfig.from_pretrained(hf_pretrain_name).vision_config
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/configuration_utils.py", line 604, in from_pretrained
+[rank1]:     config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/configuration_utils.py", line 633, in get_config_dict
+[rank1]:     config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/configuration_utils.py", line 688, in _get_config_dict
+[rank1]:     resolved_config_file = cached_file(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/transformers/utils/hub.py", line 441, in cached_file
+[rank1]:     raise EnvironmentError(
+[rank1]: OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like facebook/sam-vit-base is not the path to a directory containing a file named config.json.
+[rank1]: Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+[rank0]:[W205 21:10:19.620359904 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0205 21:10:19.788257 242258 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 242371 closing signal SIGTERM
+E0205 21:10:19.853745 242258 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 242370) of binary: /data/wangcheng/cvt/bin/python
+Traceback (most recent call last):
+  File "/data/wangcheng/cvt/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/wangcheng/cvt/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-02-05_21:10:19
+  host      : lthpc
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 242370)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

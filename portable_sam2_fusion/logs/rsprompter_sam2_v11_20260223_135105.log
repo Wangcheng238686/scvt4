@@ -1,0 +1,41 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+2026-02-23 13:51:18,048 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 734 个卫星场景 (训练集)
+2026-02-23 13:51:18,049 - portable_sam_fusion - INFO - Dataset size: 734
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/wangcheng/project/portable_sam_fusion/train/train_rsprompter_fusion.py", line 749, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/wangcheng/project/portable_sam_fusion/train/train_rsprompter_fusion.py", line 495, in main
+[rank0]:     loss_dict = model_for_loss.loss(model_inputs, data_samples, scene_indices=scene_indices)
+[rank0]:   File "/home/wangcheng/project/portable_sam_fusion/models/rsprompter_anchor_drone_guidance.py", line 463, in loss
+[rank0]:     x, image_embeddings, image_positional_embeddings = self.extract_feat(batch_inputs, scene_indices=scene_indices)
+[rank0]:   File "/home/wangcheng/project/portable_sam_fusion/models/rsprompter_anchor_drone_guidance.py", line 403, in extract_feat
+[rank0]:     x, image_embeddings, image_positional_embeddings = super().extract_feat(batch_inputs)
+[rank0]:   File "/home/wangcheng/project/portable_sam_fusion/rsprompter/models.py", line 493, in extract_feat
+[rank0]:     x = self.neck(vision_hidden_states)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/wangcheng/project/portable_sam_fusion/rsprompter/models_sam2.py", line 481, in forward
+[rank0]:     features.append(self.downconvs[idx](x))
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/container.py", line 244, in forward
+[rank0]:     input = module(input)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 548, in forward
+[rank0]:     return self._conv_forward(input, self.weight, self.bias)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 543, in _conv_forward
+[rank0]:     return F.conv2d(
+[rank0]: RuntimeError: Given groups=1, weight of size [64, 896, 1, 1], expected input[2, 256, 32, 32] to have 896 channels, but got 256 channels instead

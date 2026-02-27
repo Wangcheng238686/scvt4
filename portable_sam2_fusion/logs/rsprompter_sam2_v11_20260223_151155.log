@@ -1,0 +1,20 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/portable_sam_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+2026-02-23 15:12:06,696 - portable_sam_fusion.data.satellite_dataset - INFO - 加载 734 个卫星场景 (训练集)
+2026-02-23 15:12:06,697 - portable_sam_fusion - INFO - Dataset size: 734
+[DEBUG] RSFeatureAggregatorSAM2 inputs: 4 tensors
+  [0] shape=torch.Size([2, 256, 128, 128]), dtype=torch.float16
+  [1] shape=torch.Size([2, 256, 64, 64]), dtype=torch.float16
+  [2] shape=torch.Size([2, 256, 32, 32]), dtype=torch.float32
+  [3] shape=torch.Size([2, 256, 16, 16]), dtype=torch.float16
+2026-02-23 15:13:43,358 - portable_sam_fusion - INFO - Epoch 1 detailed losses: loss_rpn_cls=0.6466, loss_rpn_bbox=0.0104, loss_cls=0.6610, acc=93.1023, loss_bbox=0.1509, loss_mask=0.2348
+2026-02-23 15:14:02,206 - portable_sam_fusion - INFO - Epoch 1/50 | train=1.703622 | sat_backbone=2.10e-06 sat_other=4.20e-06
+2026-02-23 15:15:40,782 - portable_sam_fusion - INFO - Epoch 2 detailed losses: loss_rpn_cls=0.3420, loss_rpn_bbox=0.0114, loss_cls=0.6307, acc=91.2328, loss_bbox=0.2041, loss_mask=0.1632
+2026-02-23 15:15:59,210 - portable_sam_fusion - INFO - Epoch 2/50 | train=1.351453 | sat_backbone=4.10e-06 sat_other=8.19e-06
+2026-02-23 15:17:45,384 - portable_sam_fusion - INFO - Epoch 3 detailed losses: loss_rpn_cls=0.1966, loss_rpn_bbox=0.0077, loss_cls=0.6221, acc=88.1131, loss_bbox=0.2961, loss_mask=0.1321
+2026-02-23 15:18:08,521 - portable_sam_fusion - INFO - Epoch 3/50 | train=1.254567 | sat_backbone=6.09e-06 sat_other=1.22e-05

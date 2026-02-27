@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+    main()
+  File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 171, in main
+    import portable_sam_fusion.rsprompter
+  File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/__init__.py", line 1, in <module>
+    from .models import *
+  File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 23, in <module>
+    from mmdet.models.mask_heads import FCNMaskHead
+ModuleNotFoundError: No module named 'mmdet.models.mask_heads'
+E0205 20:37:39.298578 155643 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 155776) of binary: /data/wangcheng/cvt/bin/python
+Traceback (most recent call last):
+  File "/data/wangcheng/cvt/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/wangcheng/cvt/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-02-05_20:37:39
+  host      : lthpc
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 155776)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

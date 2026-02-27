@@ -1,0 +1,127 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Loads checkpoint by local backend from path: /home/wangcheng2021/project/SCVT2/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth
+Loads checkpoint by local backend from path: /home/wangcheng2021/project/SCVT2/portable_sam_fusion/checkpoints/sam_vit_b_01ec64.pth
+The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: shared_image_embedding.positional_embedding, prompt_encoder.shared_embedding.positional_embedding, prompt_encoder.mask_embed.conv1.weight, prompt_encoder.mask_embed.conv1.bias, prompt_encoder.mask_embed.conv2.weight, prompt_encoder.mask_embed.conv2.bias, prompt_encoder.mask_embed.conv3.weight, prompt_encoder.mask_embed.conv3.bias, prompt_encoder.mask_embed.layer_norm1.weight, prompt_encoder.mask_embed.layer_norm1.bias, prompt_encoder.mask_embed.layer_norm2.weight, prompt_encoder.mask_embed.layer_norm2.bias, prompt_encoder.no_mask_embed.weight, prompt_encoder.point_embed.0.weight, prompt_encoder.point_embed.1.weight, prompt_encoder.point_embed.2.weight, prompt_encoder.point_embed.3.weight, prompt_encoder.not_a_point_embed.weight, mask_decoder.iou_token.weight, mask_decoder.mask_tokens.weight, mask_decoder.transformer.layers.0.self_attn.q_proj.weight, mask_decoder.transformer.layers.0.self_attn.q_proj.bias, mask_decoder.transformer.layers.0.self_attn.k_proj.weight, mask_decoder.transformer.layers.0.self_attn.k_proj.bias, mask_decoder.transformer.layers.0.self_attn.v_proj.weight, mask_decoder.transformer.layers.0.self_attn.v_proj.bias, mask_decoder.transformer.layers.0.self_attn.out_proj.weight, mask_decoder.transformer.layers.0.self_attn.out_proj.bias, mask_decoder.transformer.layers.0.layer_norm1.weight, mask_decoder.transformer.layers.0.layer_norm1.bias, mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.weight, mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.bias, mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.weight, mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.bias, mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.weight, mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.bias, mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.weight, mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.bias, mask_decoder.transformer.layers.0.layer_norm2.weight, mask_decoder.transformer.layers.0.layer_norm2.bias, mask_decoder.transformer.layers.0.mlp.lin1.weight, mask_decoder.transformer.layers.0.mlp.lin1.bias, mask_decoder.transformer.layers.0.mlp.lin2.weight, mask_decoder.transformer.layers.0.mlp.lin2.bias, mask_decoder.transformer.layers.0.layer_norm3.weight, mask_decoder.transformer.layers.0.layer_norm3.bias, mask_decoder.transformer.layers.0.layer_norm4.weight, mask_decoder.transformer.layers.0.layer_norm4.bias, mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.weight, mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.bias, mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.weight, mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.bias, mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.weight, mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.bias, mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.weight, mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.bias, mask_decoder.transformer.layers.1.self_attn.q_proj.weight, mask_decoder.transformer.layers.1.self_attn.q_proj.bias, mask_decoder.transformer.layers.1.self_attn.k_proj.weight, mask_decoder.transformer.layers.1.self_attn.k_proj.bias, mask_decoder.transformer.layers.1.self_attn.v_proj.weight, mask_decoder.transformer.layers.1.self_attn.v_proj.bias, mask_decoder.transformer.layers.1.self_attn.out_proj.weight, mask_decoder.transformer.layers.1.self_attn.out_proj.bias, mask_decoder.transformer.layers.1.layer_norm1.weight, mask_decoder.transformer.layers.1.layer_norm1.bias, mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.weight, mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.bias, mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.weight, mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.bias, mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.weight, mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.bias, mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.weight, mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.bias, mask_decoder.transformer.layers.1.layer_norm2.weight, mask_decoder.transformer.layers.1.layer_norm2.bias, mask_decoder.transformer.layers.1.mlp.lin1.weight, mask_decoder.transformer.layers.1.mlp.lin1.bias, mask_decoder.transformer.layers.1.mlp.lin2.weight, mask_decoder.transformer.layers.1.mlp.lin2.bias, mask_decoder.transformer.layers.1.layer_norm3.weight, mask_decoder.transformer.layers.1.layer_norm3.bias, mask_decoder.transformer.layers.1.layer_norm4.weight, mask_decoder.transformer.layers.1.layer_norm4.bias, mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.weight, mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.bias, mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.weight, mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.bias, mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.weight, mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.bias, mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.weight, mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.bias, mask_decoder.transformer.final_attn_token_to_image.q_proj.weight, mask_decoder.transformer.final_attn_token_to_image.q_proj.bias, mask_decoder.transformer.final_attn_token_to_image.k_proj.weight, mask_decoder.transformer.final_attn_token_to_image.k_proj.bias, mask_decoder.transformer.final_attn_token_to_image.v_proj.weight, mask_decoder.transformer.final_attn_token_to_image.v_proj.bias, mask_decoder.transformer.final_attn_token_to_image.out_proj.weight, mask_decoder.transformer.final_attn_token_to_image.out_proj.bias, mask_decoder.transformer.layer_norm_final_attn.weight, mask_decoder.transformer.layer_norm_final_attn.bias, mask_decoder.upscale_conv1.weight, mask_decoder.upscale_conv1.bias, mask_decoder.upscale_conv2.weight, mask_decoder.upscale_conv2.bias, mask_decoder.upscale_layer_norm.weight, mask_decoder.upscale_layer_norm.bias, mask_decoder.output_hypernetworks_mlps.0.proj_in.weight, mask_decoder.output_hypernetworks_mlps.0.proj_in.bias, mask_decoder.output_hypernetworks_mlps.0.proj_out.weight, mask_decoder.output_hypernetworks_mlps.0.proj_out.bias, mask_decoder.output_hypernetworks_mlps.0.layers.0.weight, mask_decoder.output_hypernetworks_mlps.0.layers.0.bias, mask_decoder.output_hypernetworks_mlps.1.proj_in.weight, mask_decoder.output_hypernetworks_mlps.1.proj_in.bias, mask_decoder.output_hypernetworks_mlps.1.proj_out.weight, mask_decoder.output_hypernetworks_mlps.1.proj_out.bias, mask_decoder.output_hypernetworks_mlps.1.layers.0.weight, mask_decoder.output_hypernetworks_mlps.1.layers.0.bias, mask_decoder.output_hypernetworks_mlps.2.proj_in.weight, mask_decoder.output_hypernetworks_mlps.2.proj_in.bias, mask_decoder.output_hypernetworks_mlps.2.proj_out.weight, mask_decoder.output_hypernetworks_mlps.2.proj_out.bias, mask_decoder.output_hypernetworks_mlps.2.layers.0.weight, mask_decoder.output_hypernetworks_mlps.2.layers.0.bias, mask_decoder.output_hypernetworks_mlps.3.proj_in.weight, mask_decoder.output_hypernetworks_mlps.3.proj_in.bias, mask_decoder.output_hypernetworks_mlps.3.proj_out.weight, mask_decoder.output_hypernetworks_mlps.3.proj_out.bias, mask_decoder.output_hypernetworks_mlps.3.layers.0.weight, mask_decoder.output_hypernetworks_mlps.3.layers.0.bias, mask_decoder.iou_prediction_head.proj_in.weight, mask_decoder.iou_prediction_head.proj_in.bias, mask_decoder.iou_prediction_head.proj_out.weight, mask_decoder.iou_prediction_head.proj_out.bias, mask_decoder.iou_prediction_head.layers.0.weight, mask_decoder.iou_prediction_head.layers.0.bias
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 189, in main
+[rank0]:     model = MODELS.build(cfg.model)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank0]:     obj = obj_cls(**args)  # type: ignore
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/models/rsprompter_anchor_drone_guidance.py", line 67, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 310, in __init__
+[rank0]:     super().__init__(*args, **kwargs)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmdet/models/detectors/mask_rcnn.py", line 22, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmdet/models/detectors/two_stage.py", line 37, in __init__
+[rank0]:     self.neck = MODELS.build(neck)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank0]:     obj = obj_cls(**args)  # type: ignore
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 149, in __init__
+[rank0]:     self.feature_spliter = MODELS.build(feature_spliter)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank0]:     obj = obj_cls(**args)  # type: ignore
+[rank0]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 259, in __init__
+[rank0]:     build_norm_layer(norm_cfg, self.backbone_channel // 2)[1],
+[rank0]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmcv/cnn/bricks/norm.py", line 110, in build_norm_layer
+[rank0]:     raise KeyError(f'Cannot find {norm_layer} in registry under '
+[rank0]: KeyError: 'Cannot find None in registry under scope name mmengine'
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 502, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py", line 189, in main
+[rank1]:     model = MODELS.build(cfg.model)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank1]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank1]:     return build_from_cfg(cfg, registry, default_args)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank1]:     obj = obj_cls(**args)  # type: ignore
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/models/rsprompter_anchor_drone_guidance.py", line 67, in __init__
+[rank1]:     super().__init__(
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 310, in __init__
+[rank1]:     super().__init__(*args, **kwargs)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmdet/models/detectors/mask_rcnn.py", line 22, in __init__
+[rank1]:     super().__init__(
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmdet/models/detectors/two_stage.py", line 37, in __init__
+[rank1]:     self.neck = MODELS.build(neck)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank1]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank1]:     return build_from_cfg(cfg, registry, default_args)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank1]:     obj = obj_cls(**args)  # type: ignore
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 149, in __init__
+[rank1]:     self.feature_spliter = MODELS.build(feature_spliter)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank1]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank1]:     return build_from_cfg(cfg, registry, default_args)
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank1]:     obj = obj_cls(**args)  # type: ignore
+[rank1]:   File "/home/wangcheng2021/project/SCVT2/portable_sam_fusion/rsprompter/models.py", line 259, in __init__
+[rank1]:     build_norm_layer(norm_cfg, self.backbone_channel // 2)[1],
+[rank1]:   File "/data/wangcheng/cvt/lib/python3.9/site-packages/mmcv/cnn/bricks/norm.py", line 110, in build_norm_layer
+[rank1]:     raise KeyError(f'Cannot find {norm_layer} in registry under '
+[rank1]: KeyError: 'Cannot find None in registry under scope name mmengine'
+[rank0]:[W205 21:11:52.818226440 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+E0205 21:11:52.861624 248690 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 248874) of binary: /data/wangcheng/cvt/bin/python
+Traceback (most recent call last):
+  File "/data/wangcheng/cvt/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/wangcheng/cvt/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/wangcheng/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangcheng2021/project/SCVT2/portable_sam_fusion/train/train_rsprompter_fusion.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-02-05_21:11:52
+  host      : lthpc
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 248891)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-02-05_21:11:52
+  host      : lthpc
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 248874)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

@@ -1,0 +1,4 @@
+portable_sam2_fusion/inference_results/*
+portable_sam2_fusion/checkpoints/*
+portable_sam_fusion/inference_results/*
+portable_sam_fusion/checkpoints/*

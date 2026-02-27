@@ -1,0 +1,13 @@
+einops
+numpy<2
+opencv-python
+pillow
+torchvision
+transformers==4.38.1
+peft==0.8.2
+pycocotools
+scipy
+mmdet>=3.0.0
+mmcv>=2.0.0
+mmengine>=0.7.1
+
