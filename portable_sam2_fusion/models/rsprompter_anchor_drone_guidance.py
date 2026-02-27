@@ -12,8 +12,8 @@ from mmdet.structures import SampleList
 from mmdet.registry import MODELS
 from mmengine.registry import MODELS as MMENGINE_MODELS
 
-from portable_sam_fusion.rsprompter.models import RSPrompterAnchor
-from portable_sam_fusion.uav import build_cvt_encoder
+from portable_sam2_fusion.rsprompter.models import RSPrompterAnchor
+from portable_sam2_fusion.uav import build_cvt_encoder
 from .losses import CrossViewContrastiveLoss, FeatureConsistencyLoss, GeometricConsistencyLoss, SpatialSmoothnessLoss
 
 

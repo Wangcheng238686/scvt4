@@ -38,8 +38,8 @@ from mmdet.models.data_preprocessors import DetDataPreprocessor
 if "DetDataPreprocessor" not in MMENGINE_MODELS:
     MMENGINE_MODELS.register_module(name="DetDataPreprocessor", module=DetDataPreprocessor)
 
-import portable_sam_fusion.rsprompter
-import portable_sam_fusion.models
+import portable_sam2_fusion.rsprompter
+import portable_sam2_fusion.models
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -442,11 +442,11 @@ def main():
     model.eval()
 
     # ---- Create dataloader ----
-    from portable_sam_fusion.data.satellite_drone_dataset import (
+    from portable_sam2_fusion.data.satellite_drone_dataset import (
         SatelliteDroneDataset, rtmdet_drone_collate_fn,
     )
-    from portable_sam_fusion.data.satellite_dataset import SatelliteInstanceDataset
-    from portable_sam_fusion.data.loader import rtmdet_collate_fn
+    from portable_sam2_fusion.data.satellite_dataset import SatelliteInstanceDataset
+    from portable_sam2_fusion.data.loader import rtmdet_collate_fn
     from torch.utils.data import DataLoader
 
     sat_data_root = (args.data_root or

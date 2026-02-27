@@ -226,8 +226,8 @@ def main():
             name="DetDataPreprocessor", module=DetDataPreprocessor
         )
 
-    import portable_sam_fusion.rsprompter
-    import portable_sam_fusion.models
+    import portable_sam2_fusion.rsprompter
+    import portable_sam2_fusion.models
 
     dist_info = _init_distributed()
     distributed = bool(dist_info.get("distributed", 0))
@@ -309,7 +309,7 @@ def main():
             min_num_params=int(args.fsdp_min_num_params),
         )
 
-    from portable_sam_fusion.data import create_train_loader
+    from portable_sam2_fusion.data import create_train_loader
 
     train_loader, val_loader, train_dataset = (
         create_train_loader(

@@ -4,8 +4,8 @@ from typing import Optional, Tuple
 from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
 
-from portable_sam_fusion.data.satellite_dataset import SatelliteInstanceDataset
-from portable_sam_fusion.data.satellite_drone_dataset import (
+from portable_sam2_fusion.data.satellite_dataset import SatelliteInstanceDataset
+from portable_sam2_fusion.data.satellite_drone_dataset import (
     SatelliteDroneDataset,
     rtmdet_drone_collate_fn,
     build_scene_id_mapping,

@@ -1,0 +1,52 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Traceback (most recent call last):
+  File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/train/train_rsprompter_fusion.py", line 750, in <module>
+    main()
+  File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/train/train_rsprompter_fusion.py", line 229, in main
+    import portable_sam2_fusion.rsprompter
+  File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/__init__.py", line 2, in <module>
+    from . import models
+  File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/models/__init__.py", line 1, in <module>
+    from .rsprompter_anchor_drone_guidance import RSPrompterAnchorDroneGuidance
+  File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/models/rsprompter_anchor_drone_guidance.py", line 271, in <module>
+    class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/registry.py", line 666, in _register
+    self._register_module(module=module, module_name=name, force=force)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/registry.py", line 611, in _register_module
+    raise KeyError(f'{name} is already registered in {self.name} '
+KeyError: 'RSPrompterAnchorDroneGuidance is already registered in model at portable_sam_fusion.models.rsprompter_anchor_drone_guidance'
+E0227 20:03:42.769665 2260644 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 2260745) of binary: /home/wangcheng/anaconda3/envs/cvt2/bin/python
+Traceback (most recent call last):
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangcheng/project/SCVT4/portable_sam2_fusion/train/train_rsprompter_fusion.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-02-27_20:03:42
+  host      : node01
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2260745)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

@@ -1,0 +1,34 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT4/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT4/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+  use_high_res_features: True
+  Has conv_s0: True
+  Has conv_s1: True
+2026-02-27 20:09:56,655 - portable_sam2_fusion.data.satellite_dataset - INFO - 加载 672 个卫星场景 (训练集)
+2026-02-27 20:09:56,673 - portable_sam2_fusion.data.satellite_dataset - INFO - 加载 62 个卫星场景 (验证集)
+2026-02-27 20:09:56,674 - portable_sam2_fusion.data.loader - INFO - 创建验证集加载器: 62 样本
+2026-02-27 20:09:56,674 - portable_sam_fusion - INFO - Dataset size: 672
+[DEBUG] RSFeatureAggregatorSAM2 inputs: 4 tensors
+  [0] shape=torch.Size([2, 256, 128, 128]), dtype=torch.float32
+  [1] shape=torch.Size([2, 256, 64, 64]), dtype=torch.float32
+  [2] shape=torch.Size([2, 256, 32, 32]), dtype=torch.float32
+  [3] shape=torch.Size([2, 256, 16, 16]), dtype=torch.float32
+[DEBUG] high_res_features selection:
+  image_embeddings shape: torch.Size([2, 256, 16, 16])
+  target feat_s0: (64, 64)
+  target feat_s1: (32, 32)
+  backbone_fpn[0]: torch.Size([2, 256, 128, 128])
+  backbone_fpn[1]: torch.Size([2, 256, 64, 64])
+  backbone_fpn[2]: torch.Size([2, 256, 32, 32])
+  backbone_fpn[3]: torch.Size([2, 256, 16, 16])
+[DEBUG] high_res_features result:
+  feat_s0: torch.Size([2, 256, 64, 64])
+  feat_s1: torch.Size([2, 256, 32, 32])
+2026-02-27 20:11:51,403 - portable_sam_fusion - INFO - Epoch 1 detailed losses: loss_rpn_cls=0.6846, loss_rpn_bbox=0.0138, loss_cls=0.4724, acc=96.1228, loss_bbox=0.0385, loss_mask=0.2738
+2026-02-27 20:12:02,038 - portable_sam_fusion - INFO - Epoch 1/50 | train=1.483062 val=1.318464 | sat_backbone=2.10e-06 sat_other=4.20e-06
+2026-02-27 20:14:00,946 - portable_sam_fusion - INFO - Epoch 2 detailed losses: loss_rpn_cls=0.4100, loss_rpn_bbox=0.0119, loss_cls=0.3178, acc=89.2206, loss_bbox=0.2514, loss_mask=0.1812
+2026-02-27 20:14:19,922 - portable_sam_fusion - INFO - Epoch 2/50 | train=1.172339 val=1.129394 | sat_backbone=4.10e-06 sat_other=8.19e-06
