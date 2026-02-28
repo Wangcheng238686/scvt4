@@ -570,13 +570,13 @@ def main():
                 meta = img_metas[j]
                 img_shape = meta["img_shape"]
 
-                # GT
-                gt_inst = output.gt_instances
+                # GT - from data_samples (DetDataSample), not from output (InstanceData)
+                gt_inst = data_samples[j].gt_instances
                 gt_np = _extract_instances_numpy(gt_inst, img_shape)
                 all_gt.append(gt_np)
 
-                # Predictions
-                pred_inst = output.pred_instances
+                # Predictions - from output (InstanceData)
+                pred_inst = output
                 pred_np = _extract_instances_numpy(pred_inst, img_shape)
                 all_dt.append(pred_np)
 
@@ -624,7 +624,7 @@ def main():
                             gt_vis.masks = batch["gt_masks"][j][idx]
                     out_file = osp.join(args.show_dir, osp.basename(img_path))
                     visualize_comparison(
-                        img_path, output.pred_instances, gt_vis, out_file,
+                        img_path, output, gt_vis, out_file,
                         score_thr=args.show_score_thr,
                         target_size=img_metas[j].get("img_shape", None)[:2]
                     )

@@ -15,6 +15,7 @@ from mmengine.registry import MODELS as MMENGINE_MODELS
 from portable_sam2_fusion.rsprompter.models import RSPrompterAnchor
 from portable_sam2_fusion.uav import build_cvt_encoder
 from .losses import CrossViewContrastiveLoss, FeatureConsistencyLoss, GeometricConsistencyLoss, SpatialSmoothnessLoss
+from .height_guided_fusion import MultiLevelHeightGuidedFusion
 
 
 @dataclass
@@ -218,9 +219,6 @@ class DroneSemanticGuidance(nn.Module):
         self.level_channels = tuple(int(c) for c in level_channels)
         self.gate_scale = gate_scale
 
-        # Residual gate: learns a small offset to modulate satellite features
-        # Output centered around 0 via Tanh, scaled by gate_scale so that
-        # the default behaviour is near-identity (x * (1 + 0) = x).
         self.level_gates = nn.ModuleList(
             [nn.Sequential(
                 nn.Linear(bev_dim + int(c), int(c)),
@@ -251,8 +249,6 @@ class DroneSemanticGuidance(nn.Module):
             x_context = self.pool(x).flatten(1)
             combined_context = torch.cat([context, x_context], dim=1)
 
-            # Residual gate: x * (1 + scale * tanh(mlp(context)))
-            # When gate_offset ≈ 0, output ≈ x (identity pass-through)
             gate_offset = gate_mlp(combined_context).unsqueeze(-1).unsqueeze(-1)
             guided.append(x * (1.0 + self.gate_scale * gate_offset))
 
@@ -280,6 +276,9 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
         max_scenes: int = 1000,
         use_spatial_fusion: bool = False,
         spatial_fusion_cfg: Optional[Dict] = None,
+        use_height_guided_fusion: bool = False,
+        share_sam2_backbone: bool = False,
+        sam2_ckpt_path: Optional[str] = None,
         *args,
         **kwargs,
     ):
@@ -292,9 +291,40 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
 
         self.enable_drone_branch = enable_drone_branch
         self.use_spatial_fusion = use_spatial_fusion
+        self.use_height_guided_fusion = use_height_guided_fusion
+        self.share_sam2_backbone = share_sam2_backbone
 
         if self.enable_drone_branch and drone_branch is not None:
-            self.drone_encoder = build_cvt_encoder(drone_branch, max_scenes=max_scenes)
+            shared_sam2_encoder = None
+            print(f"[DEBUG] share_sam2_backbone={share_sam2_backbone}")
+            print(f"[DEBUG] hasattr(self, 'backbone')={hasattr(self, 'backbone')}")
+            if hasattr(self, 'backbone'):
+                print(f"[DEBUG] type(self.backbone)={type(self.backbone)}")
+                print(f"[DEBUG] hasattr(self.backbone, 'encoder')={hasattr(self.backbone, 'encoder')}")
+                if hasattr(self.backbone, 'encoder'):
+                    print(f"[DEBUG] self.backbone.encoder={self.backbone.encoder}")
+            
+            if share_sam2_backbone:
+                if hasattr(self, 'backbone'):
+                    if hasattr(self.backbone, 'encoder') and self.backbone.encoder is not None:
+                        shared_sam2_encoder = self.backbone.encoder
+                        print(f"[RSPrompterAnchorDroneGuidance] Using shared SAM2 encoder from satellite backbone")
+                    else:
+                        print(f"[RSPrompterAnchorDroneGuidance] Warning: backbone exists but encoder is None, will create standalone SAM2")
+                else:
+                    print(f"[RSPrompterAnchorDroneGuidance] Warning: backbone not found, will create standalone SAM2")
+            
+            ckpt_path = sam2_ckpt_path
+            if ckpt_path is None:
+                import os
+                ckpt_path = os.environ.get("SAM2_CKPT")
+            
+            self.drone_encoder = build_cvt_encoder(
+                drone_branch, 
+                max_scenes=max_scenes,
+                shared_sam2_encoder=shared_sam2_encoder,
+                sam2_ckpt_path=ckpt_path,
+            )
             self.freeze_drone = bool(drone_branch.get("freeze", False))
             if self.freeze_drone:
                 self.drone_encoder.requires_grad_(False)
@@ -306,7 +336,34 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
             gate_image_embeddings = bool(cfg.get("gate_image_embeddings", False))
             gate_scale = float(cfg.get("gate_scale", 0.1))
             
-            if use_spatial_fusion:
+            if use_height_guided_fusion:
+                spatial_cfg = spatial_fusion_cfg or {}
+                num_heads = int(spatial_cfg.get("num_heads", 4))
+                temperature = float(spatial_cfg.get("temperature", 0.1))
+                align_loss_weight = float(spatial_cfg.get("align_loss_weight", 0.1))
+                downsample_factor = int(spatial_cfg.get("downsample_factor", 1))
+                max_attn_size = int(spatial_cfg.get("max_attn_size", 64))
+                use_checkpoint = bool(spatial_cfg.get("use_checkpoint", False))
+                height_dim = int(spatial_cfg.get("height_dim", 64))
+                use_height_gate = bool(spatial_cfg.get("use_height_gate", True))
+                height_loss_weight = float(spatial_cfg.get("height_loss_weight", 0.01))
+                
+                self.guidance = MultiLevelHeightGuidedFusion(
+                    bev_dim=bev_dim,
+                    level_channels=level_channels,
+                    num_heads=num_heads,
+                    temperature=temperature,
+                    downsample_factor=downsample_factor,
+                    max_attn_size=max_attn_size,
+                    use_checkpoint=use_checkpoint,
+                    height_dim=height_dim,
+                    use_height_gate=use_height_gate,
+                    height_loss_weight=height_loss_weight,
+                )
+                self.spatial_align_loss_weight = align_loss_weight
+                self.height_loss_weight = height_loss_weight
+                self.gate_image_embeddings = False
+            elif use_spatial_fusion:
                 spatial_cfg = spatial_fusion_cfg or {}
                 num_heads = int(spatial_cfg.get("num_heads", 4))
                 temperature = float(spatial_cfg.get("temperature", 0.1))
@@ -326,6 +383,7 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
                 )
                 self.spatial_align_loss_weight = align_loss_weight
                 self.gate_image_embeddings = False
+                self.height_loss_weight = 0.0
             else:
                 embed_channels = 256 if gate_image_embeddings else None
                 self.guidance = DroneSemanticGuidance(
@@ -336,6 +394,7 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
                 )
                 self.gate_image_embeddings = gate_image_embeddings
                 self.spatial_align_loss_weight = 0.0
+                self.height_loss_weight = 0.0
             
             if cross_view_loss is not None:
                 self.use_cross_view_loss = True
@@ -393,6 +452,7 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
             self.geometric_weight = 0.0
             self.smoothness_loss = None
             self.smoothness_weight = 0.0
+            self.height_loss_weight = 0.0
 
     def extract_feat(
         self, 
@@ -402,7 +462,9 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
         if not isinstance(batch_inputs, dict):
             x, image_embeddings, image_positional_embeddings, high_res_features = super().extract_feat(batch_inputs)
             self._drone_bev = None
+            self._height_map = None
             self._spatial_align_loss = None
+            self._height_loss = None
             return x, image_embeddings, image_positional_embeddings, high_res_features
 
         sat = batch_inputs["sat"]
@@ -410,7 +472,9 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
         if not self.enable_drone_branch or self.drone_encoder is None:
             x, image_embeddings, image_positional_embeddings, high_res_features = super().extract_feat(sat)
             self._drone_bev = None
+            self._height_map = None
             self._spatial_align_loss = None
+            self._height_loss = None
             return x, image_embeddings, image_positional_embeddings, high_res_features
 
         drone_images = batch_inputs["drone_images"]
@@ -425,18 +489,45 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
 
         if self.freeze_drone:
             with torch.no_grad():
-                drone_bev = self.drone_encoder(drone_batch, scene_indices=scene_indices)
+                drone_output = self.drone_encoder(drone_batch, scene_indices=scene_indices)
         else:
-            drone_bev = self.drone_encoder(drone_batch, scene_indices=scene_indices)
+            drone_output = self.drone_encoder(drone_batch, scene_indices=scene_indices)
+        
+        if isinstance(drone_output, tuple):
+            if len(drone_output) == 3:
+                drone_bev, height_map, consistency_loss = drone_output
+                self._consistency_loss = consistency_loss
+            elif len(drone_output) == 2:
+                drone_bev, height_map = drone_output
+                self._consistency_loss = None
+            else:
+                drone_bev = drone_output
+                height_map = None
+                self._consistency_loss = None
+        else:
+            drone_bev = drone_output
+            height_map = None
+            self._consistency_loss = None
         
         self._drone_bev = drone_bev
+        self._height_map = height_map
 
         x, image_embeddings, image_positional_embeddings, high_res_features = super().extract_feat(sat)
 
         if self.guidance is not None:
-            if self.use_spatial_fusion:
+            if self.use_height_guided_fusion:
+                guided_feats, align_loss, height_loss = self.guidance(
+                    feats=x, 
+                    bev_feat=drone_bev,
+                    height_map=height_map,
+                )
+                self._spatial_align_loss = align_loss
+                self._height_loss = height_loss
+                return guided_feats, image_embeddings, image_positional_embeddings, high_res_features
+            elif self.use_spatial_fusion:
                 guided_feats, align_loss = self.guidance(feats=x, bev_feat=drone_bev)
                 self._spatial_align_loss = align_loss
+                self._height_loss = None
                 return guided_feats, image_embeddings, image_positional_embeddings, high_res_features
             else:
                 guided_feats, guided_emb = self.guidance(
@@ -445,6 +536,7 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
                     image_embeddings=image_embeddings if self.gate_image_embeddings else None,
                 )
                 self._spatial_align_loss = None
+                self._height_loss = None
 
                 if guided_emb is not None:
                     image_embeddings = guided_emb
@@ -452,6 +544,7 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
                 return guided_feats, image_embeddings, image_positional_embeddings, high_res_features
 
         self._spatial_align_loss = None
+        self._height_loss = None
         return x, image_embeddings, image_positional_embeddings, high_res_features
 
     def loss(
@@ -504,6 +597,14 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
         if spatial_align_loss is not None and self.spatial_align_loss_weight > 0:
             losses["loss_spatial_align"] = spatial_align_loss * self.spatial_align_loss_weight
         
+        height_loss = getattr(self, "_height_loss", None)
+        if height_loss is not None and self.height_loss_weight > 0:
+            losses["loss_height"] = height_loss * self.height_loss_weight
+        
+        consistency_loss = getattr(self, "_consistency_loss", None)
+        if consistency_loss is not None:
+            losses["loss_depth_consistency"] = consistency_loss
+        
         return losses
     
     def _compute_loss_with_cross_view(
@@ -548,25 +649,41 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
             if self.consistency_loss is not None:
                 consistency_loss = self.consistency_loss(sat_feat, drone_bev)
                 losses["loss_consistency"] = consistency_loss * self.consistency_weight
-            
-            if self.geometric_loss is not None and hasattr(self.drone_encoder, 'scene_alignment'):
-                alignment_matrix = self.drone_encoder.scene_alignment.global_alignment.unsqueeze(0)
-                alignment_matrix = alignment_matrix.expand(drone_bev.shape[0], -1, -1)
-                geo_loss = self.geometric_loss(alignment_matrix)
-                losses["loss_geometric"] = geo_loss * self.geometric_weight
-            
-            if self.smoothness_loss is not None:
-                smoothness_loss = self.smoothness_loss(drone_bev)
-                losses["loss_smoothness"] = smoothness_loss * self.smoothness_weight
         
         spatial_align_loss = getattr(self, "_spatial_align_loss", None)
         if spatial_align_loss is not None and self.spatial_align_loss_weight > 0:
             losses["loss_spatial_align"] = spatial_align_loss * self.spatial_align_loss_weight
         
+        height_loss = getattr(self, "_height_loss", None)
+        if height_loss is not None and self.height_loss_weight > 0:
+            losses["loss_height"] = height_loss * self.height_loss_weight
+        
+        consistency_loss = getattr(self, "_consistency_loss", None)
+        if consistency_loss is not None:
+            losses["loss_depth_consistency"] = consistency_loss
+        
         return losses
 
-    def train(self, mode: bool = True):
-        super().train(mode)
-        if getattr(self, "freeze_drone", False) and self.drone_encoder is not None:
-            self.drone_encoder.eval()
-        return self
+    def predict(
+        self,
+        batch_inputs: Union[torch.Tensor, Dict],
+        batch_data_samples: SampleList,
+        scene_indices: Optional[torch.Tensor] = None,
+        rescale: bool = True,
+    ):
+        x, image_embeddings, image_positional_embeddings, high_res_features = self.extract_feat(batch_inputs, scene_indices=scene_indices)
+
+        # RPNHead.predict() doesn't accept proposal_cfg parameter
+        rpn_results_list = self.rpn_head.predict(x, batch_data_samples, rescale=False)
+
+        results_list = self.roi_head.predict(
+            x,
+            rpn_results_list,
+            batch_data_samples,
+            image_embeddings=image_embeddings,
+            image_positional_embeddings=image_positional_embeddings,
+            high_res_features=high_res_features,
+            rescale=rescale,
+        )
+
+        return results_list

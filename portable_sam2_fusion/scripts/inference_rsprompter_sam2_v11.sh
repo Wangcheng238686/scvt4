@@ -22,11 +22,11 @@ CONFIG_PATH="${PROJECT_ROOT}/configs/rsprompter_anchor_satS_v8_sam2.py"
 INFERENCE_BIN="${PROJECT_ROOT}/inference/inference_rsprompter_fusion.py"
 
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-SHOW_DIR="${PROJECT_ROOT}/inference_results/sam2_v11_vis_${TIMESTAMP}"
-WORK_DIR="${PROJECT_ROOT}/inference_results/sam2_v11_metrics_${TIMESTAMP}"
+WORK_DIR="${PROJECT_ROOT}/inference_results/rsprompter-sam2-v11-${TIMESTAMP}"
+SHOW_DIR="${SHOW_DIR:-${WORK_DIR}/visualizations}"
 
-mkdir -p "$SHOW_DIR"
 mkdir -p "$WORK_DIR"
+mkdir -p "$SHOW_DIR"
 
 SCORE_THR="${SCORE_THR:-0.3}"
 MAX_NUM="${MAX_NUM:-100}"

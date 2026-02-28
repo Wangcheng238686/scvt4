@@ -114,6 +114,11 @@ class RSSAM2VisionEncoder(BaseModule):
         if init_cfg is not None and checkpoint_path is None:
             checkpoint_path = init_cfg.get("checkpoint")
 
+        if checkpoint_path:
+            if not os.path.isabs(checkpoint_path):
+                project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+                checkpoint_path = os.path.join(project_root, checkpoint_path)
+        
         if checkpoint_path and os.path.exists(checkpoint_path):
             self._load_sam2_encoder(checkpoint_path)
         else:

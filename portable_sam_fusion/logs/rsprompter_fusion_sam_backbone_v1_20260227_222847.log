@@ -1,0 +1,49 @@
+/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/wangcheng/project/SCVT4/portable_sam_fusion/train/train_rsprompter_fusion.py", line 749, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/wangcheng/project/SCVT4/portable_sam_fusion/train/train_rsprompter_fusion.py", line 253, in main
+[rank0]:     model = MODELS.build(cfg.model)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 100, in build_from_cfg
+[rank0]:     raise KeyError(
+[rank0]: KeyError: 'RSPrompterAnchorDroneSAMBackbone is not in the mmdet::model registry. Please check whether the value of `RSPrompterAnchorDroneSAMBackbone` is correct or it was registered as expected. More details can be found at https://mmengine.readthedocs.io/en/latest/advanced_tutorials/config.html#import-the-custom-module'
+[rank0]:[W227 22:28:56.953772339 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+E0227 22:28:57.312836 2563368 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 2563546) of binary: /home/wangcheng/anaconda3/envs/cvt/bin/python3
+Traceback (most recent call last):
+  File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/wangcheng/anaconda3/envs/cvt/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangcheng/project/SCVT4/portable_sam_fusion/train/train_rsprompter_fusion.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-02-27_22:28:57
+  host      : node01
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2563546)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
