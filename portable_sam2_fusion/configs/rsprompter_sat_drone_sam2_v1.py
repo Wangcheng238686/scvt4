@@ -24,16 +24,6 @@ model = dict(
         bgr_to_rgb=True,
         pad_mask=True,
         pad_size_divisor=32,
-        batch_augments=[
-            dict(
-                type="BatchFixedSizePad",
-                size=(512, 512),
-                img_pad_value=0,
-                pad_mask=True,
-                mask_pad_value=0,
-                pad_seg=False,
-            )
-        ],
     ),
     decoder_freeze=False,
     shared_image_embedding=dict(
@@ -236,6 +226,13 @@ model = dict(
         height_dim=64,
         use_height_gate=True,
         height_loss_weight=0.01,
+        # Height loss configuration (new)
+        use_variance_loss=True,      # Encourage bimodal height distribution
+        use_sparsity_loss=False,      # Encourage sparse high-height regions
+        use_smoothness_loss=False,    # Encourage spatial smoothness
+        variance_weight=0.1,         # Weight for variance loss
+        sparsity_weight=0.05,        # Weight for sparsity loss
+        smoothness_weight=0.01,      # Weight for smoothness loss
     ),
     
     cross_view_loss=dict(
@@ -258,7 +255,6 @@ train_pipeline = [
         scale=(512, 512),
         keep_ratio=True,
     ),
-    dict(type="RandomFlip", prob=0.5),
     dict(type="PackDetInputs"),
 ]
 

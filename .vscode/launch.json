@@ -1,0 +1,216 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // ==================== 训练配置 ====================
+        {
+            "name": "Python: Train RSPrompter Fusion (SAM2)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/portable_sam2_fusion/train/train_rsprompter_fusion.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "/home/wangcheng/anaconda3/envs/cvt2/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "SAM2_CKPT": "${workspaceFolder}/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt",
+                "CONDA_DEFAULT_ENV": "cvt2"
+            },
+            "args": [
+                "--config", "portable_sam2_fusion/configs/rsprompter_sat_drone_sam2_v1.py",
+                "--data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-s-train",
+                "--drone-data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-d-train-selected-5",
+                "--checkpoint-dir", "./portable_sam2_fusion/checkpoints/rsprompter-sat-drone-sam2-v1",
+                "--batch-size", "2",
+                "--epochs", "50",
+                "--lr", "4e-4",
+                "--image-size", "512", "512",
+                "--drone-image-size", "512", "512",
+                "--num-views", "4",
+                "--use-drone",
+                "--normalize-drone",
+                "--sat-backbone-lr-mult", "0.5",
+                "--sat-other-lr-mult", "1.0",
+                "--drone-lr-mult", "1.0",
+                "--grad-accum-steps", "2",
+                "--max-scenes", "1000",
+                "--gpu-id", "0",
+                "--val-ratio", "0.1",
+                "--val-every-n-epochs", "1",
+                "--early-stopping-patience", "15"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Train RSPrompter Fusion (Minimal)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/portable_sam2_fusion/train/train_rsprompter_fusion.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "/home/wangcheng/anaconda3/envs/cvt2/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "SAM2_CKPT": "${workspaceFolder}/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt",
+                "CONDA_DEFAULT_ENV": "cvt2"
+            },
+            "args": [
+                "--config", "portable_sam2_fusion/configs/rsprompter_sat_drone_sam2_v1.py",
+                "--data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-s-train",
+                "--drone-data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-d-train-selected-5",
+                "--checkpoint-dir", "./portable_sam2_fusion/checkpoints/debug",
+                "--batch-size", "1",
+                "--epochs", "2",
+                "--lr", "4e-4",
+                "--image-size", "512", "512",
+                "--drone-image-size", "512", "512",
+                "--num-views", "2",
+                "--use-drone",
+                "--normalize-drone",
+                "--max-scenes", "10",
+                "--gpu-id", "0"
+            ],
+            "justMyCode": false
+        },
+        // ==================== 推理配置 ====================
+        {
+            "name": "Python: Inference RSPrompter Fusion (SAM2)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/portable_sam2_fusion/inference/inference_rsprompter_fusion.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "/home/wangcheng/anaconda3/envs/cvt2/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "SAM2_CKPT": "${workspaceFolder}/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt",
+                "CONDA_DEFAULT_ENV": "cvt2"
+            },
+            "args": [
+                "portable_sam2_fusion/configs/rsprompter_sat_drone_sam2_v1.py",
+                "portable_sam2_fusion/checkpoints/rsprompter-sat-drone-sam2-v1/best_model.pth",
+                "--work-dir", "./portable_sam2_fusion/inference_results/debug",
+                "--show-dir", "./portable_sam2_fusion/inference_results/debug/visualizations",
+                "--show-score-thr", "0.3",
+                "--max-num", "100",
+                "--gpu-id", "0",
+                "--data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-s-test",
+                "--drone-data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-d-test-selected-5",
+                "--image-size", "512", "512",
+                "--drone-image-size", "512", "512",
+                "--num-views", "4",
+                "--use-drone"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Inference RSPrompter Fusion (Minimal)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/portable_sam2_fusion/inference/inference_rsprompter_fusion.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "/home/wangcheng/anaconda3/envs/cvt2/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "SAM2_CKPT": "${workspaceFolder}/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt",
+                "CONDA_DEFAULT_ENV": "cvt2"
+            },
+            "args": [
+                "portable_sam2_fusion/configs/rsprompter_sat_drone_sam2_v1.py",
+                "portable_sam2_fusion/checkpoints/rsprompter-sat-drone-sam2-v1/best_model.pth",
+                "--work-dir", "./portable_sam2_fusion/inference_results/debug",
+                "--show-dir", "./portable_sam2_fusion/inference_results/debug/visualizations",
+                "--show-score-thr", "0.3",
+                "--max-num", "5",
+                "--gpu-id", "0",
+                "--data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-s-test",
+                "--drone-data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-d-test-selected-5",
+                "--image-size", "512", "512",
+                "--drone-image-size", "512", "512",
+                "--num-views", "2",
+                "--use-drone"
+            ],
+            "justMyCode": false
+        },
+        // ==================== 仅卫星数据配置 ====================
+        {
+            "name": "Python: Train Satellite Only",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/portable_sam2_fusion/train/train_rsprompter_fusion.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "/home/wangcheng/anaconda3/envs/cvt2/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "SAM2_CKPT": "${workspaceFolder}/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt",
+                "CONDA_DEFAULT_ENV": "cvt2"
+            },
+            "args": [
+                "--config", "portable_sam2_fusion/configs/rsprompter_anchor_satS_only_v1.py",
+                "--data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-s-train",
+                "--checkpoint-dir", "./portable_sam2_fusion/checkpoints/rsprompter-sat-only-debug",
+                "--batch-size", "2",
+                "--epochs", "2",
+                "--lr", "4e-4",
+                "--image-size", "512", "512",
+                "--gpu-id", "0"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Inference Satellite Only",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/portable_sam2_fusion/inference/inference_rsprompter_fusion.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "/home/wangcheng/anaconda3/envs/cvt2/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "SAM2_CKPT": "${workspaceFolder}/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt",
+                "CONDA_DEFAULT_ENV": "cvt2"
+            },
+            "args": [
+                "portable_sam2_fusion/configs/rsprompter_anchor_satS_only_v1.py",
+                "portable_sam2_fusion/checkpoints/rsprompter-sat-only/best_model.pth",
+                "--work-dir", "./portable_sam2_fusion/inference_results/sat-only-debug",
+                "--show-dir", "./portable_sam2_fusion/inference_results/sat-only-debug/visualizations",
+                "--show-score-thr", "0.3",
+                "--max-num", "10",
+                "--gpu-id", "0",
+                "--data-root", "/home/wangcheng/data/unversity-big-after-without-negative/university-s-test"
+            ],
+            "justMyCode": false
+        },
+        // ==================== 其他工具配置 ====================
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "/home/wangcheng/anaconda3/envs/cvt2/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "cvt2"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Module",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "portable_sam2_fusion",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "/home/wangcheng/anaconda3/envs/cvt2/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "cvt2"
+            },
+            "justMyCode": false
+        }
+    ]
+}

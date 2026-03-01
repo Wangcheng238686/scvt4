@@ -537,6 +537,116 @@ class DepthAwareCVTEncoder(nn.Module):
         
         return x
     
+    def _backproject_depth_to_3d(
+        self,
+        depth: torch.Tensor,
+        intrinsics: torch.Tensor,
+    ) -> torch.Tensor:
+        """
+        Backproject depth map to 3D points in camera coordinate system.
+        
+        Args:
+            depth: Depth map (B, 1, H, W)
+            intrinsics: Camera intrinsics (B, 3, 3)
+        
+        Returns:
+            points_3d: 3D points in camera coordinates (B, 3, H, W)
+        """
+        B, _, H, W = depth.shape
+        device = depth.device
+        
+        # Create pixel coordinate grid
+        y_coords, x_coords = torch.meshgrid(
+            torch.arange(H, device=device, dtype=torch.float32),
+            torch.arange(W, device=device, dtype=torch.float32),
+            indexing='ij'
+        )
+        x_coords = x_coords.unsqueeze(0).expand(B, -1, -1)  # (B, H, W)
+        y_coords = y_coords.unsqueeze(0).expand(B, -1, -1)  # (B, H, W)
+        
+        # Get intrinsics parameters
+        fx = intrinsics[:, 0, 0].view(B, 1, 1)
+        fy = intrinsics[:, 1, 1].view(B, 1, 1)
+        cx = intrinsics[:, 0, 2].view(B, 1, 1)
+        cy = intrinsics[:, 1, 2].view(B, 1, 1)
+        
+        # Backproject to 3D camera coordinates
+        Z = depth.squeeze(1)  # (B, H, W)
+        X = (x_coords - cx) * Z / fx
+        Y = (y_coords - cy) * Z / fy
+        
+        points_3d = torch.stack([X, Y, Z], dim=1)  # (B, 3, H, W)
+        return points_3d
+    
+    def _transform_camera_to_world(
+        self,
+        points_cam: torch.Tensor,
+        extrinsics: torch.Tensor,
+    ) -> torch.Tensor:
+        """
+        Transform 3D points from camera coordinates to world coordinates.
+        
+        Args:
+            points_cam: 3D points in camera coordinates (B, 3, H, W)
+            extrinsics: Camera extrinsics (B, 4, 4), world-to-camera transform
+        
+        Returns:
+            points_world: 3D points in world coordinates (B, 3, H, W)
+        """
+        B, _, H, W = points_cam.shape
+        
+        # Convert to homogeneous coordinates
+        ones = torch.ones(B, 1, H, W, device=points_cam.device, dtype=points_cam.dtype)
+        points_cam_homo = torch.cat([points_cam, ones], dim=1)  # (B, 4, H, W)
+        points_cam_flat = rearrange(points_cam_homo, "b c h w -> b c (h w)")  # (B, 4, H*W)
+        
+        # Transform to world coordinates: P_world = E^{-1} @ P_cam
+        extrinsics_inv = torch.linalg.inv(extrinsics)  # (B, 4, 4)
+        points_world_flat = torch.bmm(extrinsics_inv, points_cam_flat)  # (B, 4, H*W)
+        
+        # Convert back to non-homogeneous and reshape
+        points_world = points_world_flat[:, :3, :]  # (B, 3, H*W)
+        points_world = rearrange(points_world, "b c (h w) -> b c h w", h=H, w=W)
+        
+        return points_world
+    
+    def _aggregate_height_to_bev(
+        self,
+        height_maps: torch.Tensor,
+        bev_h: int,
+        bev_w: int,
+    ) -> torch.Tensor:
+        """
+        Aggregate multi-view height maps to BEV space.
+        
+        Uses max pooling to preserve the highest points (buildings).
+        
+        Args:
+            height_maps: Height maps from all views (B, N, 1, H, W)
+            bev_h: Target BEV height
+            bev_w: Target BEV width
+        
+        Returns:
+            aggregated_height: Aggregated height map (B, 1, bev_H, bev_W)
+        """
+        B, N, _, H, W = height_maps.shape
+        
+        # Resize all height maps to BEV dimensions
+        height_resized = F.interpolate(
+            rearrange(height_maps, "b n c h w -> (b n) c h w"),
+            size=(bev_h, bev_w),
+            mode='bilinear',
+            align_corners=False
+        )  # (B*N, 1, bev_H, bev_W)
+        
+        height_resized = rearrange(height_resized, "(b n) c h w -> b n c h w", b=B, n=N)
+        
+        # Use max pooling across views to preserve highest points (buildings)
+        # This is better than average for building detection
+        aggregated_height, _ = torch.max(height_resized, dim=1)  # (B, 1, bev_H, bev_W)
+        
+        return aggregated_height
+    
     def _compute_height_map(
         self,
         depth: torch.Tensor,
@@ -546,10 +656,8 @@ class DepthAwareCVTEncoder(nn.Module):
         """
         Compute height map from depth and camera extrinsics.
         
-        Converts depth maps to 3D world coordinates using camera intrinsics and extrinsics,
-        then projects to BEV space and extracts height information.
-        
-        Memory-efficient implementation using checkpointing.
+        Properly converts depth maps to 3D world coordinates using camera intrinsics 
+        and extrinsics, extracts the Y-coordinate (height), then aggregates to BEV space.
         
         Args:
             depth: Depth maps (B, N, 1, H, W)
@@ -562,33 +670,39 @@ class DepthAwareCVTEncoder(nn.Module):
         b, n, _, h, w = depth.shape
         device = depth.device
         
-        # Use a simplified but memory-efficient approach
-        # Instead of computing full 3D transformation, use depth as a proxy for height
-        # and apply a simple correction based on camera pose
-        
-        # Average depth across views
-        depth_avg = depth.mean(dim=1)  # (B, 1, H, W)
-        
-        # Extract camera height from extrinsics (translation in Y direction)
-        # extrinsics is world-to-camera, so camera position in world is -R^T @ t
-        # For simplicity, we use the Y component of translation as height reference
-        camera_heights = extrinsics[:, :, 1, 3]  # (B, N) - camera Y position in world
-        avg_camera_height = camera_heights.mean(dim=1, keepdim=True)  # (B, 1)
-        
-        # Resize to BEV dimensions
         bev_h = self.bev_embedding.h
         bev_w = self.bev_embedding.w
-        height_map = F.interpolate(depth_avg, size=(bev_h, bev_w), mode='bilinear', align_corners=False)
         
-        # Add camera height bias (normalized)
-        # This gives a rough estimate of absolute height
-        height_bias = avg_camera_height.view(b, 1, 1, 1) * 0.01  # Scale down to match depth scale
-        height_map = height_map + height_bias
+        # Collect height maps from all views
+        height_maps_list = []
+        
+        for i in range(n):
+            depth_i = depth[:, i]  # (B, 1, H, W)
+            extrinsics_i = extrinsics[:, i]  # (B, 4, 4)
+            intrinsics_i = intrinsics[:, i]  # (B, 3, 3)
+            
+            # Step 1: Backproject depth to 3D camera coordinates
+            points_3d_cam = self._backproject_depth_to_3d(depth_i, intrinsics_i)
+            
+            # Step 2: Transform to world coordinates
+            points_3d_world = self._transform_camera_to_world(points_3d_cam, extrinsics_i)
+            
+            # Step 3: Extract height (Y-coordinate in world space)
+            # In world coordinates, Y typically represents height (up direction)
+            height_i = points_3d_world[:, 1:2, :, :]  # (B, 1, H, W)
+            
+            height_maps_list.append(height_i)
+        
+        # Stack all height maps
+        height_maps = torch.stack(height_maps_list, dim=1)  # (B, N, 1, H, W)
+        
+        # Step 4: Aggregate to BEV space
+        height_map = self._aggregate_height_to_bev(height_maps, bev_h, bev_w)
         
         # Normalize to [0, 1] for stability
         height_min = height_map.min()
         height_max = height_map.max()
         if height_max > height_min:
-            height_map = (height_map - height_min) / (height_max - height_min)
+            height_map = (height_map - height_min) / (height_max - height_min + 1e-6)
         
         return height_map

@@ -180,7 +180,7 @@ def main():
         default="/data/wangcheng/dataset/university-test/D",
     )
     parser.add_argument("--num-views", type=int, default=15)
-    parser.add_argument("--image-size", type=int, nargs=2, default=[1024, 1024])
+    parser.add_argument("--image-size", type=int, nargs=2, default=[512, 512])
     parser.add_argument("--drone-image-size", type=int, nargs=2, default=[512, 512])
     parser.add_argument(
         "--random-sample", action="store_true", help="Randomly sample drone images"
@@ -318,8 +318,8 @@ def main():
             mosaic_prob=0.0,
             rotate_prob=0.0,
             scale_prob=0.0,
-            flip_prob=0.5,
-            vflip_prob=0.2,
+            flip_prob=0.0,
+            vflip_prob=0.0,
             crop_prob=0.0,
             color_jitter_prob=0.0,
             hue_prob=0.0,

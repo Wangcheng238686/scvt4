@@ -5,6 +5,7 @@ echo "RSPrompter(SAM2) 卫星-无人机融合推理 v1"
 echo "========================================"
 
 export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+export SAM2_CKPT="${SAM2_CKPT:-./portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt}"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 # 配置参数
 CONFIG_FILE="${CONFIG_FILE:-portable_sam2_fusion/configs/rsprompter_sat_drone_sam2_v1.py}"

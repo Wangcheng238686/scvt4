@@ -516,18 +516,20 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
 
         if self.guidance is not None:
             if self.use_height_guided_fusion:
-                guided_feats, align_loss, height_loss = self.guidance(
+                guided_feats, align_loss, height_loss, height_loss_dict = self.guidance(
                     feats=x, 
                     bev_feat=drone_bev,
                     height_map=height_map,
                 )
                 self._spatial_align_loss = align_loss
                 self._height_loss = height_loss
+                self._height_loss_dict = height_loss_dict
                 return guided_feats, image_embeddings, image_positional_embeddings, high_res_features
             elif self.use_spatial_fusion:
                 guided_feats, align_loss = self.guidance(feats=x, bev_feat=drone_bev)
                 self._spatial_align_loss = align_loss
                 self._height_loss = None
+                self._height_loss_dict = None
                 return guided_feats, image_embeddings, image_positional_embeddings, high_res_features
             else:
                 guided_feats, guided_emb = self.guidance(
@@ -537,6 +539,7 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
                 )
                 self._spatial_align_loss = None
                 self._height_loss = None
+                self._height_loss_dict = None
 
                 if guided_emb is not None:
                     image_embeddings = guided_emb
@@ -545,6 +548,7 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
 
         self._spatial_align_loss = None
         self._height_loss = None
+        self._height_loss_dict = None
         return x, image_embeddings, image_positional_embeddings, high_res_features
 
     def loss(
@@ -600,6 +604,13 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
         height_loss = getattr(self, "_height_loss", None)
         if height_loss is not None and self.height_loss_weight > 0:
             losses["loss_height"] = height_loss * self.height_loss_weight
+        
+        # Add detailed height losses
+        height_loss_dict = getattr(self, "_height_loss_dict", None)
+        if height_loss_dict is not None:
+            for key, value in height_loss_dict.items():
+                if key != 'loss_height_total':  # Skip total as it's already added as loss_height
+                    losses[key] = value
         
         consistency_loss = getattr(self, "_consistency_loss", None)
         if consistency_loss is not None:
@@ -657,6 +668,13 @@ class RSPrompterAnchorDroneGuidance(RSPrompterAnchor):
         height_loss = getattr(self, "_height_loss", None)
         if height_loss is not None and self.height_loss_weight > 0:
             losses["loss_height"] = height_loss * self.height_loss_weight
+        
+        # Add detailed height losses
+        height_loss_dict = getattr(self, "_height_loss_dict", None)
+        if height_loss_dict is not None:
+            for key, value in height_loss_dict.items():
+                if key != 'loss_height_total':  # Skip total as it's already added as loss_height
+                    losses[key] = value
         
         consistency_loss = getattr(self, "_consistency_loss", None)
         if consistency_loss is not None:

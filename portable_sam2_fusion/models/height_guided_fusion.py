@@ -18,6 +18,13 @@ class HeightGuidedSpatialFusion(nn.Module):
     
     Key idea: Building regions (higher height) should receive more attention
     in the fusion process for better building instance segmentation.
+    
+    Height Loss Design:
+    - Variance loss: Encourages height distribution to have clear separation
+                     between buildings (high) and ground (low)
+    - Sparsity loss: Encourages most regions to have low height (ground)
+                     while allowing few regions to have high height (buildings)
+    - Smoothness loss: Encourages spatial smoothness in height predictions
     """
     
     def __init__(
@@ -32,6 +39,12 @@ class HeightGuidedSpatialFusion(nn.Module):
         height_dim: int = 64,
         use_height_gate: bool = True,
         height_threshold: float = 0.3,
+        use_variance_loss: bool = True,
+        use_sparsity_loss: bool = True,
+        use_smoothness_loss: bool = True,
+        variance_weight: float = 0.1,
+        sparsity_weight: float = 0.05,
+        smoothness_weight: float = 0.01,
     ):
         super().__init__()
         
@@ -43,6 +56,14 @@ class HeightGuidedSpatialFusion(nn.Module):
         self.use_checkpoint = use_checkpoint
         self.use_height_gate = use_height_gate
         self.height_threshold = height_threshold
+        
+        # Height loss configuration
+        self.use_variance_loss = use_variance_loss
+        self.use_sparsity_loss = use_sparsity_loss
+        self.use_smoothness_loss = use_smoothness_loss
+        self.variance_weight = variance_weight
+        self.sparsity_weight = sparsity_weight
+        self.smoothness_weight = smoothness_weight
         
         self.bev_proj = nn.Sequential(
             nn.Conv2d(bev_dim, sat_dim, 1, bias=False),
@@ -174,11 +195,77 @@ class HeightGuidedSpatialFusion(nn.Module):
         
         align_loss = 1 - similarity.mean()
         
-        height_loss = torch.tensor(0.0, device=sat_feat.device)
-        if height_attn is not None and building_mask is not None:
-            height_loss = height_attn.mean()
+        # Compute height losses with physical meaning
+        height_loss_dict = self._compute_height_losses(height_attn, building_mask)
+        height_loss = height_loss_dict.get('loss_height_total', torch.tensor(0.0, device=sat_feat.device))
         
-        return output, align_loss, height_loss
+        return output, align_loss, height_loss, height_loss_dict
+    
+    def _compute_height_losses(
+        self,
+        height_attn: Optional[torch.Tensor],
+        building_mask: Optional[torch.Tensor],
+    ) -> dict:
+        """
+        Compute height-related losses with physical meaning.
+        
+        Args:
+            height_attn: Height attention map (B, 1, H, W) in range [0, 1]
+            building_mask: Binary mask indicating potential building regions
+        
+        Returns:
+            loss_dict: Dictionary containing all height loss components
+        """
+        loss_dict = {}
+        
+        if height_attn is None:
+            loss_dict['loss_height_total'] = torch.tensor(0.0, device=height_attn.device if height_attn is not None else 'cpu')
+            return loss_dict
+        
+        device = height_attn.device
+        total_loss = torch.tensor(0.0, device=device)
+        
+        # 1. Variance Loss: Encourage clear separation between high and low heights
+        if self.use_variance_loss:
+            height_mean = height_attn.mean()
+            height_variance = ((height_attn - height_mean) ** 2).mean()
+            variance_loss = -height_variance  # Negative because we maximize variance
+            weighted_variance_loss = self.variance_weight * variance_loss
+            total_loss = total_loss + weighted_variance_loss
+            loss_dict['loss_height_variance'] = weighted_variance_loss
+        
+        # 2. Sparsity Loss: Encourage sparse high-height regions
+        if self.use_sparsity_loss:
+            sparsity_loss = height_attn.mean()
+            high_value_penalty = F.relu(height_attn - 0.9).mean()
+            sparsity_loss = sparsity_loss + 0.1 * high_value_penalty
+            weighted_sparsity_loss = self.sparsity_weight * sparsity_loss
+            total_loss = total_loss + weighted_sparsity_loss
+            loss_dict['loss_height_sparsity'] = weighted_sparsity_loss
+        
+        # 3. Smoothness Loss: Encourage spatial smoothness
+        if self.use_smoothness_loss:
+            grad_x = height_attn[:, :, :, 1:] - height_attn[:, :, :, :-1]
+            grad_y = height_attn[:, :, 1:, :] - height_attn[:, :, :-1, :]
+            smoothness_loss = (grad_x.abs().mean() + grad_y.abs().mean()) / 2.0
+            weighted_smoothness_loss = self.smoothness_weight * smoothness_loss
+            total_loss = total_loss + weighted_smoothness_loss
+            loss_dict['loss_height_smoothness'] = weighted_smoothness_loss
+        
+        # 4. Building Contrast Loss
+        if building_mask is not None and building_mask.sum() > 0:
+            building_height = (height_attn * building_mask).sum() / (building_mask.sum() + 1e-6)
+            non_building_mask = 1.0 - building_mask
+            if non_building_mask.sum() > 0:
+                non_building_height = (height_attn * non_building_mask).sum() / (non_building_mask.sum() + 1e-6)
+            else:
+                non_building_height = torch.tensor(0.0, device=device)
+            contrast_loss = F.relu(0.5 - (building_height - non_building_height))
+            total_loss = total_loss + 0.1 * contrast_loss
+            loss_dict['loss_height_contrast'] = contrast_loss
+        
+        loss_dict['loss_height_total'] = total_loss
+        return loss_dict
     
     def forward(
         self,
@@ -214,6 +301,12 @@ class MultiLevelHeightGuidedFusion(nn.Module):
         height_dim: int = 64,
         use_height_gate: bool = True,
         height_loss_weight: float = 0.01,
+        use_variance_loss: bool = True,
+        use_sparsity_loss: bool = True,
+        use_smoothness_loss: bool = True,
+        variance_weight: float = 0.1,
+        sparsity_weight: float = 0.05,
+        smoothness_weight: float = 0.01,
     ):
         super().__init__()
         
@@ -233,6 +326,12 @@ class MultiLevelHeightGuidedFusion(nn.Module):
                 use_checkpoint=use_checkpoint,
                 height_dim=height_dim,
                 use_height_gate=use_height_gate,
+                use_variance_loss=use_variance_loss,
+                use_sparsity_loss=use_sparsity_loss,
+                use_smoothness_loss=use_smoothness_loss,
+                variance_weight=variance_weight,
+                sparsity_weight=sparsity_weight,
+                smoothness_weight=smoothness_weight,
             )
             for c in self.level_channels
         ])
@@ -251,16 +350,20 @@ class MultiLevelHeightGuidedFusion(nn.Module):
         feats: Tuple[torch.Tensor, ...],
         bev_feat: torch.Tensor,
         height_map: Optional[torch.Tensor] = None,
-    ) -> Tuple[Tuple[torch.Tensor, ...], torch.Tensor, torch.Tensor]:
+    ) -> Tuple[Tuple[torch.Tensor, ...], torch.Tensor, torch.Tensor, dict]:
         guided_feats = []
         total_align_loss = 0.0
         total_height_loss = 0.0
         
+        # Collect detailed height losses from all levels
+        all_height_loss_dicts = []
+        
         for feat, fusion in zip(feats, self.spatial_fusions):
-            guided_feat, align_loss, height_loss = fusion(feat, bev_feat, height_map)
+            guided_feat, align_loss, height_loss, height_loss_dict = fusion(feat, bev_feat, height_map)
             guided_feats.append(guided_feat)
             total_align_loss = total_align_loss + align_loss
             total_height_loss = total_height_loss + height_loss
+            all_height_loss_dicts.append(height_loss_dict)
         
         for i in range(len(guided_feats) - 1, 0, -1):
             upsampled = F.interpolate(
@@ -274,4 +377,15 @@ class MultiLevelHeightGuidedFusion(nn.Module):
         avg_align_loss = total_align_loss / len(feats)
         avg_height_loss = total_height_loss / len(feats)
         
-        return tuple(guided_feats), avg_align_loss, avg_height_loss
+        # Aggregate detailed height losses across all levels
+        # Only aggregate keys that exist in all dictionaries
+        aggregated_height_loss_dict = {}
+        if all_height_loss_dicts:
+            all_keys = set(all_height_loss_dicts[0].keys())
+            for d in all_height_loss_dicts[1:]:
+                all_keys &= set(d.keys())
+            
+            for key in all_keys:
+                aggregated_height_loss_dict[key] = sum(d.get(key, 0.0) for d in all_height_loss_dicts) / len(feats)
+        
+        return tuple(guided_feats), avg_align_loss, avg_height_loss, aggregated_height_loss_dict
