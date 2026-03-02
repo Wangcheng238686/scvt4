@@ -51,6 +51,11 @@ class SatelliteDroneDataset(Dataset):
         seed: int = 42,
         flip_prob: float = 0.0,
         scene_id_to_index: Optional[Dict[str, int]] = None,
+        gaussian_noise_prob: float = 0.0,
+        gaussian_noise_std: float = 0.02,
+        random_erasing_prob: float = 0.0,
+        random_erasing_scale: Tuple[float, float] = (0.02, 0.2),
+        random_erasing_ratio: Tuple[float, float] = (0.3, 3.3),
     ):
         self.satellite_data_root = Path(satellite_data_root)
         self.drone_data_root = Path(drone_data_root)
@@ -65,6 +70,11 @@ class SatelliteDroneDataset(Dataset):
         self.seed = int(seed)
         self.flip_prob = float(flip_prob)
         self.scene_id_to_index = scene_id_to_index or {}
+        self.gaussian_noise_prob = float(gaussian_noise_prob)
+        self.gaussian_noise_std = float(gaussian_noise_std)
+        self.random_erasing_prob = float(random_erasing_prob)
+        self.random_erasing_scale = tuple(random_erasing_scale)
+        self.random_erasing_ratio = tuple(random_erasing_ratio)
 
         self._drone_transform = self._build_drone_transform()
         self.scene_data = self._load_scene_data()
@@ -187,13 +197,21 @@ class SatelliteDroneDataset(Dataset):
         else:
             scale_w, scale_h = 1.0, 1.0
 
-        if self.flip_prob > 0 and np.random.rand() < self.flip_prob:
+        do_flip = self.flip_prob > 0 and np.random.rand() < self.flip_prob
+        if do_flip:
             img = img[:, ::-1].copy()
             w = self.image_size[0]
             for inst in instances:
                 x1, y1, x2, y2 = inst["bbox"]
                 inst["bbox"] = [w - x2, y1, w - x1, y2]
                 inst["mask"] = inst["mask"][:, ::-1].copy()
+
+        if self.gaussian_noise_prob > 0 and np.random.rand() < self.gaussian_noise_prob:
+            noise = np.random.randn(*img.shape) * (self.gaussian_noise_std * 255)
+            img = np.clip(img.astype(np.float32) + noise, 0, 255).astype(np.uint8)
+
+        if self.random_erasing_prob > 0 and np.random.rand() < self.random_erasing_prob:
+            img, instances = self._apply_random_erasing(img, instances)
 
         img_tensor = torch.from_numpy(img).permute(2, 0, 1).float()
 
@@ -216,7 +234,7 @@ class SatelliteDroneDataset(Dataset):
             "scene_id": scene_id,
         }
 
-        drone_images, intrinsics, extrinsics = self._load_drone_data(scene_info)
+        drone_images, intrinsics, extrinsics = self._load_drone_data(scene_info, do_flip=do_flip)
 
         scene_index = self.scene_id_to_index.get(scene_id, 0)
 
@@ -233,7 +251,7 @@ class SatelliteDroneDataset(Dataset):
             "scene_index": scene_index,
         }
 
-    def _load_drone_data(self, scene_info: Dict) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    def _load_drone_data(self, scene_info: Dict, do_flip: bool = False) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         drone_dir: Path = scene_info["drone_dir"]
         camera_params: Dict = scene_info["camera_params"]
         image_index: Dict[str, Path] = scene_info.get("drone_image_index", {})
@@ -281,22 +299,33 @@ class SatelliteDroneDataset(Dataset):
 
             img = Image.open(image_path).convert("RGB")
             orig_w, orig_h = img.size
+            
+            if do_flip:
+                img = img.transpose(Image.FLIP_LEFT_RIGHT)
+            
             img_tensor = self._drone_transform(img)
             images_list.append(img_tensor)
 
             if int(idx) < len(intr_all):
                 intr = torch.tensor(intr_all[int(idx)], dtype=torch.float32)
-                # Scale intrinsics based on image resize
                 scale_x = self.drone_image_size[0] / orig_w
                 scale_y = self.drone_image_size[1] / orig_h
-                intr[0, 0] *= scale_x  # fx
-                intr[1, 1] *= scale_y  # fy
-                intr[0, 2] *= scale_x  # cx
-                intr[1, 2] *= scale_y  # cy
+                intr[0, 0] *= scale_x
+                intr[1, 1] *= scale_y
+                intr[0, 2] *= scale_x
+                intr[1, 2] *= scale_y
+                
+                if do_flip:
+                    intr[0, 2] = self.drone_image_size[0] - intr[0, 2]
             else:
                 intr = torch.eye(3, dtype=torch.float32)
+            
             if int(idx) < len(ext_all):
                 ext = torch.tensor(ext_all[int(idx)], dtype=torch.float32)
+                
+                if do_flip:
+                    ext[0, 0] = -ext[0, 0]
+                    ext[0, 3] = -ext[0, 3]
             else:
                 ext = torch.eye(4, dtype=torch.float32)
             intrinsics_list.append(intr)
@@ -313,6 +342,69 @@ class SatelliteDroneDataset(Dataset):
         intrinsics = torch.eye(3, dtype=torch.float32).unsqueeze(0).repeat(self.num_sample_images, 1, 1)
         extrinsics = torch.eye(4, dtype=torch.float32).unsqueeze(0).repeat(self.num_sample_images, 1, 1)
         return drone_images, intrinsics, extrinsics
+
+    def _apply_random_erasing(
+        self, 
+        img: np.ndarray, 
+        instances: List[Dict],
+    ) -> Tuple[np.ndarray, List[Dict]]:
+        h, w = img.shape[:2]
+        img_area = h * w
+        
+        for _ in range(10):
+            target_area = img_area * np.random.uniform(self.random_erasing_scale[0], self.random_erasing_scale[1])
+            aspect_ratio = np.random.uniform(self.random_erasing_ratio[0], self.random_erasing_ratio[1])
+            
+            erase_h = int(round(np.sqrt(target_area * aspect_ratio)))
+            erase_w = int(round(np.sqrt(target_area / aspect_ratio)))
+            
+            if erase_h >= h or erase_w >= w:
+                continue
+            
+            y1 = np.random.randint(0, h - erase_h)
+            x1 = np.random.randint(0, w - erase_w)
+            y2 = y1 + erase_h
+            x2 = x1 + erase_w
+            
+            erase_mask = np.zeros((h, w), dtype=np.uint8)
+            erase_mask[y1:y2, x1:x2] = 1
+            
+            overlap_ratio = 0.0
+            for inst in instances:
+                inst_mask = inst["mask"]
+                intersection = np.logical_and(inst_mask, erase_mask).sum()
+                inst_area = inst_mask.sum()
+                if inst_area > 0:
+                    overlap_ratio = max(overlap_ratio, intersection / inst_area)
+            
+            if overlap_ratio < 0.3:
+                img[y1:y2, x1:x2] = np.random.randint(0, 256, (erase_h, erase_w, 3), dtype=np.uint8)
+                
+                for inst in instances:
+                    inst["mask"][y1:y2, x1:x2] = 0
+                    
+                    x1_i, y1_i, x2_i, y2_i = inst["bbox"]
+                    if x1_i >= x2 and x2_i <= x1:
+                        continue
+                    if y1_i >= y2 and y2_i <= y1:
+                        continue
+                    
+                    new_mask = inst["mask"]
+                    rows = np.any(new_mask, axis=1)
+                    cols = np.any(new_mask, axis=0)
+                    if rows.any() and cols.any():
+                        y_indices = np.where(rows)[0]
+                        x_indices = np.where(cols)[0]
+                        inst["bbox"] = [
+                            float(x_indices[0]),
+                            float(y_indices[0]),
+                            float(x_indices[-1] + 1),
+                            float(y_indices[-1] + 1),
+                        ]
+                
+                break
+        
+        return img, instances
 
     def _parse_instances(self, annotation: Dict, img_h: int, img_w: int) -> List[Dict]:
         shapes = annotation.get("shapes", [])

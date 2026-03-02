@@ -25,6 +25,17 @@ TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 WORK_DIR="${PROJECT_ROOT}/inference_results/rsprompter-sam2-v11-${TIMESTAMP}"
 SHOW_DIR="${SHOW_DIR:-${WORK_DIR}/visualizations}"
 
+if [ ! -f "$CHECKPOINT_PATH" ]; then
+    echo "错误: 权重文件不存在: $CHECKPOINT_PATH"
+    echo "请设置 CHECKPOINT_PATH 环境变量"
+    exit 1
+fi
+
+if [ ! -f "$CONFIG_PATH" ]; then
+    echo "错误: 配置文件不存在: $CONFIG_PATH"
+    exit 1
+fi
+
 mkdir -p "$WORK_DIR"
 mkdir -p "$SHOW_DIR"
 

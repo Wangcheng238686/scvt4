@@ -25,6 +25,11 @@ class SatelliteInstanceDataset(Dataset):
         seed: int = 42,
         flip_prob: float = 0.0,
         vflip_prob: float = 0.0,
+        gaussian_noise_prob: float = 0.0,
+        gaussian_noise_std: float = 0.02,
+        random_erasing_prob: float = 0.0,
+        random_erasing_scale: Tuple[float, float] = (0.02, 0.2),
+        random_erasing_ratio: Tuple[float, float] = (0.3, 3.3),
     ):
         self.satellite_data_root = Path(satellite_data_root)
         self.image_size = tuple(image_size)
@@ -33,6 +38,11 @@ class SatelliteInstanceDataset(Dataset):
         self.seed = int(seed)
         self.flip_prob = float(flip_prob)
         self.vflip_prob = float(vflip_prob)
+        self.gaussian_noise_prob = float(gaussian_noise_prob)
+        self.gaussian_noise_std = float(gaussian_noise_std)
+        self.random_erasing_prob = float(random_erasing_prob)
+        self.random_erasing_scale = tuple(random_erasing_scale)
+        self.random_erasing_ratio = tuple(random_erasing_ratio)
 
         self.scene_data = self._load_scenes(scene_ids)
         split_name = "验证" if self.is_val else "训练"
@@ -135,6 +145,13 @@ class SatelliteInstanceDataset(Dataset):
                 inst["bbox"] = [x1, h - y2, x2, h - y1]
                 inst["mask"] = inst["mask"][::-1, :].copy()
 
+        if self.gaussian_noise_prob > 0 and np.random.rand() < self.gaussian_noise_prob:
+            noise = np.random.randn(*img.shape) * (self.gaussian_noise_std * 255)
+            img = np.clip(img.astype(np.float32) + noise, 0, 255).astype(np.uint8)
+
+        if self.random_erasing_prob > 0 and np.random.rand() < self.random_erasing_prob:
+            img, instances = self._apply_random_erasing(img, instances)
+
         img_tensor = torch.from_numpy(img).permute(2, 0, 1).float()
 
         if len(instances) == 0:
@@ -213,3 +230,60 @@ class SatelliteInstanceDataset(Dataset):
             instances.append({"bbox": [float(x1), float(y1), float(x2), float(y2)], "label": 0, "mask": mask})
 
         return instances
+
+    def _apply_random_erasing(
+        self, 
+        img: np.ndarray, 
+        instances: List[Dict],
+    ) -> Tuple[np.ndarray, List[Dict]]:
+        h, w = img.shape[:2]
+        img_area = h * w
+        
+        for _ in range(10):
+            target_area = img_area * np.random.uniform(self.random_erasing_scale[0], self.random_erasing_scale[1])
+            aspect_ratio = np.random.uniform(self.random_erasing_ratio[0], self.random_erasing_ratio[1])
+            
+            erase_h = int(round(np.sqrt(target_area * aspect_ratio)))
+            erase_w = int(round(np.sqrt(target_area / aspect_ratio)))
+            
+            if erase_h >= h or erase_w >= w:
+                continue
+            
+            y1 = np.random.randint(0, h - erase_h)
+            x1 = np.random.randint(0, w - erase_w)
+            y2 = y1 + erase_h
+            x2 = x1 + erase_w
+            
+            erase_mask = np.zeros((h, w), dtype=np.uint8)
+            erase_mask[y1:y2, x1:x2] = 1
+            
+            overlap_ratio = 0.0
+            for inst in instances:
+                inst_mask = inst["mask"]
+                intersection = np.logical_and(inst_mask, erase_mask).sum()
+                inst_area = inst_mask.sum()
+                if inst_area > 0:
+                    overlap_ratio = max(overlap_ratio, intersection / inst_area)
+            
+            if overlap_ratio < 0.3:
+                img[y1:y2, x1:x2] = np.random.randint(0, 256, (erase_h, erase_w, 3), dtype=np.uint8)
+                
+                for inst in instances:
+                    inst["mask"][y1:y2, x1:x2] = 0
+                    
+                    new_mask = inst["mask"]
+                    rows = np.any(new_mask, axis=1)
+                    cols = np.any(new_mask, axis=0)
+                    if rows.any() and cols.any():
+                        y_indices = np.where(rows)[0]
+                        x_indices = np.where(cols)[0]
+                        inst["bbox"] = [
+                            float(x_indices[0]),
+                            float(y_indices[0]),
+                            float(x_indices[-1] + 1),
+                            float(y_indices[-1] + 1),
+                        ]
+                
+                break
+        
+        return img, instances

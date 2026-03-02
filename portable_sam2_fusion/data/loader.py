@@ -76,6 +76,11 @@ def create_train_loader(
     color_jitter_prob: float = 0.0,
     hue_prob: float = 0.0,
     sharpness_prob: float = 0.0,
+    gaussian_noise_prob: float = 0.0,
+    gaussian_noise_std: float = 0.02,
+    random_erasing_prob: float = 0.0,
+    random_erasing_scale: Tuple[float, float] = (0.02, 0.2),
+    random_erasing_ratio: Tuple[float, float] = (0.3, 3.3),
     image_size: Tuple[int, int] = (512, 512),
     use_drone: bool = False,
     drone_data_root: str = "",
@@ -107,6 +112,11 @@ def create_train_loader(
             is_val=False,
             flip_prob=flip_prob,
             scene_id_to_index=scene_id_to_index,
+            gaussian_noise_prob=gaussian_noise_prob,
+            gaussian_noise_std=gaussian_noise_std,
+            random_erasing_prob=random_erasing_prob,
+            random_erasing_scale=random_erasing_scale,
+            random_erasing_ratio=random_erasing_ratio,
         )
         collate_fn = rtmdet_drone_collate_fn
         if val_ratio > 0:
@@ -142,6 +152,11 @@ def create_train_loader(
             is_val=False,
             flip_prob=flip_prob,
             vflip_prob=vflip_prob,
+            gaussian_noise_prob=gaussian_noise_prob,
+            gaussian_noise_std=gaussian_noise_std,
+            random_erasing_prob=random_erasing_prob,
+            random_erasing_scale=random_erasing_scale,
+            random_erasing_ratio=random_erasing_ratio,
         )
         collate_fn = rtmdet_collate_fn
 
@@ -155,6 +170,8 @@ def create_train_loader(
                 is_val=True,
                 flip_prob=0.0,
                 vflip_prob=0.0,
+                gaussian_noise_prob=0.0,
+                random_erasing_prob=0.0,
             )
             val_loader = DataLoader(
                 val_dataset,

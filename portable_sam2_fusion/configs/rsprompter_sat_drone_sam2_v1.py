@@ -24,6 +24,16 @@ model = dict(
         bgr_to_rgb=True,
         pad_mask=True,
         pad_size_divisor=32,
+        batch_augments=[
+            dict(
+                type="BatchFixedSizePad",
+                size=(512, 512),
+                img_pad_value=0,
+                pad_mask=True,
+                mask_pad_value=0,
+                pad_seg=False,
+            )
+        ],
     ),
     decoder_freeze=False,
     shared_image_embedding=dict(
@@ -153,7 +163,7 @@ model = dict(
                 neg_pos_ub=-1,
                 add_gt_as_proposals=True,
             ),
-            mask_size=28,
+            mask_size=(512, 512),
             pos_weight=-1,
             debug=False,
         ),
