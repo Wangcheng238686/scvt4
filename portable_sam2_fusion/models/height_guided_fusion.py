@@ -252,17 +252,8 @@ class HeightGuidedSpatialFusion(nn.Module):
             total_loss = total_loss + weighted_smoothness_loss
             loss_dict['loss_height_smoothness'] = weighted_smoothness_loss
         
-        # 4. Building Contrast Loss
-        if building_mask is not None and building_mask.sum() > 0:
-            building_height = (height_attn * building_mask).sum() / (building_mask.sum() + 1e-6)
-            non_building_mask = 1.0 - building_mask
-            if non_building_mask.sum() > 0:
-                non_building_height = (height_attn * non_building_mask).sum() / (non_building_mask.sum() + 1e-6)
-            else:
-                non_building_height = torch.tensor(0.0, device=device)
-            contrast_loss = F.relu(0.5 - (building_height - non_building_height))
-            total_loss = total_loss + 0.1 * contrast_loss
-            loss_dict['loss_height_contrast'] = contrast_loss
+        # Note: Building Contrast Loss removed to simplify training
+        # The variance loss is sufficient to encourage bimodal height distribution
         
         loss_dict['loss_height_total'] = total_loss
         return loss_dict

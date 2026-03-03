@@ -113,6 +113,7 @@ model = dict(
             num_fcs=2,
             fc_out_channels=256,
             roi_feat_size=14,
+            per_pointset_point=prompt_shape[1],
             loss_mask=dict(type="CrossEntropyLoss", use_mask=True, loss_weight=1.0),
             sam2_mask_decoder=dict(
                 checkpoint_path=sam2_ckpt_path,
@@ -236,23 +237,18 @@ model = dict(
         height_dim=64,
         use_height_gate=True,
         height_loss_weight=0.01,
-        # Height loss configuration (new)
-        use_variance_loss=True,      # Encourage bimodal height distribution
-        use_sparsity_loss=False,      # Encourage sparse high-height regions
-        use_smoothness_loss=False,    # Encourage spatial smoothness
-        variance_weight=0.1,         # Weight for variance loss
-        sparsity_weight=0.05,        # Weight for sparsity loss
-        smoothness_weight=0.01,      # Weight for smoothness loss
+        # Simplified height loss configuration - only keep essential variance loss
+        use_variance_loss=True,      # Essential: encourage bimodal height distribution
+        use_sparsity_loss=False,     # Disabled: not critical for convergence
+        use_smoothness_loss=False,   # Disabled: not critical for convergence
+        variance_weight=0.05,        # Reduced weight for stability
+        sparsity_weight=0.0,         # Disabled
+        smoothness_weight=0.0,       # Disabled
     ),
     
-    cross_view_loss=dict(
-        temperature=0.07,
-        contrastive_weight=0.1,
-        hidden_dim=256,
-        consistency_weight=0.1,
-        geometric_weight=0.01,
-        smoothness_weight=0.01,
-    ),
+    # Cross-view losses disabled to reduce complexity and improve convergence
+    # These losses are helpful but add too much optimization pressure during initial training
+    cross_view_loss=None,
     
     max_scenes=1000,
 )

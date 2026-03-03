@@ -16,15 +16,15 @@ SAT_DATA_ROOT="${SAT_DATA_ROOT:-/home/wangcheng/data/unversity-big-after-without
 DRONE_DATA_ROOT="${DRONE_DATA_ROOT:-/home/wangcheng/data/unversity-big-after-without-negative/university-d-train-selected-5}"
 
 export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
-NPROC_PER_NODE="${NPROC_PER_NODE:-1}"
+NPROC_PER_NODE="${NPROC_PER_NODE:-1}" #单卡训练
 BATCH_SIZE="${BATCH_SIZE:-4}"
-EPOCHS="${EPOCHS:-50}"
+EPOCHS="${EPOCHS:-70}"
 LEARNING_RATE="${LEARNING_RATE:-4e-4}"
 GRAD_ACCUM_STEPS="${GRAD_ACCUM_STEPS:-2}"
 
 CHECKPOINT_DIR="${CHECKPOINT_DIR:-${PROJECT_ROOT}/checkpoints/rsprompter-sat-drone-sam2-v1}"
 
-USE_FSDP="${USE_FSDP:-0}"
+USE_FSDP="${USE_FSDP:-0}" #是否启用FSDP
 FSDP_SHARDING="${FSDP_SHARDING:-FULL_SHARD}"
 FSDP_MIN_NUM_PARAMS="${FSDP_MIN_NUM_PARAMS:-1000000}"
 
@@ -32,10 +32,12 @@ VAL_RATIO="${VAL_RATIO:-0.1}"
 VAL_BATCH_SIZE="${VAL_BATCH_SIZE:-${BATCH_SIZE}}"
 VAL_EVERY_N_EPOCHS="${VAL_EVERY_N_EPOCHS:-1}"
 EARLY_STOPPING_PATIENCE="${EARLY_STOPPING_PATIENCE:-15}"
+WARMUP_EPOCHS="${WARMUP_EPOCHS:-2}"
+WEIGHT_DECAY="${WEIGHT_DECAY:-0.1}"
 
 SAT_BACKBONE_LR_MULT="${SAT_BACKBONE_LR_MULT:-0.5}"
 SAT_OTHER_LR_MULT="${SAT_OTHER_LR_MULT:-1.0}"
-DRONE_LR_MULT="${DRONE_LR_MULT:-1.0}"
+DRONE_LR_MULT="${DRONE_LR_MULT:-0.5}"
 SCENE_ALIGN_LR_MULT="${SCENE_ALIGN_LR_MULT:-2.0}"
 NUM_VIEWS="${NUM_VIEWS:-4}"
 MAX_SCENES="${MAX_SCENES:-1000}"
@@ -73,6 +75,8 @@ echo "  - LR倍率: sat_backbone=${SAT_BACKBONE_LR_MULT} sat_other=${SAT_OTHER_L
 echo "  - 视角数: $NUM_VIEWS"
 echo "  - 最大场景数: $MAX_SCENES"
 echo "  - 验证: ratio=${VAL_RATIO} patience=${EARLY_STOPPING_PATIENCE}"
+echo "  - Warmup轮数: ${WARMUP_EPOCHS}"
+echo "  - Weight Decay: ${WEIGHT_DECAY}"
 echo "  - 分布式: nproc=$NPROC_PER_NODE fsdp=$USE_FSDP"
 echo "  - 权重目录: $CHECKPOINT_DIR"
 echo "  - 日志文件: $LOG_FILE"
@@ -103,6 +107,8 @@ echo "========================================"
   --val-batch-size "$VAL_BATCH_SIZE" \
   --val-every-n-epochs "$VAL_EVERY_N_EPOCHS" \
   --early-stopping-patience "$EARLY_STOPPING_PATIENCE" \
+  --warmup-epochs "$WARMUP_EPOCHS" \
+  --weight-decay "$WEIGHT_DECAY" \
   "${FSDP_ARGS[@]}" \
   2>&1 | tee "$LOG_FILE"
 

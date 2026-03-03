@@ -54,6 +54,7 @@ def _build_optimizer(
     sat_other_lr_mult: float,
     drone_lr_mult: float,
     scene_align_lr_mult: float = 2.0,
+    weight_decay: float = 0.05,
 ) -> optim.Optimizer:
     params_sat_backbone = []
     params_sat_other = []
@@ -105,7 +106,7 @@ def _build_optimizer(
             "No trainable parameters found. Check freezing / requires_grad."
         )
 
-    return optim.AdamW(param_groups, lr=lr, weight_decay=0.05, eps=1e-6)
+    return optim.AdamW(param_groups, lr=lr, weight_decay=weight_decay, eps=1e-6)
 
 
 def _set_norm_eval(model: torch.nn.Module):
@@ -209,6 +210,9 @@ def main():
     parser.add_argument("--scene-align-lr-mult", type=float, default=2.0, help="Learning rate multiplier for scene alignment parameters")
     parser.add_argument("--grad-accum-steps", type=int, default=1)
     parser.add_argument("--max-scenes", type=int, default=1000, help="Maximum number of scenes for scene-specific alignment")
+    parser.add_argument("--warmup-epochs", type=int, default=0, help="Number of warmup epochs for learning rate scheduling")
+    parser.add_argument("--weight-decay", type=float, default=0.05, help="Weight decay for optimizer")
+    parser.add_argument("--dropout", type=float, default=0.0, help="Dropout rate for regularization")
 
     args = parser.parse_args()
 
@@ -356,8 +360,21 @@ def main():
         sat_other_lr_mult=args.sat_other_lr_mult,
         drone_lr_mult=args.drone_lr_mult,
         scene_align_lr_mult=args.scene_align_lr_mult,
+        weight_decay=args.weight_decay,
     )
-    warmup_iters = min(50, num_batches_per_epoch)
+
+    # Warmup scheduling: support both epoch-based and iteration-based warmup
+    if args.warmup_epochs > 0:
+        # Epoch-based warmup for better stability with fusion modules
+        warmup_iters = args.warmup_epochs * num_batches_per_epoch
+        if is_main:
+            logger.info(f"Using epoch-based warmup: {args.warmup_epochs} epochs ({warmup_iters} iters)")
+    else:
+        # Fallback to iteration-based warmup (original behavior)
+        warmup_iters = min(50, num_batches_per_epoch)
+        if is_main:
+            logger.info(f"Using iteration-based warmup: {warmup_iters} iters")
+
     cosine_t_max = max(1, args.epochs * num_batches_per_epoch - warmup_iters)
     cosine_scheduler = optim.lr_scheduler.CosineAnnealingLR(
         optimizer, T_max=cosine_t_max, eta_min=args.lr * 0.001

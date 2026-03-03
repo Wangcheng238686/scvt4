@@ -1,0 +1,326 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT4/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT4/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Decoder state dict keys: 131
+Loaded SAM2 MaskDecoder. Missing keys: 0
+  use_high_res_features: True
+  Has conv_s0: True
+  Has conv_s1: True
+[DEBUG] share_sam2_backbone=False
+[DEBUG] hasattr(self, 'backbone')=True
+[DEBUG] type(self.backbone)=<class 'portable_sam2_fusion.rsprompter.models_sam2.RSSAM2VisionEncoder'>
+[DEBUG] hasattr(self.backbone, 'encoder')=True
+[DEBUG] self.backbone.encoder=ImageEncoder(
+  (trunk): Hiera(
+    (patch_embed): PatchEmbed(
+      (proj): Conv2d(3, 112, kernel_size=(7, 7), stride=(4, 4), padding=(3, 3))
+    )
+    (blocks): ModuleList(
+      (0): MultiScaleBlock(
+        (norm1): LayerNorm((112,), eps=1e-06, elementwise_affine=True)
+        (attn): MultiScaleAttention(
+          (qkv): Linear(in_features=112, out_features=336, bias=True)
+          (proj): Linear(in_features=112, out_features=112, bias=True)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((112,), eps=1e-06, elementwise_affine=True)
+        (mlp): MLP(
+          (layers): ModuleList(
+            (0): Linear(in_features=112, out_features=448, bias=True)
+            (1): Linear(in_features=448, out_features=112, bias=True)
+          )
+          (act): GELU(approximate='none')
+        )
+      )
+      (1): MultiScaleBlock(
+        (norm1): LayerNorm((112,), eps=1e-06, elementwise_affine=True)
+        (attn): MultiScaleAttention(
+          (qkv): Linear(in_features=112, out_features=336, bias=True)
+          (proj): Linear(in_features=112, out_features=112, bias=True)
+        )
+        (drop_path): DropPath()
+        (norm2): LayerNorm((112,), eps=1e-06, elementwise_affine=True)
+        (mlp): MLP(
+          (layers): ModuleList(
+            (0): Linear(in_features=112, out_features=448, bias=True)
+            (1): Linear(in_features=448, out_features=112, bias=True)
+          )
+          (act): GELU(approximate='none')
+        )
+      )
+      (2): MultiScaleBlock(
+        (norm1): LayerNorm((112,), eps=1e-06, elementwise_affine=True)
+        (pool): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+        (attn): MultiScaleAttention(
+          (q_pool): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+          (qkv): Linear(in_features=112, out_features=672, bias=True)
+          (proj): Linear(in_features=224, out_features=224, bias=True)
+        )
+        (drop_path): DropPath()
+        (norm2): LayerNorm((224,), eps=1e-06, elementwise_affine=True)
+        (mlp): MLP(
+          (layers): ModuleList(
+            (0): Linear(in_features=224, out_features=896, bias=True)
+            (1): Linear(in_features=896, out_features=224, bias=True)
+          )
+          (act): GELU(approximate='none')
+        )
+        (proj): Linear(in_features=112, out_features=224, bias=True)
+      )
+      (3-4): 2 x MultiScaleBlock(
+        (norm1): LayerNorm((224,), eps=1e-06, elementwise_affine=True)
+        (attn): MultiScaleAttention(
+          (qkv): Linear(in_features=224, out_features=672, bias=True)
+          (proj): Linear(in_features=224, out_features=224, bias=True)
+        )
+        (drop_path): DropPath()
+        (norm2): LayerNorm((224,), eps=1e-06, elementwise_affine=True)
+        (mlp): MLP(
+          (layers): ModuleList(
+            (0): Linear(in_features=224, out_features=896, bias=True)
+            (1): Linear(in_features=896, out_features=224, bias=True)
+          )
+          (act): GELU(approximate='none')
+        )
+      )
+      (5): MultiScaleBlock(
+        (norm1): LayerNorm((224,), eps=1e-06, elementwise_affine=True)
+        (pool): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+        (attn): MultiScaleAttention(
+          (q_pool): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+          (qkv): Linear(in_features=224, out_features=1344, bias=True)
+          (proj): Linear(in_features=448, out_features=448, bias=True)
+        )
+        (drop_path): DropPath()
+        (norm2): LayerNorm((448,), eps=1e-06, elementwise_affine=True)
+        (mlp): MLP(
+          (layers): ModuleList(
+            (0): Linear(in_features=448, out_features=1792, bias=True)
+            (1): Linear(in_features=1792, out_features=448, bias=True)
+          )
+          (act): GELU(approximate='none')
+        )
+        (proj): Linear(in_features=224, out_features=448, bias=True)
+      )
+      (6-20): 15 x MultiScaleBlock(
+        (norm1): LayerNorm((448,), eps=1e-06, elementwise_affine=True)
+        (attn): MultiScaleAttention(
+          (qkv): Linear(in_features=448, out_features=1344, bias=True)
+          (proj): Linear(in_features=448, out_features=448, bias=True)
+        )
+        (drop_path): DropPath()
+        (norm2): LayerNorm((448,), eps=1e-06, elementwise_affine=True)
+        (mlp): MLP(
+          (layers): ModuleList(
+            (0): Linear(in_features=448, out_features=1792, bias=True)
+            (1): Linear(in_features=1792, out_features=448, bias=True)
+          )
+          (act): GELU(approximate='none')
+        )
+      )
+      (21): MultiScaleBlock(
+        (norm1): LayerNorm((448,), eps=1e-06, elementwise_affine=True)
+        (pool): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+        (attn): MultiScaleAttention(
+          (q_pool): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+          (qkv): Linear(in_features=448, out_features=2688, bias=True)
+          (proj): Linear(in_features=896, out_features=896, bias=True)
+        )
+        (drop_path): DropPath()
+        (norm2): LayerNorm((896,), eps=1e-06, elementwise_affine=True)
+        (mlp): MLP(
+          (layers): ModuleList(
+            (0): Linear(in_features=896, out_features=3584, bias=True)
+            (1): Linear(in_features=3584, out_features=896, bias=True)
+          )
+          (act): GELU(approximate='none')
+        )
+        (proj): Linear(in_features=448, out_features=896, bias=True)
+      )
+      (22-23): 2 x MultiScaleBlock(
+        (norm1): LayerNorm((896,), eps=1e-06, elementwise_affine=True)
+        (attn): MultiScaleAttention(
+          (qkv): Linear(in_features=896, out_features=2688, bias=True)
+          (proj): Linear(in_features=896, out_features=896, bias=True)
+        )
+        (drop_path): DropPath()
+        (norm2): LayerNorm((896,), eps=1e-06, elementwise_affine=True)
+        (mlp): MLP(
+          (layers): ModuleList(
+            (0): Linear(in_features=896, out_features=3584, bias=True)
+            (1): Linear(in_features=3584, out_features=896, bias=True)
+          )
+          (act): GELU(approximate='none')
+        )
+      )
+    )
+  )
+  (neck): FpnNeck(
+    (position_encoding): PositionEmbeddingSine()
+    (convs): ModuleList(
+      (0): Sequential(
+        (conv): Conv2d(896, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (1): Sequential(
+        (conv): Conv2d(448, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (2): Sequential(
+        (conv): Conv2d(224, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (3): Sequential(
+        (conv): Conv2d(112, 256, kernel_size=(1, 1), stride=(1, 1))
+      )
+    )
+  )
+)
+Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT4/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+[StandaloneSAM2Backbone] Loaded from /home/wangcheng/project/SCVT4/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt. Missing keys: 0
+2026-03-02 23:13:55,171 - dinov2 - WARNING - xFormers not available
+2026-03-02 23:13:55,174 - dinov2 - WARNING - xFormers not available
+2026-03-02 23:13:55,190 - dinov2 - INFO - using MLP layer as FFN
+2026-03-02 23:13:57,821 - portable_sam2_fusion.data.loader - INFO - Built scene ID mapping: 734 scenes
+2026-03-02 23:13:58,382 - portable_sam2_fusion.data.satellite_drone_dataset - INFO - SatelliteDroneDataset initialized (训练集): 672 scenes, views=4, sat_size=(512, 512), drone_size=(512, 512)
+2026-03-02 23:13:58,414 - portable_sam2_fusion.data.satellite_drone_dataset - INFO - SatelliteDroneDataset initialized (验证集): 62 scenes, views=4, sat_size=(512, 512), drone_size=(512, 512)
+2026-03-02 23:13:58,415 - portable_sam_fusion - INFO - Dataset size: 672
+2026-03-02 23:13:58,422 - portable_sam_fusion - INFO - Using epoch-based warmup: 2 epochs (336 iters)
+[DEBUG] RSFeatureAggregatorSAM2 inputs: 4 tensors
+  [0] shape=torch.Size([4, 256, 128, 128]), dtype=torch.float32
+  [1] shape=torch.Size([4, 256, 64, 64]), dtype=torch.float32
+  [2] shape=torch.Size([4, 256, 32, 32]), dtype=torch.float32
+  [3] shape=torch.Size([4, 256, 16, 16]), dtype=torch.float32
+[DEBUG] high_res_features selection:
+  image_embeddings shape: torch.Size([4, 256, 16, 16])
+  target feat_s0: (64, 64)
+  target feat_s1: (32, 32)
+  backbone_fpn[0]: torch.Size([4, 256, 128, 128])
+  backbone_fpn[1]: torch.Size([4, 256, 64, 64])
+  backbone_fpn[2]: torch.Size([4, 256, 32, 32])
+  backbone_fpn[3]: torch.Size([4, 256, 16, 16])
+[DEBUG] high_res_features result:
+  feat_s0: torch.Size([4, 256, 64, 64])
+  feat_s1: torch.Size([4, 256, 32, 32])
+2026-03-02 23:18:38,163 - portable_sam_fusion - INFO - Epoch 1 detailed losses: loss_rpn_cls=0.6660, loss_rpn_bbox=0.0267, loss_cls=0.3124, acc=98.6802, loss_bbox=0.0128, loss_mask=0.2486, loss_spatial_align=0.0569, loss_height=-0.0000
+2026-03-02 23:19:26,820 - portable_sam_fusion - INFO - Epoch 1/70 | train=1.323420 val=1.150342 | sat_backbone=7.95e-07 sat_other=1.59e-06 drone_guidance=7.95e-07 scene_alignment=1.59e-06
+2026-03-02 23:23:56,983 - portable_sam_fusion - INFO - Epoch 2 detailed losses: loss_rpn_cls=0.5918, loss_rpn_bbox=0.0237, loss_cls=0.0836, acc=98.7706, loss_bbox=0.0102, loss_mask=0.2000, loss_spatial_align=0.0568, loss_height=-0.0000
+2026-03-02 23:24:48,856 - portable_sam_fusion - INFO - Epoch 2/70 | train=0.966200 val=0.892271 | sat_backbone=1.39e-06 sat_other=2.78e-06 drone_guidance=1.39e-06 scene_alignment=2.78e-06
+2026-03-02 23:29:24,343 - portable_sam_fusion - INFO - Epoch 3 detailed losses: loss_rpn_cls=0.4663, loss_rpn_bbox=0.0222, loss_cls=0.0794, acc=98.5509, loss_bbox=0.0157, loss_mask=0.1466, loss_spatial_align=0.0566, loss_height=-0.0000
+2026-03-02 23:30:19,582 - portable_sam_fusion - INFO - Epoch 3/70 | train=0.786936 val=0.777050 | sat_backbone=1.98e-06 sat_other=3.97e-06 drone_guidance=1.98e-06 scene_alignment=3.97e-06
+2026-03-02 23:35:08,201 - portable_sam_fusion - INFO - Epoch 4 detailed losses: loss_rpn_cls=0.3338, loss_rpn_bbox=0.0210, loss_cls=0.1406, acc=95.9827, loss_bbox=0.0838, loss_mask=0.1287, loss_spatial_align=0.0565, loss_height=-0.0000
+2026-03-02 23:35:42,991 - portable_sam_fusion - INFO - Epoch 4/70 | train=0.764302 val=0.842774 | sat_backbone=2.58e-06 sat_other=5.16e-06 drone_guidance=2.58e-06 scene_alignment=5.16e-06
+2026-03-02 23:40:46,014 - portable_sam_fusion - INFO - Epoch 5 detailed losses: loss_rpn_cls=0.2148, loss_rpn_bbox=0.0192, loss_cls=0.1894, acc=92.5778, loss_bbox=0.1590, loss_mask=0.1168, loss_spatial_align=0.0562, loss_height=-0.0000
+2026-03-02 23:41:42,466 - portable_sam_fusion - INFO - Epoch 5/70 | train=0.755397 val=0.763432 | sat_backbone=3.17e-06 sat_other=6.35e-06 drone_guidance=3.17e-06 scene_alignment=6.35e-06
+2026-03-02 23:46:41,409 - portable_sam_fusion - INFO - Epoch 6 detailed losses: loss_rpn_cls=0.1527, loss_rpn_bbox=0.0170, loss_cls=0.2073, acc=91.4841, loss_bbox=0.1672, loss_mask=0.1131, loss_spatial_align=0.0559, loss_height=-0.0000
+2026-03-02 23:47:35,166 - portable_sam_fusion - INFO - Epoch 6/70 | train=0.713146 val=0.723597 | sat_backbone=3.77e-06 sat_other=7.54e-06 drone_guidance=3.77e-06 scene_alignment=7.54e-06
+2026-03-02 23:52:43,030 - portable_sam_fusion - INFO - Epoch 7 detailed losses: loss_rpn_cls=0.1167, loss_rpn_bbox=0.0149, loss_cls=0.2151, acc=91.1066, loss_bbox=0.1668, loss_mask=0.1053, loss_spatial_align=0.0556, loss_height=-0.0000
+2026-03-02 23:53:36,103 - portable_sam_fusion - INFO - Epoch 7/70 | train=0.674290 val=0.676947 | sat_backbone=4.36e-06 sat_other=8.73e-06 drone_guidance=4.36e-06 scene_alignment=8.73e-06
+2026-03-02 23:58:45,917 - portable_sam_fusion - INFO - Epoch 8 detailed losses: loss_rpn_cls=0.0919, loss_rpn_bbox=0.0135, loss_cls=0.2175, acc=90.8386, loss_bbox=0.1633, loss_mask=0.0966, loss_spatial_align=0.0553, loss_height=-0.0000
+2026-03-02 23:59:40,227 - portable_sam_fusion - INFO - Epoch 8/70 | train=0.637969 val=0.652985 | sat_backbone=4.96e-06 sat_other=9.91e-06 drone_guidance=4.96e-06 scene_alignment=9.91e-06
+2026-03-03 00:04:55,367 - portable_sam_fusion - INFO - Epoch 9 detailed losses: loss_rpn_cls=0.0742, loss_rpn_bbox=0.0122, loss_cls=0.2166, acc=90.8508, loss_bbox=0.1589, loss_mask=0.0938, loss_spatial_align=0.0549, loss_height=-0.0000
+2026-03-03 00:05:49,635 - portable_sam_fusion - INFO - Epoch 9/70 | train=0.610525 val=0.621180 | sat_backbone=5.55e-06 sat_other=1.11e-05 drone_guidance=5.55e-06 scene_alignment=1.11e-05
+2026-03-03 00:11:06,932 - portable_sam_fusion - INFO - Epoch 10 detailed losses: loss_rpn_cls=0.0605, loss_rpn_bbox=0.0113, loss_cls=0.2116, acc=90.9950, loss_bbox=0.1537, loss_mask=0.0902, loss_spatial_align=0.0546, loss_height=-0.0000
+2026-03-03 00:12:00,671 - portable_sam_fusion - INFO - Epoch 10/70 | train=0.581697 val=0.589461 | sat_backbone=6.15e-06 sat_other=1.23e-05 drone_guidance=6.15e-06 scene_alignment=1.23e-05
+2026-03-03 00:17:19,238 - portable_sam_fusion - INFO - Epoch 11 detailed losses: loss_rpn_cls=0.0494, loss_rpn_bbox=0.0103, loss_cls=0.2036, acc=91.3034, loss_bbox=0.1404, loss_mask=0.0886, loss_spatial_align=0.0543, loss_height=-0.0000
+2026-03-03 00:17:55,942 - portable_sam_fusion - INFO - Epoch 11/70 | train=0.546530 val=0.589941 | sat_backbone=6.74e-06 sat_other=1.35e-05 drone_guidance=6.74e-06 scene_alignment=1.35e-05
+2026-03-03 00:23:21,150 - portable_sam_fusion - INFO - Epoch 12 detailed losses: loss_rpn_cls=0.0410, loss_rpn_bbox=0.0096, loss_cls=0.1963, acc=91.6510, loss_bbox=0.1318, loss_mask=0.0799, loss_spatial_align=0.0539, loss_height=-0.0000
+2026-03-03 00:24:18,346 - portable_sam_fusion - INFO - Epoch 12/70 | train=0.512494 val=0.550975 | sat_backbone=7.34e-06 sat_other=1.47e-05 drone_guidance=7.34e-06 scene_alignment=1.47e-05
+2026-03-03 00:29:42,099 - portable_sam_fusion - INFO - Epoch 13 detailed losses: loss_rpn_cls=0.0344, loss_rpn_bbox=0.0087, loss_cls=0.1900, acc=91.8722, loss_bbox=0.1256, loss_mask=0.0722, loss_spatial_align=0.0534, loss_height=-0.0000
+2026-03-03 00:30:18,946 - portable_sam_fusion - INFO - Epoch 13/70 | train=0.484350 val=0.556651 | sat_backbone=7.93e-06 sat_other=1.59e-05 drone_guidance=7.93e-06 scene_alignment=1.59e-05
+2026-03-03 00:35:42,602 - portable_sam_fusion - INFO - Epoch 14 detailed losses: loss_rpn_cls=0.0295, loss_rpn_bbox=0.0083, loss_cls=0.1810, acc=92.3148, loss_bbox=0.1169, loss_mask=0.0646, loss_spatial_align=0.0530, loss_height=-0.0000
+2026-03-03 00:36:44,070 - portable_sam_fusion - INFO - Epoch 14/70 | train=0.453320 val=0.530460 | sat_backbone=8.53e-06 sat_other=1.71e-05 drone_guidance=8.53e-06 scene_alignment=1.71e-05
+2026-03-03 00:42:09,042 - portable_sam_fusion - INFO - Epoch 15 detailed losses: loss_rpn_cls=0.0263, loss_rpn_bbox=0.0079, loss_cls=0.1784, acc=92.4110, loss_bbox=0.1068, loss_mask=0.0581, loss_spatial_align=0.0525, loss_height=-0.0000
+2026-03-03 00:43:06,438 - portable_sam_fusion - INFO - Epoch 15/70 | train=0.430034 val=0.507657 | sat_backbone=9.12e-06 sat_other=1.82e-05 drone_guidance=9.12e-06 scene_alignment=1.82e-05
+2026-03-03 00:48:33,224 - portable_sam_fusion - INFO - Epoch 16 detailed losses: loss_rpn_cls=0.0228, loss_rpn_bbox=0.0072, loss_cls=0.1655, acc=92.9382, loss_bbox=0.0989, loss_mask=0.0530, loss_spatial_align=0.0520, loss_height=-0.0000
+2026-03-03 00:49:34,602 - portable_sam_fusion - INFO - Epoch 16/70 | train=0.399339 val=0.492453 | sat_backbone=9.71e-06 sat_other=1.94e-05 drone_guidance=9.71e-06 scene_alignment=1.94e-05
+2026-03-03 00:55:01,289 - portable_sam_fusion - INFO - Epoch 17 detailed losses: loss_rpn_cls=0.0198, loss_rpn_bbox=0.0069, loss_cls=0.1591, acc=93.2719, loss_bbox=0.0941, loss_mask=0.0507, loss_spatial_align=0.0514, loss_height=-0.0000
+2026-03-03 00:56:00,370 - portable_sam_fusion - INFO - Epoch 17/70 | train=0.381965 val=0.482217 | sat_backbone=1.03e-05 sat_other=2.06e-05 drone_guidance=1.03e-05 scene_alignment=2.06e-05
+2026-03-03 01:01:26,481 - portable_sam_fusion - INFO - Epoch 18 detailed losses: loss_rpn_cls=0.0178, loss_rpn_bbox=0.0065, loss_cls=0.1550, acc=93.4800, loss_bbox=0.0868, loss_mask=0.0472, loss_spatial_align=0.0509, loss_height=-0.0000
+2026-03-03 01:02:25,858 - portable_sam_fusion - INFO - Epoch 18/70 | train=0.364128 val=0.466863 | sat_backbone=1.09e-05 sat_other=2.18e-05 drone_guidance=1.09e-05 scene_alignment=2.18e-05
+2026-03-03 01:07:53,156 - portable_sam_fusion - INFO - Epoch 19 detailed losses: loss_rpn_cls=0.0159, loss_rpn_bbox=0.0060, loss_cls=0.1522, acc=93.5521, loss_bbox=0.0855, loss_mask=0.0456, loss_spatial_align=0.0503, loss_height=-0.0000
+2026-03-03 01:08:51,466 - portable_sam_fusion - INFO - Epoch 19/70 | train=0.355577 val=0.448586 | sat_backbone=1.15e-05 sat_other=2.30e-05 drone_guidance=1.15e-05 scene_alignment=2.30e-05
+2026-03-03 01:14:19,006 - portable_sam_fusion - INFO - Epoch 20 detailed losses: loss_rpn_cls=0.0154, loss_rpn_bbox=0.0060, loss_cls=0.1445, acc=93.9328, loss_bbox=0.0809, loss_mask=0.0403, loss_spatial_align=0.0498, loss_height=-0.0000
+2026-03-03 01:14:57,005 - portable_sam_fusion - INFO - Epoch 20/70 | train=0.336962 val=0.480325 | sat_backbone=1.21e-05 sat_other=2.42e-05 drone_guidance=1.21e-05 scene_alignment=2.42e-05
+2026-03-03 01:20:22,711 - portable_sam_fusion - INFO - Epoch 21 detailed losses: loss_rpn_cls=0.0134, loss_rpn_bbox=0.0056, loss_cls=0.1369, acc=94.2171, loss_bbox=0.0748, loss_mask=0.0385, loss_spatial_align=0.0491, loss_height=-0.0000
+2026-03-03 01:20:59,335 - portable_sam_fusion - INFO - Epoch 21/70 | train=0.318311 val=0.455311 | sat_backbone=1.27e-05 sat_other=2.54e-05 drone_guidance=1.27e-05 scene_alignment=2.54e-05
+2026-03-03 01:26:25,151 - portable_sam_fusion - INFO - Epoch 22 detailed losses: loss_rpn_cls=0.0121, loss_rpn_bbox=0.0053, loss_cls=0.1341, acc=94.3731, loss_bbox=0.0733, loss_mask=0.0383, loss_spatial_align=0.0485, loss_height=-0.0000
+2026-03-03 01:27:00,546 - portable_sam_fusion - INFO - Epoch 22/70 | train=0.311543 val=0.473483 | sat_backbone=1.33e-05 sat_other=2.66e-05 drone_guidance=1.33e-05 scene_alignment=2.66e-05
+2026-03-03 01:32:29,659 - portable_sam_fusion - INFO - Epoch 23 detailed losses: loss_rpn_cls=0.0116, loss_rpn_bbox=0.0050, loss_cls=0.1296, acc=94.6065, loss_bbox=0.0710, loss_mask=0.0332, loss_spatial_align=0.0480, loss_height=-0.0000
+2026-03-03 01:33:25,356 - portable_sam_fusion - INFO - Epoch 23/70 | train=0.298379 val=0.427371 | sat_backbone=1.39e-05 sat_other=2.78e-05 drone_guidance=1.39e-05 scene_alignment=2.78e-05
+2026-03-03 01:38:55,254 - portable_sam_fusion - INFO - Epoch 24 detailed losses: loss_rpn_cls=0.0102, loss_rpn_bbox=0.0047, loss_cls=0.1229, acc=94.8675, loss_bbox=0.0635, loss_mask=0.0301, loss_spatial_align=0.0473, loss_height=-0.0000
+2026-03-03 01:39:36,289 - portable_sam_fusion - INFO - Epoch 24/70 | train=0.278610 val=0.463359 | sat_backbone=1.45e-05 sat_other=2.89e-05 drone_guidance=1.45e-05 scene_alignment=2.89e-05
+2026-03-03 01:45:06,793 - portable_sam_fusion - INFO - Epoch 25 detailed losses: loss_rpn_cls=0.0097, loss_rpn_bbox=0.0046, loss_cls=0.1227, acc=94.9009, loss_bbox=0.0643, loss_mask=0.0276, loss_spatial_align=0.0468, loss_height=-0.0000
+2026-03-03 01:46:09,680 - portable_sam_fusion - INFO - Epoch 25/70 | train=0.275721 val=0.421929 | sat_backbone=1.51e-05 sat_other=3.01e-05 drone_guidance=1.51e-05 scene_alignment=3.01e-05
+2026-03-03 01:51:34,183 - portable_sam_fusion - INFO - Epoch 26 detailed losses: loss_rpn_cls=0.0094, loss_rpn_bbox=0.0045, loss_cls=0.1160, acc=95.1611, loss_bbox=0.0560, loss_mask=0.0268, loss_spatial_align=0.0461, loss_height=-0.0000
+2026-03-03 01:52:11,125 - portable_sam_fusion - INFO - Epoch 26/70 | train=0.258832 val=0.444521 | sat_backbone=1.57e-05 sat_other=3.13e-05 drone_guidance=1.57e-05 scene_alignment=3.13e-05
+2026-03-03 01:57:39,968 - portable_sam_fusion - INFO - Epoch 27 detailed losses: loss_rpn_cls=0.0083, loss_rpn_bbox=0.0042, loss_cls=0.1142, acc=95.2927, loss_bbox=0.0555, loss_mask=0.0238, loss_spatial_align=0.0456, loss_height=-0.0000
+2026-03-03 01:58:16,988 - portable_sam_fusion - INFO - Epoch 27/70 | train=0.251665 val=0.439819 | sat_backbone=1.63e-05 sat_other=3.25e-05 drone_guidance=1.63e-05 scene_alignment=3.25e-05
+2026-03-03 02:03:27,017 - portable_sam_fusion - INFO - Epoch 28 detailed losses: loss_rpn_cls=0.0092, loss_rpn_bbox=0.0041, loss_cls=0.1101, acc=95.4305, loss_bbox=0.0526, loss_mask=0.0258, loss_spatial_align=0.0450, loss_height=-0.0000
+2026-03-03 02:04:04,765 - portable_sam_fusion - INFO - Epoch 28/70 | train=0.246847 val=0.438543 | sat_backbone=1.68e-05 sat_other=3.37e-05 drone_guidance=1.68e-05 scene_alignment=3.37e-05
+2026-03-03 02:09:33,137 - portable_sam_fusion - INFO - Epoch 29 detailed losses: loss_rpn_cls=0.0073, loss_rpn_bbox=0.0039, loss_cls=0.1085, acc=95.4648, loss_bbox=0.0561, loss_mask=0.0225, loss_spatial_align=0.0446, loss_height=-0.0000
+2026-03-03 02:10:28,339 - portable_sam_fusion - INFO - Epoch 29/70 | train=0.242872 val=0.412099 | sat_backbone=1.74e-05 sat_other=3.49e-05 drone_guidance=1.74e-05 scene_alignment=3.49e-05
+2026-03-03 02:15:59,224 - portable_sam_fusion - INFO - Epoch 30 detailed losses: loss_rpn_cls=0.0075, loss_rpn_bbox=0.0038, loss_cls=0.1039, acc=95.7270, loss_bbox=0.0511, loss_mask=0.0225, loss_spatial_align=0.0440, loss_height=-0.0000
+2026-03-03 02:16:37,249 - portable_sam_fusion - INFO - Epoch 30/70 | train=0.232834 val=0.422983 | sat_backbone=1.80e-05 sat_other=3.61e-05 drone_guidance=1.80e-05 scene_alignment=3.61e-05
+2026-03-03 02:22:07,872 - portable_sam_fusion - INFO - Epoch 31 detailed losses: loss_rpn_cls=0.0067, loss_rpn_bbox=0.0038, loss_cls=0.0999, acc=95.8880, loss_bbox=0.0494, loss_mask=0.0210, loss_spatial_align=0.0434, loss_height=-0.0000
+2026-03-03 02:22:46,766 - portable_sam_fusion - INFO - Epoch 31/70 | train=0.224288 val=0.421376 | sat_backbone=1.86e-05 sat_other=3.73e-05 drone_guidance=1.86e-05 scene_alignment=3.73e-05
+2026-03-03 02:28:15,095 - portable_sam_fusion - INFO - Epoch 32 detailed losses: loss_rpn_cls=0.0063, loss_rpn_bbox=0.0037, loss_cls=0.0979, acc=95.9263, loss_bbox=0.0458, loss_mask=0.0220, loss_spatial_align=0.0430, loss_height=-0.0000
+2026-03-03 02:29:13,679 - portable_sam_fusion - INFO - Epoch 32/70 | train=0.218645 val=0.404304 | sat_backbone=1.92e-05 sat_other=3.85e-05 drone_guidance=1.92e-05 scene_alignment=3.85e-05
+2026-03-03 02:34:45,992 - portable_sam_fusion - INFO - Epoch 33 detailed losses: loss_rpn_cls=0.0058, loss_rpn_bbox=0.0035, loss_cls=0.0927, acc=96.1658, loss_bbox=0.0442, loss_mask=0.0207, loss_spatial_align=0.0423, loss_height=-0.0000
+2026-03-03 02:35:43,724 - portable_sam_fusion - INFO - Epoch 33/70 | train=0.209359 val=0.401503 | sat_backbone=1.98e-05 sat_other=3.96e-05 drone_guidance=1.98e-05 scene_alignment=3.96e-05
+2026-03-03 02:41:10,335 - portable_sam_fusion - INFO - Epoch 34 detailed losses: loss_rpn_cls=0.0061, loss_rpn_bbox=0.0034, loss_cls=0.0926, acc=96.1484, loss_bbox=0.0447, loss_mask=0.0196, loss_spatial_align=0.0418, loss_height=-0.0000
+2026-03-03 02:41:48,479 - portable_sam_fusion - INFO - Epoch 34/70 | train=0.208079 val=0.414536 | sat_backbone=2.04e-05 sat_other=4.08e-05 drone_guidance=2.04e-05 scene_alignment=4.08e-05
+2026-03-03 02:47:15,958 - portable_sam_fusion - INFO - Epoch 35 detailed losses: loss_rpn_cls=0.0060, loss_rpn_bbox=0.0031, loss_cls=0.0916, acc=96.1946, loss_bbox=0.0426, loss_mask=0.0188, loss_spatial_align=0.0414, loss_height=-0.0000
+2026-03-03 02:48:11,584 - portable_sam_fusion - INFO - Epoch 35/70 | train=0.203606 val=0.387528 | sat_backbone=2.10e-05 sat_other=4.20e-05 drone_guidance=2.10e-05 scene_alignment=4.20e-05
+2026-03-03 02:53:39,062 - portable_sam_fusion - INFO - Epoch 36 detailed losses: loss_rpn_cls=0.0045, loss_rpn_bbox=0.0031, loss_cls=0.0888, acc=96.2940, loss_bbox=0.0387, loss_mask=0.0190, loss_spatial_align=0.0408, loss_height=-0.0000
+2026-03-03 02:54:17,734 - portable_sam_fusion - INFO - Epoch 36/70 | train=0.194930 val=0.405702 | sat_backbone=2.16e-05 sat_other=4.32e-05 drone_guidance=2.16e-05 scene_alignment=4.32e-05
+2026-03-03 02:59:49,743 - portable_sam_fusion - INFO - Epoch 37 detailed losses: loss_rpn_cls=0.0047, loss_rpn_bbox=0.0030, loss_cls=0.0893, acc=96.3178, loss_bbox=0.0388, loss_mask=0.0187, loss_spatial_align=0.0404, loss_height=-0.0000
+2026-03-03 03:00:28,182 - portable_sam_fusion - INFO - Epoch 37/70 | train=0.194764 val=0.403535 | sat_backbone=2.22e-05 sat_other=4.44e-05 drone_guidance=2.22e-05 scene_alignment=4.44e-05
+2026-03-03 03:05:53,419 - portable_sam_fusion - INFO - Epoch 38 detailed losses: loss_rpn_cls=0.0046, loss_rpn_bbox=0.0028, loss_cls=0.0858, acc=96.4178, loss_bbox=0.0391, loss_mask=0.0197, loss_spatial_align=0.0399, loss_height=-0.0000
+2026-03-03 03:06:48,335 - portable_sam_fusion - INFO - Epoch 38/70 | train=0.191822 val=0.387219 | sat_backbone=2.28e-05 sat_other=4.56e-05 drone_guidance=2.28e-05 scene_alignment=4.56e-05
+2026-03-03 03:12:12,313 - portable_sam_fusion - INFO - Epoch 39 detailed losses: loss_rpn_cls=0.0039, loss_rpn_bbox=0.0029, loss_cls=0.0814, acc=96.5794, loss_bbox=0.0358, loss_mask=0.0179, loss_spatial_align=0.0393, loss_height=-0.0000
+2026-03-03 03:12:49,109 - portable_sam_fusion - INFO - Epoch 39/70 | train=0.181156 val=0.426584 | sat_backbone=2.34e-05 sat_other=4.68e-05 drone_guidance=2.34e-05 scene_alignment=4.68e-05
+2026-03-03 03:18:23,948 - portable_sam_fusion - INFO - Epoch 40 detailed losses: loss_rpn_cls=0.0046, loss_rpn_bbox=0.0028, loss_cls=0.0834, acc=96.5390, loss_bbox=0.0375, loss_mask=0.0181, loss_spatial_align=0.0388, loss_height=-0.0000
+2026-03-03 03:19:18,525 - portable_sam_fusion - INFO - Epoch 40/70 | train=0.185140 val=0.382138 | sat_backbone=2.40e-05 sat_other=4.80e-05 drone_guidance=2.40e-05 scene_alignment=4.80e-05
+2026-03-03 03:24:51,522 - portable_sam_fusion - INFO - Epoch 41 detailed losses: loss_rpn_cls=0.0040, loss_rpn_bbox=0.0028, loss_cls=0.0825, acc=96.6024, loss_bbox=0.0365, loss_mask=0.0165, loss_spatial_align=0.0384, loss_height=-0.0000
+2026-03-03 03:25:30,348 - portable_sam_fusion - INFO - Epoch 41/70 | train=0.180823 val=0.428935 | sat_backbone=2.46e-05 sat_other=4.92e-05 drone_guidance=2.46e-05 scene_alignment=4.92e-05
+2026-03-03 03:30:57,215 - portable_sam_fusion - INFO - Epoch 42 detailed losses: loss_rpn_cls=0.0037, loss_rpn_bbox=0.0030, loss_cls=0.0793, acc=96.7399, loss_bbox=0.0321, loss_mask=0.0184, loss_spatial_align=0.0379, loss_height=-0.0000
+2026-03-03 03:31:37,253 - portable_sam_fusion - INFO - Epoch 42/70 | train=0.174379 val=0.394675 | sat_backbone=2.52e-05 sat_other=5.03e-05 drone_guidance=2.52e-05 scene_alignment=5.03e-05
+2026-03-03 03:37:06,017 - portable_sam_fusion - INFO - Epoch 43 detailed losses: loss_rpn_cls=0.0034, loss_rpn_bbox=0.0028, loss_cls=0.0767, acc=96.7922, loss_bbox=0.0338, loss_mask=0.0159, loss_spatial_align=0.0373, loss_height=-0.0000
+2026-03-03 03:38:07,118 - portable_sam_fusion - INFO - Epoch 43/70 | train=0.169953 val=0.369280 | sat_backbone=2.58e-05 sat_other=5.15e-05 drone_guidance=2.58e-05 scene_alignment=5.15e-05
+2026-03-03 03:43:35,317 - portable_sam_fusion - INFO - Epoch 44 detailed losses: loss_rpn_cls=0.0038, loss_rpn_bbox=0.0031, loss_cls=0.0751, acc=96.8901, loss_bbox=0.0317, loss_mask=0.0164, loss_spatial_align=0.0368, loss_height=-0.0000
+2026-03-03 03:44:13,028 - portable_sam_fusion - INFO - Epoch 44/70 | train=0.166927 val=0.378214 | sat_backbone=2.64e-05 sat_other=5.27e-05 drone_guidance=2.64e-05 scene_alignment=5.27e-05
+2026-03-03 03:49:36,815 - portable_sam_fusion - INFO - Epoch 45 detailed losses: loss_rpn_cls=0.0038, loss_rpn_bbox=0.0024, loss_cls=0.0783, acc=96.7317, loss_bbox=0.0328, loss_mask=0.0156, loss_spatial_align=0.0362, loss_height=-0.0000
+2026-03-03 03:50:13,687 - portable_sam_fusion - INFO - Epoch 45/70 | train=0.169084 val=0.388317 | sat_backbone=2.70e-05 sat_other=5.39e-05 drone_guidance=2.70e-05 scene_alignment=5.39e-05
+2026-03-03 03:55:42,171 - portable_sam_fusion - INFO - Epoch 46 detailed losses: loss_rpn_cls=0.0034, loss_rpn_bbox=0.0023, loss_cls=0.0756, acc=96.8875, loss_bbox=0.0305, loss_mask=0.0164, loss_spatial_align=0.0356, loss_height=-0.0000
+2026-03-03 03:56:36,669 - portable_sam_fusion - INFO - Epoch 46/70 | train=0.163718 val=0.358855 | sat_backbone=2.76e-05 sat_other=5.51e-05 drone_guidance=2.76e-05 scene_alignment=5.51e-05
+2026-03-03 04:02:01,751 - portable_sam_fusion - INFO - Epoch 47 detailed losses: loss_rpn_cls=0.0038, loss_rpn_bbox=0.0023, loss_cls=0.0726, acc=97.0157, loss_bbox=0.0292, loss_mask=0.0154, loss_spatial_align=0.0352, loss_height=-0.0000
+2026-03-03 04:02:40,523 - portable_sam_fusion - INFO - Epoch 47/70 | train=0.158482 val=0.399191 | sat_backbone=2.81e-05 sat_other=5.63e-05 drone_guidance=2.81e-05 scene_alignment=5.63e-05
+2026-03-03 04:08:10,787 - portable_sam_fusion - INFO - Epoch 48 detailed losses: loss_rpn_cls=0.0032, loss_rpn_bbox=0.0027, loss_cls=0.0710, acc=97.0476, loss_bbox=0.0302, loss_mask=0.0156, loss_spatial_align=0.0347, loss_height=-0.0000
+2026-03-03 04:08:53,161 - portable_sam_fusion - INFO - Epoch 48/70 | train=0.157498 val=0.387277 | sat_backbone=2.87e-05 sat_other=5.75e-05 drone_guidance=2.87e-05 scene_alignment=5.75e-05
+2026-03-03 04:14:19,346 - portable_sam_fusion - INFO - Epoch 49 detailed losses: loss_rpn_cls=0.0038, loss_rpn_bbox=0.0024, loss_cls=0.0724, acc=97.0192, loss_bbox=0.0280, loss_mask=0.0161, loss_spatial_align=0.0341, loss_height=-0.0000
+2026-03-03 04:14:55,201 - portable_sam_fusion - INFO - Epoch 49/70 | train=0.156879 val=0.371500 | sat_backbone=2.93e-05 sat_other=5.87e-05 drone_guidance=2.93e-05 scene_alignment=5.87e-05
+2026-03-03 04:20:20,404 - portable_sam_fusion - INFO - Epoch 50 detailed losses: loss_rpn_cls=0.0032, loss_rpn_bbox=0.0021, loss_cls=0.0698, acc=97.1302, loss_bbox=0.0289, loss_mask=0.0155, loss_spatial_align=0.0336, loss_height=-0.0000
+2026-03-03 04:20:57,600 - portable_sam_fusion - INFO - Epoch 50/70 | train=0.153140 val=0.422810 | sat_backbone=2.99e-05 sat_other=5.99e-05 drone_guidance=2.99e-05 scene_alignment=5.99e-05
+2026-03-03 04:26:27,055 - portable_sam_fusion - INFO - Epoch 51 detailed losses: loss_rpn_cls=0.0027, loss_rpn_bbox=0.0021, loss_cls=0.0677, acc=97.2058, loss_bbox=0.0270, loss_mask=0.0146, loss_spatial_align=0.0331, loss_height=-0.0000
+2026-03-03 04:26:49,539 - portable_sam_fusion - INFO - Epoch 51/70 | train=0.147127 val=0.382478 | sat_backbone=3.05e-05 sat_other=6.11e-05 drone_guidance=3.05e-05 scene_alignment=6.11e-05
+2026-03-03 04:32:14,536 - portable_sam_fusion - INFO - Epoch 52 detailed losses: loss_rpn_cls=0.0028, loss_rpn_bbox=0.0025, loss_cls=0.0688, acc=97.1244, loss_bbox=0.0272, loss_mask=0.0144, loss_spatial_align=0.0325, loss_height=-0.0000
+2026-03-03 04:32:39,832 - portable_sam_fusion - INFO - Epoch 52/70 | train=0.148188 val=0.365244 | sat_backbone=3.11e-05 sat_other=6.22e-05 drone_guidance=3.11e-05 scene_alignment=6.22e-05
+2026-03-03 04:38:04,734 - portable_sam_fusion - INFO - Epoch 53 detailed losses: loss_rpn_cls=0.0038, loss_rpn_bbox=0.0027, loss_cls=0.0693, acc=97.1325, loss_bbox=0.0293, loss_mask=0.0170, loss_spatial_align=0.0321, loss_height=-0.0000
+2026-03-03 04:38:27,536 - portable_sam_fusion - INFO - Epoch 53/70 | train=0.154111 val=0.426011 | sat_backbone=3.17e-05 sat_other=6.34e-05 drone_guidance=3.17e-05 scene_alignment=6.34e-05
+2026-03-03 04:43:51,664 - portable_sam_fusion - INFO - Epoch 54 detailed losses: loss_rpn_cls=0.0033, loss_rpn_bbox=0.0021, loss_cls=0.0679, acc=97.1427, loss_bbox=0.0284, loss_mask=0.0157, loss_spatial_align=0.0316, loss_height=-0.0000
+2026-03-03 04:44:15,834 - portable_sam_fusion - INFO - Epoch 54/70 | train=0.149010 val=0.380194 | sat_backbone=3.23e-05 sat_other=6.46e-05 drone_guidance=3.23e-05 scene_alignment=6.46e-05
+2026-03-03 04:49:41,554 - portable_sam_fusion - INFO - Epoch 55 detailed losses: loss_rpn_cls=0.0041, loss_rpn_bbox=0.0023, loss_cls=0.0657, acc=97.2688, loss_bbox=0.0241, loss_mask=0.0161, loss_spatial_align=0.0311, loss_height=-0.0000
+2026-03-03 04:50:06,047 - portable_sam_fusion - INFO - Epoch 55/70 | train=0.143475 val=0.375009 | sat_backbone=3.29e-05 sat_other=6.58e-05 drone_guidance=3.29e-05 scene_alignment=6.58e-05
+2026-03-03 04:55:30,501 - portable_sam_fusion - INFO - Epoch 56 detailed losses: loss_rpn_cls=0.0029, loss_rpn_bbox=0.0021, loss_cls=0.0668, acc=97.2639, loss_bbox=0.0264, loss_mask=0.0161, loss_spatial_align=0.0306, loss_height=-0.0000
+2026-03-03 04:55:54,012 - portable_sam_fusion - INFO - Epoch 56/70 | train=0.145023 val=0.384985 | sat_backbone=3.35e-05 sat_other=6.70e-05 drone_guidance=3.35e-05 scene_alignment=6.70e-05
+2026-03-03 05:01:09,450 - portable_sam_fusion - INFO - Epoch 57 detailed losses: loss_rpn_cls=0.0025, loss_rpn_bbox=0.0019, loss_cls=0.0649, acc=97.2932, loss_bbox=0.0247, loss_mask=0.0143, loss_spatial_align=0.0302, loss_height=-0.0000
+2026-03-03 05:01:32,506 - portable_sam_fusion - INFO - Epoch 57/70 | train=0.138333 val=0.376956 | sat_backbone=3.41e-05 sat_other=6.82e-05 drone_guidance=3.41e-05 scene_alignment=6.82e-05
+2026-03-03 05:06:59,968 - portable_sam_fusion - INFO - Epoch 58 detailed losses: loss_rpn_cls=0.0023, loss_rpn_bbox=0.0018, loss_cls=0.0648, acc=97.3400, loss_bbox=0.0254, loss_mask=0.0138, loss_spatial_align=0.0296, loss_height=-0.0000
+2026-03-03 05:07:26,638 - portable_sam_fusion - INFO - Epoch 58/70 | train=0.137644 val=0.383317 | sat_backbone=3.47e-05 sat_other=6.94e-05 drone_guidance=3.47e-05 scene_alignment=6.94e-05
+2026-03-03 05:12:54,726 - portable_sam_fusion - INFO - Epoch 59 detailed losses: loss_rpn_cls=0.0022, loss_rpn_bbox=0.0022, loss_cls=0.0634, acc=97.3877, loss_bbox=0.0236, loss_mask=0.0159, loss_spatial_align=0.0291, loss_height=-0.0000
+2026-03-03 05:13:18,331 - portable_sam_fusion - INFO - Epoch 59/70 | train=0.136417 val=0.411701 | sat_backbone=3.53e-05 sat_other=7.06e-05 drone_guidance=3.53e-05 scene_alignment=7.06e-05
+2026-03-03 05:18:45,006 - portable_sam_fusion - INFO - Epoch 60 detailed losses: loss_rpn_cls=0.0023, loss_rpn_bbox=0.0019, loss_cls=0.0614, acc=97.4450, loss_bbox=0.0253, loss_mask=0.0150, loss_spatial_align=0.0286, loss_height=-0.0000
+2026-03-03 05:19:07,337 - portable_sam_fusion - INFO - Epoch 60/70 | train=0.134479 val=0.409063 | sat_backbone=3.59e-05 sat_other=7.18e-05 drone_guidance=3.59e-05 scene_alignment=7.18e-05
+2026-03-03 05:24:35,950 - portable_sam_fusion - INFO - Epoch 61 detailed losses: loss_rpn_cls=0.0022, loss_rpn_bbox=0.0021, loss_cls=0.0629, acc=97.3708, loss_bbox=0.0265, loss_mask=0.0136, loss_spatial_align=0.0282, loss_height=-0.0000
+2026-03-03 05:24:59,418 - portable_sam_fusion - INFO - Epoch 61/70 | train=0.135430 val=0.371655 | sat_backbone=3.65e-05 sat_other=7.29e-05 drone_guidance=3.65e-05 scene_alignment=7.29e-05
+2026-03-03 05:24:59,420 - portable_sam_fusion - INFO - Early stopping triggered (patience=15)

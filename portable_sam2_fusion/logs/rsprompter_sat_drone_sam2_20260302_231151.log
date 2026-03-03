@@ -1,0 +1,81 @@
+/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/imagecorruptions/corruptions.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Loads checkpoint by local backend from path: /home/wangcheng/project/SCVT4/portable_sam2_fusion/checkpoints/sam2.1_hiera_base_plus.pt
+Loaded SAM2 VisionEncoder. Missing keys: 0
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/train/train_rsprompter_fusion.py", line 772, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/train/train_rsprompter_fusion.py", line 257, in main
+[rank0]:     model = MODELS.build(cfg.model)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank0]:     obj = obj_cls(**args)  # type: ignore
+[rank0]:   File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/models/rsprompter_anchor_drone_guidance.py", line 285, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/rsprompter/models.py", line 437, in __init__
+[rank0]:     super().__init__(*args, **kwargs)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmdet/models/detectors/mask_rcnn.py", line 22, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmdet/models/detectors/two_stage.py", line 61, in __init__
+[rank0]:     self.roi_head = MODELS.build(roi_head)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank0]:     obj = obj_cls(**args)  # type: ignore
+[rank0]:   File "/home/wangcheng/project/SCVT4/portable_sam2_fusion/rsprompter/models.py", line 583, in __init__
+[rank0]:     super().__init__(*args, **kwargs)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmdet/models/roi_heads/base_roi_head.py", line 32, in __init__
+[rank0]:     self.init_bbox_head(bbox_roi_extractor, bbox_head)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmdet/models/roi_heads/standard_roi_head.py", line 39, in init_bbox_head
+[rank0]:     self.bbox_head = MODELS.build(bbox_head)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/registry.py", line 570, in build
+[rank0]:     return self.build_func(cfg, *args, **kwargs, registry=self)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 232, in build_model_from_cfg
+[rank0]:     return build_from_cfg(cfg, registry, default_args)
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+[rank0]:     obj = obj_cls(**args)  # type: ignore
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmdet/models/roi_heads/bbox_heads/convfc_bbox_head.py", line 224, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/mmdet/models/roi_heads/bbox_heads/convfc_bbox_head.py", line 39, in __init__
+[rank0]:     super().__init__(*args, init_cfg=init_cfg, **kwargs)
+[rank0]: TypeError: __init__() got an unexpected keyword argument 'dropout'
+[rank0]:[W302 23:12:01.144008624 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+E0302 23:12:02.614327 1198490 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 1198543) of binary: /home/wangcheng/anaconda3/envs/cvt2/bin/python
+Traceback (most recent call last):
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/wangcheng/anaconda3/envs/cvt2/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/wangcheng/project/SCVT4/portable_sam2_fusion/train/train_rsprompter_fusion.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-03-02_23:12:02
+  host      : node01
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 1198543)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
